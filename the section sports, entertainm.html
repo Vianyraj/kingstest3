@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        
+        @import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&f[]=clash-display@400,500,600,700&f[]=general-sans@300,400,500,600&display=swap');
+        
+        * { font-family: 'General Sans', 'Inter Tight', sans-serif; }
+        .heading-font { font-family: 'Clash Display', sans-serif; }
+        .body-font { font-family: 'Satoshi', 'Inter Tight', sans-serif; }
+        
+        .noise-bg {
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(218, 165, 32, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(245, 245, 220, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 248, 220, 0.25) 0%, transparent 50%),
+                linear-gradient(135deg, #faf7f2 0%, #f5f1e8 25%, #f8f5f0 50%, #fdfcf8 75%, #fff 100%);
+            background-blend-mode: multiply, overlay, normal;
+        }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(248, 217, 139, 0.18);
+        }
+        
+        .asymmetric-border {
+            border-radius: 24px 8px 16px 32px;
+        }
+        
+        .card-asymmetric {
+            border-radius: 20px 4px 20px 4px;
+        }
+        
+        .interactive-image {
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .interactive-image:hover {
+            transform: rotateY(5deg) rotateX(2deg);
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .micro-bounce:hover {
+            animation: micro-bounce 0.4s ease;
+        }
+        
+        @keyframes micro-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-4px); }
+            60% { transform: translateY(-2px); }
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 245, 240, 0.8) 100%);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(218, 165, 32, 0.1);
+        }
+
+        /* Parallax Scrolling Styles */
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .parallax-bg {
+            transform: translateZ(-1px) scale(2);
+        }
+
+        .parallax-mid {
+            transform: translateZ(-0.5px) scale(1.5);
+        }
+
+        .parallax-front {
+            transform: translateZ(0);
+        }
+
+        /* Smooth parallax scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .parallax-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .parallax-bg-image {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            object-fit: cover;
+            will-change: transform;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            will-change: transform;
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0 80px;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 24px;
+        }
+
+        .carousel-slide {
+            min-width: calc(33.333% - 16px);
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(248, 217, 139, 0.4);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn:hover {
+            background: #F8D98B;
+            color: white;
+            box-shadow: 0 6px 20px rgba(248, 217, 139, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn-prev {
+            left: 0;
+        }
+
+        .carousel-btn-next {
+            right: 0;
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 32px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(248, 217, 139, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: #F8D98B;
+            width: 36px;
+            border-radius: 6px;
+        }
+
+        /* New Carousel Styles */
+        .perspective-carousel-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+        }
+
+        .perspective-carousel-wrapper {
+            position: relative;
+            width: 350px;
+            height: 550px;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .perspective-carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            cursor: pointer;
+            background-color: #f0ebe4;
+        }
+
+        .perspective-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .perspective-carousel-slide .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .perspective-carousel-slide.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Positioning the slides */
+        .perspective-carousel-slide.prev-2 { transform: translateX(-150%) scale(0.7) rotateY(45deg); z-index: 1; opacity: 0.3; }
+        .perspective-carousel-slide.prev-1 { transform: translateX(-80%) scale(0.85) rotateY(30deg); z-index: 2; opacity: 0.6; }
+        .perspective-carousel-slide.active { transform: translateX(0) scale(1); z-index: 3; opacity: 1; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .perspective-carousel-slide.next-1 { transform: translateX(80%) scale(0.85) rotateY(-30deg); z-index: 2; opacity: 0.6; }
+        .perspective-carousel-slide.next-2 { transform: translateX(150%) scale(0.7) rotateY(-45deg); z-index: 1; opacity: 0.3; }
+        .perspective-carousel-slide.hidden-slide { transform: translateX(0) scale(0.6); opacity: 0; z-index: 0; }
+
+        .perspective-carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background-color: rgba(20, 20, 20, 0.6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .perspective-carousel-nav:hover {
+            background-color: #F8D98B;
+            color: #333;
+            transform: translateY(-50%) scale(1.1);
+        }
+        #perspective-prev { left: 10%; }
+        #perspective-next { right: 10%; }
+
+        /* Update all yellow/amber colors to new shade */
+        .text-amber-400, .text-amber-500, .text-amber-600 {
+            color: #F8D98B !important;
+        }
+        
+        .bg-amber-400, .bg-amber-500, .bg-amber-600,
+        .from-amber-400, .from-amber-500, .to-amber-500, .to-amber-600 {
+            background-color: #F8D98B !important;
+        }
+        
+        .border-amber-500 {
+            border-color: #F8D98B !important;
+        }
+        
+        .privilege-card {
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .privilege-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .privilege-card:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .privilege-card:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .privilege-card:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .privilege-card:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+    </style>
+</head>
+<body class="noise-bg min-h-screen">
+
+<nav id="header" class="glassmorphism fixed top-0 w-full z-50 py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <img class="h-10 w-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e95559cdaa-a7bd47995241a64dc863.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, gold, elegant and luxurious, on a transparent background" />
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Home</a>
+            <a href="#" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Dining</a>
+            <a href="#" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Sports</a>
+            <a href="#" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Events</a>
+            <a href="#" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">About</a>
+            <button class="bg-gradient-to-r from-amber-400 to-amber-500 text-white px-6 py-2 asymmetric-border hover:shadow-lg transition-all micro-bounce">
+                Join Now
+            </button>
+        </div>
+        <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+</nav>
+
+<section id="hero" class="h-screen relative overflow-hidden pt-0">
+    <div class="relative w-full h-full">
+        <div class="absolute inset-0 w-full h-full overflow-hidden cursor-grab active:cursor-grabbing">
+            <div id="panorama-container" class="w-full h-full relative">
+                <img class="absolute top-0 left-0 h-full w-auto object-cover" style="transform: translateX(0%); min-width: 200%;" id="hero-360-image" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/cf69123edf-c49c282923e8f5f5402c.png" alt="panoramic view of a modern luxury club exterior at night, beautifully illuminated with warm lights, dramatic evening sky, high-resolution, elegant architecture" />
+            </div>
+        </div>
+        
+        <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="text-center space-y-8 px-6 max-w-4xl">
+                <h1 class="heading-font text-6xl lg:text-8xl font-bold text-white leading-tight drop-shadow-2xl" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 2px 10px rgba(0,0,0,0.3);">
+                    Welcome to
+                    <span class="block mt-2 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent" style="text-shadow: none; filter: drop-shadow(0 4px 12px rgba(218,165,32,0.6));">
+                        Kings Club
+                    </span>
+                </h1>
+                <p class="body-font text-xl lg:text-2xl text-white leading-relaxed max-w-2xl mx-auto font-medium" style="text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5);">
+                    Bangalore's most prestigious family club offering world-class dining, sports facilities, and exclusive events in an elegant setting.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto">
+                    <button class="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-10 py-5 asymmetric-border hover:shadow-2xl transition-all micro-bounce text-lg font-semibold hover:scale-105" style="box-shadow: 0 8px 30px rgba(218,165,32,0.4);">
+                        Explore Membership
+                    </button>
+                    <button class="bg-white/20 backdrop-blur-md border-2 border-white text-white px-10 py-5 card-asymmetric hover:bg-white/30 transition-all micro-bounce text-lg font-semibold hover:scale-105">
+                        Virtual Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute top-6 right-6 bg-white/20 backdrop-blur-md px-4 py-3 rounded-full text-sm body-font text-white flex items-center gap-2 z-20 border border-white/30">
+            <i class="fas fa-hand-pointer text-amber-400"></i>
+            <span class="font-medium">Hover to control | Auto-rotating</span>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-3xl opacity-70"></i>
+        </div>
+    </div>
+</section>
+
+<section id="intro" class="parallax-section">
+    <img class="parallax-bg-image" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/43c475f850-5233f033129845d46c00.png" alt="Exterior of a modern, luxurious family club building during the day, clean architecture, beautiful landscaping, bright and welcoming atmosphere" />
+    <div class="parallax-overlay bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+    <div class="parallax-content max-w-6xl mx-auto px-6 text-center scroll-reveal">
+        <div class="absolute inset-0 flex items-center justify-center opacity-10">
+            <img class="h-64 w-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e95559cdaa-4e281d92e66c42231650.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, white, elegant and luxurious, on a transparent background" />
+        </div>
+        <h2 class="heading-font text-5xl font-bold text-white mb-6 drop-shadow-2xl">
+            Where Luxury Meets Community
+        </h2>
+        <p class="body-font text-xl text-white leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
+            For over two decades, Kings Club has been the epitome of refined living in Bangalore. 
+            Our exclusive community brings together families who appreciate the finer things in life.
+        </p>
+    </div>
+</section>
+
+<section id="club-features" class="py-20 relative parallax-section">
+    <img class="parallax-bg-image" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e95559cdaa-4e281d92e66c42231650.png" alt="Kings Club logo watermark background, luxury emblem, elegant design" style="opacity: 0.25; filter: brightness(0.85) sepia(0.3); max-width: 50%; left: 50%; transform: translateX(-50%);" />
+    <div class="parallax-overlay bg-gradient-to-b from-stone-50/85 via-stone-50/75 to-stone-50/85"></div>
+    
+    <!-- Sticky Navigation -->
+    <div class="fixed right-8 top-1/2 -translate-y-1/2 z-40 space-y-4" id="sticky-nav">
+        <a href="#feature-sports" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-sports">
+            <i class="fas fa-basketball-ball text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-fitness" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-fitness">
+            <i class="fas fa-dumbbell text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-entertainment" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-entertainment">
+            <i class="fas fa-gamepad text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-banquets" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-banquets">
+            <i class="fas fa-glass-cheers text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-restaurant" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-restaurant">
+            <i class="fas fa-utensils text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+    </div>
+
+    <div class="parallax-content max-w-7xl mx-auto px-6 w-full relative">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="heading-font text-5xl font-bold text-gray-800 mb-6">
+                Club Features
+            </h2>
+            <p class="body-font text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-4">
+                You can celebrate large and special events at the stunning King's Club, which has more than three acres of land and is situated in a magnificent location.
+            </p>
+            <p class="body-font text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                We have quite the paraphernalia for everything between birthdays, weddings, baby showers, graduation, promotion, or any celebration & have the fun times roll. We have a children-friendly ambiance where you could watch them grow, laugh, & play while they make the best out of the sports & fun activities. Park your car with ease in 200+ parking capacity area which is safe & secure. The best membership club in Bangalore, you can trust.
+            </p>
+        </div>
+
+        <!-- Featured Offerings Carousel -->
+        <div class="mb-20">
+            <div class="text-center mb-12">
+                <p class="body-font text-xl text-gray-600">Discover what makes Kings Club extraordinary</p>
+            </div>
+            
+            <div class="perspective-carousel-container">
+                <div class="perspective-carousel-wrapper" id="perspectiveCarouselWrapper">
+                    
+                    <div class="perspective-carousel-slide" data-index="0">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/58da9ebc44-e3ddcd5c49d99132733c.png" alt="sports facilities, tennis court, badminton, swimming pool" />
+                        <div class="content">
+                            <i class="fas fa-basketball-ball text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Sports</h3>
+                            <p class="body-font text-gray-200 mt-2">Championship courts, Olympic pools, and more for the active family.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="1">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7a5b3e8f92-fitness-gym-equipment.png" alt="modern gym, fitness center, health equipment, wellness facilities" />
+                         <div class="content">
+                            <i class="fas fa-dumbbell text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Health & Fitness</h3>
+                            <p class="body-font text-gray-200 mt-2">State-of-the-art gym, yoga studios, and wellness programs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="2">
+                       <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/3d4c5f6a81-entertainment-lounge.png" alt="entertainment lounge, games room, recreation area, leisure activities" />
+                         <div class="content">
+                            <i class="fas fa-gamepad text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Entertainment</h3>
+                             <p class="body-font text-gray-200 mt-2">Gaming zones, kids play areas, and lounges for family fun.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="3">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12d65472af-adc1091581111661f0da.png" alt="elegant banquet hall, wedding venue, event space" />
+                         <div class="content">
+                            <i class="fas fa-glass-cheers text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Banquets</h3>
+                            <p class="body-font text-gray-200 mt-2">Elegant halls and outdoor venues for your grand celebrations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="4">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/90d6b578d0-c667d413975e794db1d5.png" alt="fine dining restaurant, gourmet cuisine, elegant dining" />
+                        <div class="content">
+                            <i class="fas fa-utensils text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Restaurant</h3>
+                            <p class="body-font text-gray-200 mt-2">Exquisite cuisine from world-renowned chefs in a fine-dining setting.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="perspective-carousel-nav" id="perspective-prev"><i class="fas fa-chevron-left"></i></div>
+                <div class="perspective-carousel-nav" id="perspective-next"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Sports Section -->
+            <div id="feature-sports" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Sports</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Nestled amongst the greenery of nature, Kings Club, surrounded all the state-of-the-art facilities that ensure to make you experience relaxing & happiness. Come to enjoy a range of indoor sports & outdoor sports that are sure to delight your fitness soul.
+                        </p>
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            There's something for everybody! Luxuriate your favorite sports at your own pace. We provide extensive space for your complete sports activities with multiple spaces segregated into several courts for the perfect sport such as:
+                        </p>
+                        <ul class="space-y-3 body-font text-gray-700 text-lg">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Indoor activities</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Outdoor activities</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Table Tennis & many more</li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/58da9ebc44-e3ddcd5c49d99132733c.png" alt="badminton court, sports facility" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 mt-8">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/modern-swimming-pool-luxury.png" alt="olympic swimming pool, luxury sports club" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 -mt-8">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/tennis-court-modern.png" alt="tennis court, outdoor sports" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/table-tennis-indoor.png" alt="table tennis, indoor sports" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health & Fitness Section -->
+            <div id="feature-fitness" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Health & Fitness</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7a5b3e8f92-fitness-gym-equipment.png" alt="modern gym, fitness equipment" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fitness-center-luxury.png" alt="luxury fitness center, modern gym" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Kings Club is the most prestigious health club in Bangalore. At our modern & advanced fitness center, you can boost your stamina and energy with the latest technology. By taking the first step to wellness under the guidance of our fitness trainers, you will be guided through a customized program of specific exercises tailored to your needs or just relax at one of our SPA areas.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fitness-trainer-luxury.png" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/fitness-trainer-luxury.png" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entertainment Section -->
+            <div id="feature-entertainment" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Entertainment</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Guests are escorted by our entertainment team through a wealth of sports, entertainment, and relaxation in a fun environment. There are countless activities that can be enjoyed at our entertainment facility, including an equipped swimming pool, and sports fields. In addition, we offer entertainment services for the hosting of special events including New Year Bash, Dandiya Nights, Diwali, Dusherra & even other festivals & take care of all guests so they can enjoy themselves fully.
+                        </p>
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Celebrating Valentine's Day with your loved ones and enjoying the dance floor with our best DJ is an even more exciting way to celebrate the holiday. Other events will include singers and belly dancers.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/entertainment-lounge-modern.png" alt="entertainment lounge, games room" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/entertainment-lounge-modern.png" alt="entertainment lounge, games room" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banquets Section -->
+            <div id="feature-banquets" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute bottom-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Banquets</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            At the Kings Club, you can choose from a variety of banqueting facilities that ensure your celebration is a memorable experience. At our unique banquet halls, we redefine hospitality by offering an explicit theme for every occasion, such as Engagement Parties, Anniversaries, Birthday Parties, Weddings, Kitty Parties, and Corporate Events, Conference hall, meeting hall, & much more. We will take care of everything from start to finish with our team of highly skilled professionals.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/banquet-hall-modern.png" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/banquet-hall-modern.png" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/indoor-banquet-luxury.png" alt="indoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/outdoor-banquet-luxury.png" alt="outdoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Section -->
+            <div id="feature-restaurant" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Restaurant</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            At the Kings Club, you can enjoy a variety of fine dining experiences with our world-class chefs. From elegant banquets to casual gatherings, our restaurant offers a perfect blend of luxury and comfort. Whether you're celebrating a special occasion or just enjoying a meal with friends, our restaurant provides an unforgettable dining experience.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/restaurant-luxury.png" alt="fine dining, elegant setting" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/restaurant-luxury.png" alt="fine dining, elegant setting" class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/indoor-banquet-luxury.png" alt="indoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/outdoor-banquet-luxury.png" alt="outdoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about-video" class="py-20 bg-gradient-to-r from-amber-50 to-orange-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="scroll-reveal">
+                <div class="asymmetric-border overflow-hidden shadow-2xl">
+                    <iframe class="w-full h-[400px]" src="https://www.youtube.com/embed/rhuMUbnvk7E" title="Kings Club Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="scroll-reveal">
+                <h2 class="heading-font text-5xl font-bold text-gray-800 mb-4">About Kings Club</h2>
+                <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-4 card-asymmetric mb-6 inline-block">
+                    <p class="text-2xl font-bold">750+ Memberships Closed!</p>
+                    <p class="text-lg">Get Yours Today!</p>
+                </div>
+                <p class="body-font text-lg text-gray-700 leading-relaxed mb-4">
+                    Welcome to Bangalore's Club – Kings Club. Discover the most spectacular & beautiful location at Kings Club, which is designed for lifestyle services in the vicinity of Malathalli Lake. Get the family and friends together to enjoy a luxury environment & several types of sports & leisure services in Nagarabhavi, West Bangalore. We focus on making your life more enjoyable and less stressful.
+                </p>
+                <p class="body-font text-lg text-gray-700 leading-relaxed mb-6">
+                    The Kings Club in Bangalore is surrounded by plenty of lush greenery and natural lighting, making it a prime destination. The rejuvenating climate of the region, along with its friendly atmosphere & delightfully crisp air make it a preferred destination. It makes you feel like royalty when you enter our entrance hall. We provide you with ample green space in our gardens as well as natural light and a gesture of extra care.
+                </p>
+                <p class="body-font text-xl text-gray-800 font-semibold mb-6">
+                    Don't miss the chance to build splendid memories with your near & dear ones
+                </p>
+                <button class="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-4 asymmetric-border hover:shadow-xl transition-all micro-bounce text-lg font-semibold flex items-center space-x-3">
+                    <i class="fas fa-download"></i>
+                    <span>Download Brochure</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="perks" class="py-20 parallax-section">
+    <img class="parallax-bg-image" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e95559cdaa-4e281d92e66c42231650.png" alt="Kings Club logo watermark background" style="opacity: 0.08;" />
+    <div class="parallax-overlay bg-gradient-to-b from-white/80 via-amber-50/90 to-orange-50/90"></div>
+    <div class="parallax-content max-w-7xl mx-auto px-6 w-full">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="heading-font text-5xl font-bold text-gray-800 mb-4">
+                Membership Privileges
+            </h2>
+            <p class="body-font text-xl text-gray-600">Exclusive benefits for our valued members</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f2bc0378c6-912f3ea7c21be3b7a98a.png" alt="professional concierge desk, luxury hotel service, elegant reception area, warm lighting" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">24/7 Concierge</h3>
+                <p class="body-font text-gray-600 text-sm">Personal assistance whenever you need it</p>
+            </div>
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0f0e3d1ed1-d03c44ad925e22576d5c.png" alt="luxury valet parking service, premium car service, elegant entrance, professional staff" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">Valet Parking</h3>
+                <p class="body-font text-gray-600 text-sm">Complimentary valet service</p>
+            </div>
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/02f89b67f2-be6de60c391f8f66f292.png" alt="happy families and friends gathering, luxury club lounge, social event, elegant setting" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">Guest Privileges</h3>
+                <p class="body-font text-gray-600 text-sm">Bring friends and family</p>
+            </div>
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a1738e8c34-9ae709edcd6e37bbd009.png" alt="exclusive discount offers, premium membership benefits, luxury services, elegant presentation" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">Member Discounts</h3>
+                <p class="body-font text-gray-600 text-sm">Special rates on all services</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-20 overflow-hidden parallax-section">
+    <img class="parallax-bg-image" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/e95559cdaa-4e281d92e66c42231650.png" alt="Kings Club logo watermark background" style="opacity: 0.08;" />
+    <div class="parallax-overlay bg-gradient-to-b from-white/85 via-transparent to-white/85"></div>
+    <div class="parallax-content max-w-7xl mx-auto px-6 w-full">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="heading-font text-5xl font-bold text-gray-800 mb-4">
+                What Our Members Say
+            </h2>
+            <p class="body-font text-xl text-gray-600">Hear from our satisfied club family</p>
+        </div>
+        
+        <div id="testimonial-carousel-container" class="relative h-[350px] flex items-center justify-center">
+            <div id="testimonial-carousel-wrapper" class="relative w-full h-full" style="perspective: 1500px;">
+                <div class="testimonial-card p-8 card-asymmetric shadow-lg absolute w-[calc(100%-200px)] max-w-2xl left-1/2 top-1/2" data-index="0">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Member" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="heading-font text-lg font-semibold text-gray-800">Priya Sharma</h4>
+                            <p class="body-font text-gray-600 text-sm">Family Membership</p>
+                        </div>
+                    </div>
+                    <p class="body-font text-gray-700 italic leading-relaxed">
+                        "Kings Club has become our second home. The facilities are world-class and the staff treats us like royalty."
+                    </p>
+                    <div class="flex text-amber-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 card-asymmetric shadow-lg absolute w-[calc(100%-200px)] max-w-2xl left-1/2 top-1/2" data-index="1">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Member" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="heading-font text-lg font-semibold text-gray-800">Rajesh Kumar</h4>
+                            <p class="body-font text-gray-600 text-sm">Corporate Membership</p>
+                        </div>
+                    </div>
+                    <p class="body-font text-gray-700 italic leading-relaxed">
+                        "Perfect venue for business meetings and family celebrations. The attention to detail is extraordinary."
+                    </p>
+                    <div class="flex text-amber-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 card-asymmetric shadow-lg absolute w-[calc(100%-200px)] max-w-2xl left-1/2 top-1/2" data-index="2">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg" alt="Member" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="heading-font text-lg font-semibold text-gray-800">Anita Menon</h4>
+                            <p class="body-font text-gray-600 text-sm">Lifetime Member</p>
+                        </div>
+                    </div>
+                    <p class="body-font text-gray-700 italic leading-relaxed">
+                        "Twenty years of membership and it keeps getting better. The community here is truly special."
+                    </p>
+                    <div class="flex text-amber-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+             <button id="testimonial-prev" class="carousel-btn absolute top-1/2 -translate-y-1/2 left-0 z-10"><i class="fas fa-chevron-left"></i></button>
+            <button id="testimonial-next" class="carousel-btn absolute top-1/2 -translate-y-1/2 right-0 z-10"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div id="testimonial-indicators" class="carousel-indicators mt-8"></div>
+    </div>
+</section>
+
+<footer id="footer" class="bg-gradient-to-b from-gray-800 to-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="col-span-2">
+                <div class="flex items-center space-x-2 mb-6">
+                    <i class="fas fa-crown text-2xl text-amber-500"></i>
+                    <span class="heading-font text-2xl font-bold">Kings Club</span>
+                </div>
+                <p class="body-font text-gray-300 leading-relaxed mb-6 max-w-md">
+                    Bangalore's premier family club offering luxury, elegance, and unforgettable experiences since 2001.
+                </p>
+                <div class="flex space-x-4">
+                    <i class="fab fa-facebook text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                    <i class="fab fa-instagram text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                    <i class="fab fa-twitter text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                    <i class="fab fa-linkedin text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                </div>
+            </div>
+            <div>
+                <h3 class="heading-font text-xl font-semibold mb-6">Contact Info</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-map-marker-alt text-amber-500"></i>
+                        <span class="body-font text-gray-300 text-sm">MG Road, Bangalore 560001</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-phone text-amber-500"></i>
+                        <span class="body-font text-gray-300 text-sm">+91 80 2558 7700</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-amber-500"></i>
+                        <span class="body-font text-gray-300 text-sm">info@kingsclub.in</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="heading-font text-xl font-semibold mb-6">Quick Links</h3>
+                <div class="space-y-3">
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Membership Plans</a>
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Event Booking</a>
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Gallery</a>
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+            <p class="body-font text-gray-400 text-sm">
+                © 2025 Kings Club. All rights reserved. | Privacy Policy | Terms of Service
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('load', function() {
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal, .privilege-card').forEach(el => {
+        observer.observe(el);
+    });
+
+    // New Perspective Carousel
+    const carouselWrapper = document.getElementById('perspectiveCarouselWrapper');
+    const slides = document.querySelectorAll('.perspective-carousel-slide');
+    const prevBtn = document.getElementById('perspective-prev');
+    const nextBtn = document.getElementById('perspective-next');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev-1', 'prev-2', 'next-1', 'next-2', 'hidden-slide');
+            
+            let newIndex = (index - currentIndex + totalSlides) % totalSlides;
+            
+            if (newIndex === 0) {
+                slide.classList.add('active');
+            } else if (newIndex === 1) {
+                slide.classList.add('next-1');
+            } else if (newIndex === 2) {
+                slide.classList.add('next-2');
+            } else if (newIndex === totalSlides - 1) {
+                slide.classList.add('prev-1');
+            } else if (newIndex === totalSlides - 2) {
+                slide.classList.add('prev-2');
+            } else {
+                 slide.classList.add('hidden-slide');
+            }
+        });
+
+        // Rotate the wrapper for a 3D effect
+        const rotateAngle = -currentIndex * (360 / totalSlides);
+        // carouselWrapper.style.transform = `rotateY(${rotateAngle}deg)`;
+    }
+    
+    function showNext() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    slides.forEach(slide => {
+        slide.addEventListener('click', () => {
+            const slideIndex = parseInt(slide.dataset.index);
+            if (slideIndex !== currentIndex) {
+                currentIndex = slideIndex;
+                updateCarousel();
+            }
+        });
+    });
+
+    // Autoplay
+    let autoplayInterval = setInterval(showNext, 4000);
+
+    carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    carouselWrapper.addEventListener('mouseleave', () => autoplayInterval = setInterval(showNext, 4000));
+    
+    updateCarousel();
+
+    // Testimonial Carousel
+    const testimonialWrapper = document.getElementById('testimonial-carousel-wrapper');
+    const testimonialSlides = document.querySelectorAll('#testimonial-carousel-wrapper .testimonial-card');
+    const testimonialPrevBtn = document.getElementById('testimonial-prev');
+    const testimonialNextBtn = document.getElementById('testimonial-next');
+    const testimonialIndicatorsContainer = document.getElementById('testimonial-indicators');
+    
+    let testimonialCurrentIndex = 0;
+    const testimonialTotalSlides = testimonialSlides.length;
+
+    function createTestimonialIndicators() {
+        for (let i = 0; i < testimonialTotalSlides; i++) {
+            const button = document.createElement('button');
+            button.classList.add('carousel-indicator');
+            if (i === 0) button.classList.add('active');
+            button.dataset.index = i;
+            button.addEventListener('click', (e) => {
+                testimonialCurrentIndex = parseInt(e.target.dataset.index);
+                updateTestimonialCarousel();
+            });
+            testimonialIndicatorsContainer.appendChild(button);
+        }
+    }
+
+    function updateTestimonialCarousel() {
+        const offset = testimonialCurrentIndex * -100;
+        
+        testimonialSlides.forEach((slide, index) => {
+            const relativeIndex = index - testimonialCurrentIndex;
+            slide.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+            
+            if (relativeIndex === 0) { // Active slide
+                slide.style.transform = `translate(-50%, -50%) translateX(0) translateZ(0) scale(1)`;
+                slide.style.opacity = '1';
+                slide.style.zIndex = '3';
+            } else if (relativeIndex === 1 || relativeIndex === - (testimonialTotalSlides - 1)) { // Next slide
+                slide.style.transform = `translate(-50%, -50%) translateX(70%) translateZ(-300px) scale(0.8)`;
+                slide.style.opacity = '0.5';
+                slide.style.zIndex = '2';
+            } else if (relativeIndex === -1 || relativeIndex === (testimonialTotalSlides - 1)) { // Previous slide
+                slide.style.transform = `translate(-50%, -50%) translateX(-70%) translateZ(-300px) scale(0.8)`;
+                slide.style.opacity = '0.5';
+                slide.style.zIndex = '2';
+            } else { // Other slides
+                 slide.style.transform = `translate(-50%, -50%) translateX(${relativeIndex > 0 ? '140%' : '-140%'}) translateZ(-600px) scale(0.6)`;
+                slide.style.opacity = '0';
+                slide.style.zIndex = '1';
+            }
+        });
+        
+        const indicators = testimonialIndicatorsContainer.querySelectorAll('.carousel-indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === testimonialCurrentIndex);
+        });
+    }
+    
+    testimonialNextBtn.addEventListener('click', () => {
+        testimonialCurrentIndex = (testimonialCurrentIndex + 1) % testimonialTotalSlides;
+        updateTestimonialCarousel();
+    });
+    
+    testimonialPrevBtn.addEventListener('click', () => {
+        testimonialCurrentIndex = (testimonialCurrentIndex - 1 + testimonialTotalSlides) % testimonialTotalSlides;
+        updateTestimonialCarousel();
+    });
+    
+    createTestimonialIndicators();
+    updateTestimonialCarousel();
+
+    let testimonialAutoplay = setInterval(() => {
+        testimonialNextBtn.click();
+    }, 5000);
+
+    document.getElementById('testimonial-carousel-container').addEventListener('mouseenter', () => clearInterval(testimonialAutoplay));
+    document.getElementById('testimonial-carousel-container').addEventListener('mouseleave', () => {
+        testimonialAutoplay = setInterval(() => {
+            testimonialNextBtn.click();
+        }, 5000);
+    });
+
+
+    // Enhanced 360-degree panoramic image with auto-rotation
+    const panoramaContainer = document.getElementById('panorama-container');
+    const heroImage = document.getElementById('hero-360-image');
+    let isDragging = false;
+    let isHovering = false;
+    let startX = 0;
+    let currentX = 0;
+    let velocityX = 0;
+    let animationId = null;
+    let autoRotateId = null;
+
+    // Set initial position to center
+    const imageWidth = heroImage.offsetWidth;
+    const containerWidth = panoramaContainer.offsetWidth;
+    currentX = -(imageWidth - containerWidth) / 2;
+    heroImage.style.transform = `translateX(${currentX}px)`;
+
+    // Auto-rotation function
+    function autoRotate() {
+        if (!isDragging && !isHovering) {
+            currentX -= 0.5; // Slow rotation speed
+            
+            const minX = -(imageWidth - containerWidth);
+            
+            // Loop back when reaching the end
+            if (currentX < minX) {
+                currentX = 0;
+            }
+            
+            heroImage.style.transform = `translateX(${currentX}px)`;
+            autoRotateId = requestAnimationFrame(autoRotate);
+        }
+    }
+
+    // Start auto-rotation
+    autoRotate();
+
+    panoramaContainer.addEventListener('mouseenter', function() {
+        isHovering = true;
+        if (autoRotateId) {
+            cancelAnimationFrame(autoRotateId);
+        }
+    });
+
+    panoramaContainer.addEventListener('mouseleave', function() {
+        isHovering = false;
+        if (!isDragging) {
+            autoRotate();
+        }
+    });
+
+    panoramaContainer.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.clientX - currentX;
+        velocityX = 0;
+        panoramaContainer.style.cursor = 'grabbing';
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        if (autoRotateId) {
+            cancelAnimationFrame(autoRotateId);
+        }
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        
+        const x = e.clientX - startX;
+        const maxX = 0;
+        const minX = -(imageWidth - containerWidth);
+        
+        velocityX = x - currentX;
+        currentX = Math.max(minX, Math.min(maxX, x));
+        
+        heroImage.style.transform = `translateX(${currentX}px)`;
+    });
+
+    document.addEventListener('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+            panoramaContainer.style.cursor = 'grab';
+            
+            // Add momentum/inertia effect
+            function momentum() {
+                if (Math.abs(velocityX) > 0.5) {
+                    velocityX *= 0.95;
+                    currentX += velocityX;
+                    
+                    const maxX = 0;
+                    const minX = -(imageWidth - containerWidth);
+                    currentX = Math.max(minX, Math.min(maxX, currentX));
+                    
+                    heroImage.style.transform = `translateX(${currentX}px)`;
+                    animationId = requestAnimationFrame(momentum);
+                } else {
+                    if (!isHovering) {
+                        autoRotate();
+                    }
+                }
+            }
+            momentum();
+        }
+    });
+
+    // Touch events for mobile
+    panoramaContainer.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        isHovering = true;
+        startX = e.touches[0].clientX - currentX;
+        velocityX = 0;
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        if (autoRotateId) {
+            cancelAnimationFrame(autoRotateId);
+        }
+    });
+
+    document.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        
+        const x = e.touches[0].clientX - startX;
+        const maxX = 0;
+        const minX = -(imageWidth - containerWidth);
+        
+        velocityX = x - currentX;
+        currentX = Math.max(minX, Math.min(maxX, x));
+        
+        heroImage.style.transform = `translateX(${currentX}px)`;
+    });
+
+    document.addEventListener('touchend', function() {
+        if (isDragging) {
+            isDragging = false;
+            isHovering = false;
+            
+            function momentum() {
+                if (Math.abs(velocityX) > 0.5) {
+                    velocityX *= 0.95;
+                    currentX += velocityX;
+                    
+                    const maxX = 0;
+                    const minX = -(imageWidth - containerWidth);
+                    currentX = Math.max(minX, Math.min(maxX, currentX));
+                    
+                    heroImage.style.transform = `translateX(${currentX}px)`;
+                    animationId = requestAnimationFrame(momentum);
+                } else {
+                    autoRotate();
+                }
+            }
+            momentum();
+        }
+    });
+
+    // Add parallax scrolling effect
+    function parallaxScroll() {
+        const parallaxSections = document.querySelectorAll('.parallax-section');
+        
+        parallaxSections.forEach(section => {
+            const bgImage = section.querySelector('.parallax-bg-image');
+            const overlay = section.querySelector('.parallax-overlay');
+            const content = section.querySelector('.parallax-content');
+            
+            if (bgImage) {
+                const scrolled = window.pageYOffset;
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const windowHeight = window.innerHeight;
+                
+                // Calculate if section is in viewport
+                if (scrolled + windowHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
+                    const yPos = (scrolled - sectionTop) * 0.3;
+                    bgImage.style.transform = `translateY(${yPos}px)`;
+                    
+                    if (overlay) {
+                        overlay.style.transform = `translateY(${yPos * 0.5}px)`;
+                    }
+                    
+                    if (content) {
+                        content.style.transform = `translateY(${yPos * -0.1}px)`;
+                    }
+                }
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', parallaxScroll);
+    parallaxScroll(); // Initial call
+
+    // Other interactive images
+    document.querySelectorAll('.interactive-image:not(#hero-360-image)').forEach(img => {
+        img.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / centerY * 5;
+            const rotateY = (x - centerX) / centerX * 5;
+            
+            this.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+        
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+    });
+});
+</script>
+
+</body>
+</html>

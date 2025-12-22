@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-light': '#F4E4C1',
+                        'gold-dark': '#B8941F',
+                        cream: '#FFF8E7',
+                        'cream-dark': '#F5EDD6',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+<header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-crown text-gold text-3xl"></i>
+                <span class="font-serif text-2xl font-bold text-gray-900">Kings Club</span>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-gold transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-gold transition">About Us</a>
+                <div class="relative group">
+                    <a href="#membership" class="text-gray-900 font-medium hover:text-gold transition flex items-center">
+                        Membership <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <a href="#dining" class="text-gray-600 hover:text-gold transition">Dining</a>
+                <a href="#sports" class="text-gray-600 hover:text-gold transition">Sports & Activities</a>
+                <a href="#events" class="text-gray-600 hover:text-gold transition">Events</a>
+                <a href="#gallery" class="text-gray-600 hover:text-gold transition">Gallery</a>
+                <a href="#contact" class="text-gray-600 hover:text-gold transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="hidden lg:block px-6 py-2.5 bg-gold text-white font-semibold rounded-md hover:bg-gold-dark transition">Join Now</button>
+                <button class="lg:hidden text-gray-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main id="main-content" class="pt-20">
+    <section id="signup-hero" class="relative h-[400px] overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-gold via-gold-dark to-gray-900"></div>
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+                <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            </div>
+        </div>
+        
+        <div class="relative container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
+            <div class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-4">
+                <span class="text-white font-semibold text-sm tracking-wide">START YOUR JOURNEY</span>
+            </div>
+            <h1 class="font-serif text-6xl font-bold text-white mb-4">Membership Signup</h1>
+            <p class="text-xl text-white/90 max-w-2xl">Join Bangalore's most prestigious family club and unlock a world of luxury, exclusivity, and unforgettable experiences</p>
+        </div>
+    </section>
+
+    <section id="signup-form-section" class="py-16 bg-gradient-to-br from-cream via-white to-gold-light">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div id="membership-benefits-sidebar" class="lg:col-span-1">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 sticky top-28">
+                            <div class="text-center mb-8">
+                                <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fa-solid fa-crown text-gold text-3xl"></i>
+                                </div>
+                                <h3 class="font-serif text-2xl font-bold text-gray-900 mb-2">Why Join Kings Club?</h3>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fa-solid fa-star text-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-1">Premium Facilities</h4>
+                                        <p class="text-sm text-gray-600">World-class amenities for the entire family</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fa-solid fa-users text-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-1">Exclusive Community</h4>
+                                        <p class="text-sm text-gray-600">Connect with like-minded families</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fa-solid fa-calendar-days text-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-1">Year-Round Events</h4>
+                                        <p class="text-sm text-gray-600">Curated experiences and celebrations</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fa-solid fa-utensils text-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-1">Fine Dining</h4>
+                                        <p class="text-sm text-gray-600">Exceptional culinary experiences</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fa-solid fa-dumbbell text-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900 mb-1">Sports & Wellness</h4>
+                                        <p class="text-sm text-gray-600">State-of-the-art fitness facilities</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 pt-8 border-t border-gray-200">
+                                <p class="text-sm text-gray-600 text-center mb-4">Need assistance?</p>
+                                <button class="w-full py-3 bg-gray-100 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition flex items-center justify-center">
+                                    <i class="fa-solid fa-phone mr-2"></i>
+                                    +91 80 1234 5678
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="signup-form-container" class="lg:col-span-2">
+                        <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-12">
+                            <div class="mb-8">
+                                <h2 class="font-serif text-3xl font-bold text-gray-900 mb-2">Complete Your Application</h2>
+                                <p class="text-gray-600">Fill in your details to begin your membership journey</p>
+                            </div>
+
+                            <form id="membership-form">
+                                <div id="membership-plan-selection" class="mb-10">
+                                    <label class="block text-sm font-semibold text-gray-900 mb-4">Select Membership Plan *</label>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <div class="relative">
+                                            <input type="radio" name="plan" id="silver" value="silver" class="peer hidden">
+                                            <label for="silver" class="block p-6 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gold transition peer-checked:border-gold peer-checked:bg-gold/5">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <i class="fa-solid fa-medal text-2xl text-gray-400"></i>
+                                                    <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-gold peer-checked:bg-gold flex items-center justify-center">
+                                                        <i class="fa-solid fa-check text-white text-xs hidden peer-checked:block"></i>
+                                                    </div>
+                                                </div>
+                                                <h4 class="font-serif text-xl font-bold text-gray-900 mb-1">Silver</h4>
+                                                <p class="text-2xl font-bold text-gray-900 mb-1">₹75,000</p>
+                                                <p class="text-sm text-gray-600">per year</p>
+                                            </label>
+                                        </div>
+
+                                        <div class="relative">
+                                            <input type="radio" name="plan" id="gold" value="gold" class="peer hidden" checked>
+                                            <label for="gold" class="block p-6 border-2 border-gold rounded-xl cursor-pointer bg-gold/5 relative">
+                                                <div class="absolute top-0 right-0 bg-gold text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <i class="fa-solid fa-crown text-2xl text-gold"></i>
+                                                    <div class="w-5 h-5 border-2 border-gold rounded-full bg-gold flex items-center justify-center">
+                                                        <i class="fa-solid fa-check text-white text-xs"></i>
+                                                    </div>
+                                                </div>
+                                                <h4 class="font-serif text-xl font-bold text-gray-900 mb-1">Gold</h4>
+                                                <p class="text-2xl font-bold text-gray-900 mb-1">₹1,50,000</p>
+                                                <p class="text-sm text-gray-600">per year</p>
+                                            </label>
+                                        </div>
+
+                                        <div class="relative">
+                                            <input type="radio" name="plan" id="platinum" value="platinum" class="peer hidden">
+                                            <label for="platinum" class="block p-6 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gold transition peer-checked:border-gold peer-checked:bg-gold/5">
+                                                <div class="flex items-center justify-between mb-3">
+                                                    <i class="fa-solid fa-gem text-2xl text-gray-800"></i>
+                                                    <div class="w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-gold peer-checked:bg-gold flex items-center justify-center">
+                                                        <i class="fa-solid fa-check text-white text-xs hidden peer-checked:block"></i>
+                                                    </div>
+                                                </div>
+                                                <h4 class="font-serif text-xl font-bold text-gray-900 mb-1">Platinum</h4>
+                                                <p class="text-2xl font-bold text-gray-900 mb-1">₹3,00,000</p>
+                                                <p class="text-sm text-gray-600">per year</p>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="personal-information" class="mb-10">
+                                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                        <span class="w-8 h-8 bg-gold text-white rounded-full flex items-center justify-center text-sm mr-3">1</span>
+                                        Personal Information
+                                    </h3>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
+                                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="Enter first name" required>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
+                                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="Enter last name" required>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="your.email@example.com" required>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="+91 98765 43210" required>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Date of Birth *</label>
+                                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" required>
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Gender *</label>
+                                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" required>
+                                                <option value="">Select gender</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="address-information" class="mb-10">
+                                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                        <span class="w-8 h-8 bg-gold text-white rounded-full flex items-center justify-center text-sm mr-3">2</span>
+                                        Address Details
+                                    </h3>
+                                    
+                                    <div class="grid grid-cols-1 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Street Address *</label>
+                                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="Enter street address" required>
+                                        </div>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">City *</label>
+                                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="Bangalore" required>
+                                            </div>
+                                            
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">State *</label>
+                                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="Karnataka" required>
+                                            </div>
+                                            
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">PIN Code *</label>
+                                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="560001" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="family-information" class="mb-10">
+                                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                        <span class="w-8 h-8 bg-gold text-white rounded-full flex items-center justify-center text-sm mr-3">3</span>
+                                        Family Members
+                                    </h3>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Number of Adults</label>
+                                            <input type="number" min="1" max="10" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="2">
+                                        </div>
+                                        
+                                        <div>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Number of Children</label>
+                                            <input type="number" min="0" max="10" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition" placeholder="0">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-gold/5 border border-gold/20 rounded-lg p-4">
+                                        <p class="text-sm text-gray-700"><i class="fa-solid fa-info-circle text-gold mr-2"></i>You can add detailed family member information after completing the initial registration</p>
+                                    </div>
+                                </div>
+
+                                <div id="preferences-section" class="mb-10">
+                                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-6 flex items-center">
+                                        <span class="w-8 h-8 bg-gold text-white rounded-full flex items-center justify-center text-sm mr-3">4</span>
+                                        Interests & Preferences
+                                    </h3>
+                                    
+                                    <div class="mb-6">
+                                        <label class="block text-sm font-semibold text-gray-700 mb-3">Primary Interests (Select all that apply)</label>
+                                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                            <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gold/5 hover:border-gold transition">
+                                                <input type="checkbox" class="w-4 h-4 text-gold rounded focus:ring-gold mr-3">
+                                                <span class="text-sm text-gray-700">Dining</span>
+                                            </label>
+                                            
+                                            <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gold/5 hover:border-gold transition">
+                                                <input type="checkbox" class="w-4 h-4 text-gold rounded focus:ring-gold mr-3">
+                                                <span class="text-sm text-gray-700">Swimming</span>
+                                            </label>
+                                            
+                                            <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gold/5 hover:border-gold transition">
+                                                <input type="checkbox" class="w-4 h-4 text-gold rounded focus:ring-gold mr-3">
+                                                <span class="text-sm text-gray-700">Tennis</span>
+                                            </label>
+                                            
+                                            <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gold/5 hover:border-gold transition">
+                                                <input type="checkbox" class="w-4 h-4 text-gold rounded focus:ring-gold mr-3">
+                                                <span class="text-sm text-gray-700">Fitness</span>
+                                            </label>
+                                            
+                                            <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gold/5 hover:border-gold transition">
+                                                <input type="checkbox" class="w-4 h-4 text-gold rounded focus:ring-gold mr-3">
+                                                <span class="text-sm text-gray-700">Events</span>
+                                            </label>
+                                            
+                                            <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gold/5 hover:border-gold transition">
+                                                <input type="checkbox" class="w-4 h-4 text-gold rounded focus:ring-gold mr-3">
+                                                <span class="text-sm text-gray-700">Badminton</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">How did you hear about us?</label>
+                                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition">
+                                            <option value="">Select an option</option>
+                                            <option value="friend">Friend/Family Referral</option>
+                                            <option value="social">Social Media</option>
+                                            <option value="website">Website</option>
+                                            <option value="event">Event/Exhibition</option>
+                                            <option value="advertisement">Advertisement</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div id="terms-section" class="mb-8">
+                                    <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                                        <label class="flex items-start cursor-pointer">
+                                            <input type="checkbox" class="w-5 h-5 text-gold rounded focus:ring-gold mt-1 mr-4" required>
+                                            <span class="text-sm text-gray-700">
+                                                I agree to the <a href="#" class="text-gold hover:underline font-semibold">Terms & Conditions</a> and <a href="#" class="text-gold hover:underline font-semibold">Privacy Policy</a>. I understand that membership is subject to approval and payment of applicable fees.
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div id="form-actions" class="flex flex-col md:flex-row gap-4">
+                                    <button type="submit" class="flex-1 py-4 bg-gold text-white font-bold rounded-lg hover:bg-gold-dark transition shadow-lg flex items-center justify-center text-lg">
+                                        Submit Application
+                                        <i class="fa-solid fa-arrow-right ml-3"></i>
+                                    </button>
+                                    
+                                    <button type="button" class="md:w-auto px-8 py-4 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition">
+                                        Save as Draft
+                                    </button>
+                                </div>
+                                
+                                <p class="text-sm text-gray-600 text-center mt-6">
+                                    <i class="fa-solid fa-lock mr-2"></i>
+                                    Your information is secure and will be used only for membership processing
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="next-steps" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="font-serif text-4xl font-bold text-gray-900 mb-4">What Happens Next?</h2>
+                <p class="text-lg text-gray-600">Your journey to becoming a Kings Club member</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div id="step-1" class="text-center">
+                        <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl font-bold text-gold">1</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Application Review</h4>
+                        <p class="text-sm text-gray-600">Our team reviews your application within 48 hours</p>
+                    </div>
+                    
+                    <div id="step-2" class="text-center">
+                        <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl font-bold text-gold">2</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Club Tour</h4>
+                        <p class="text-sm text-gray-600">Schedule a personalized tour of our facilities</p>
+                    </div>
+                    
+                    <div id="step-3" class="text-center">
+                        <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl font-bold text-gold">3</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Payment Process</h4>
+                        <p class="text-sm text-gray-600">Complete your membership fee payment securely</p>
+                    </div>
+                    
+                    <div id="step-4" class="text-center">
+                        <div class="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-3xl font-bold text-gold">4</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Welcome Aboard</h4>
+                        <p class="text-sm text-gray-600">Receive your membership card and start enjoying</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer" class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center space-x-2 mb-6">
+                    <i class="fa-solid fa-crown text-gold text-3xl"></i>
+                    <span class="font-serif text-2xl font-bold">Kings Club</span>
+                </div>
+                <p class="text-gray-400 mb-6">Bangalore's premier family membership club offering luxury, exclusivity, and unforgettable experiences.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-lg font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Membership Plans</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Facilities</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Events</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Gallery</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-lg font-bold mb-6">Contact</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-location-dot mt-1 mr-3 text-gold"></i>
+                        <span>123 MG Road, Bangalore<br>Karnataka 560001</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-phone mr-3 text-gold"></i>
+                        <span>+91 80 1234 5678</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope mr-3 text-gold"></i>
+                        <span>info@kingsclub.com</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-lg font-bold mb-6">Newsletter</h4>
+                <p class="text-gray-400 mb-4">Subscribe to receive updates and exclusive offers</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-l-lg focus:outline-none focus:border-gold text-white placeholder-gray-500">
+                    <button class="px-6 py-3 bg-gold hover:bg-gold-dark transition rounded-r-lg">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2024 Kings Club. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-gold transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-gold transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

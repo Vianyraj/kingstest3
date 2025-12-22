@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-light': '#F4E4C1',
+                        'gold-dark': '#B8941F',
+                        cream: '#FFF8E7',
+                        'cream-dark': '#F5EDD6',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+<header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <!-- <i class="fa-solid fa-crown text-gold text-3xl"></i> -->
+            <img class="h-10 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, gold, elegant and luxurious, on a transparent background" />
+
+                <span class="font-serif text-2xl font-bold text-gray-900">Kings Club</span>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-gold transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-gold transition">About Us</a>
+                <div class="relative group">
+                    <a href="#membership" class="text-gray-900 font-medium hover:text-gold transition flex items-center">
+                        Membership <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <a href="#dining" class="text-gray-600 hover:text-gold transition">Dining</a>
+                <a href="#sports" class="text-gray-600 hover:text-gold transition">Sports & Activities</a>
+                <a href="#events" class="text-gray-600 hover:text-gold transition">Events</a>
+                <a href="#gallery" class="text-gray-600 hover:text-gold transition">Gallery</a>
+                <a href="#contact" class="text-gray-600 hover:text-gold transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="hidden lg:block px-6 py-2.5 bg-gold text-white font-semibold rounded-md hover:bg-gold-dark transition">Join Now</button>
+                <button class="lg:hidden text-gray-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main id="main-content" class="pt-20">
+    <section id="membership-hero" class="relative h-[600px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0fab2e7f9f-ddc4969a2ead9e609902.png" alt="luxury club membership lounge with families enjoying premium facilities, elegant interior design" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        </div>
+        
+        <div class="relative container mx-auto px-6 h-full flex items-center">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-2 bg-gold/20 backdrop-blur-sm rounded-full mb-6">
+                    <span class="text-gold-light font-semibold text-sm tracking-wide">EXCLUSIVE MEMBERSHIP</span>
+                </div>
+                <h1 class="font-serif text-6xl font-bold text-white mb-6 leading-tight">Discover Your Perfect Membership</h1>
+                <p class="text-xl text-gray-200 mb-8 leading-relaxed">Join Bangalore's most prestigious family club and unlock a world of luxury, exclusivity, and unforgettable experiences tailored for your family.</p>
+                <div class="flex items-center space-x-4">
+                    <button class="px-8 py-4 bg-gold text-white font-semibold rounded-md hover:bg-gold-dark transition shadow-lg">Compare Plans</button>
+                    <button class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-md hover:bg-white/20 transition border border-white/30">Schedule Tour</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="membership-benefits" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-gold/10 rounded-full text-gold font-semibold text-sm tracking-wide mb-4">WHY JOIN US</span>
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-4">Membership Benefits</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Experience unparalleled privileges designed exclusively for our members</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div id="benefit-dining" class="bg-gradient-to-br from-cream to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-utensils text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Premium Dining</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Access to multi-cuisine restaurants, exclusive lounge, and private dining spaces with member-only discounts.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>15-25% dining discounts</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Priority reservations</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Exclusive menu tastings</li>
+                    </ul>
+                </div>
+
+                <div id="benefit-sports" class="bg-gradient-to-br from-cream to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-dumbbell text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">World-Class Sports</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">State-of-the-art facilities including swimming pool, tennis courts, gym, and indoor games.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Professional coaching</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Tournament participation</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Kids sports programs</li>
+                    </ul>
+                </div>
+
+                <div id="benefit-events" class="bg-gradient-to-br from-cream to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-calendar-days text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Exclusive Events</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Invitations to members-only galas, cultural festivals, and networking gatherings.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Priority event booking</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Complimentary tickets</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>VIP event access</li>
+                    </ul>
+                </div>
+
+                <div id="benefit-family" class="bg-gradient-to-br from-cream to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-users text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Family Privileges</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Membership benefits extend to your entire family with special programs for children.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Kids activity zones</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Family event packages</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Guest privileges</li>
+                    </ul>
+                </div>
+
+                <div id="benefit-concierge" class="bg-gradient-to-br from-cream to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-concierge-bell text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Concierge Service</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Personalized assistance for reservations, event planning, and special requests.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>24/7 member support</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Event coordination</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Special arrangements</li>
+                    </ul>
+                </div>
+
+                <div id="benefit-network" class="bg-gradient-to-br from-cream to-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-handshake text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 mb-4">Elite Network</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Connect with like-minded families and build lasting relationships in an exclusive community.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Networking events</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Business mixers</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold mr-2"></i>Social gatherings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="membership-plans" class="py-20 bg-gradient-to-br from-cream via-white to-gold-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-gold/10 rounded-full text-gold font-semibold text-sm tracking-wide mb-4">CHOOSE YOUR PLAN</span>
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-4">Membership Plans</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Select the perfect membership tier designed for your family's lifestyle</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+                <div id="silver-membership" class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-gray-400 to-gray-600 p-8 text-white text-center">
+                        <i class="fa-solid fa-medal text-5xl mb-4"></i>
+                        <h3 class="font-serif text-4xl font-bold mb-2">Silver</h3>
+                        <p class="text-gray-100 text-lg">Perfect Start for New Families</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <div class="flex items-baseline justify-center mb-2">
+                                <span class="text-5xl font-bold text-gray-900">₹75,000</span>
+                            </div>
+                            <span class="text-gray-600 text-lg">Annual Membership</span>
+                            <div class="mt-4 text-sm text-gray-500">
+                                <span>+ ₹15,000 admission fee (one-time)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Full access to dining facilities and restaurants</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Basic sports amenities (pool, gym, courts)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Invitations to all club events</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">2 guest privileges per month</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">10% discount on dining bills</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Access to kids play area</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Member newsletter and updates</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full py-4 bg-gray-100 text-gray-900 font-semibold rounded-xl hover:bg-gray-200 transition text-lg">Select Silver</button>
+                    </div>
+                </div>
+
+                <div id="gold-membership" class="bg-white rounded-3xl shadow-2xl overflow-hidden transform scale-105 border-4 border-gold relative">
+                    <div class="absolute top-0 left-0 right-0 bg-gold text-center py-3 z-10">
+                        <span class="text-white font-bold text-sm tracking-widest">⭐ MOST POPULAR CHOICE ⭐</span>
+                    </div>
+                    <div class="bg-gradient-to-br from-gold to-gold-dark p-8 text-white text-center mt-12">
+                        <i class="fa-solid fa-crown text-5xl mb-4"></i>
+                        <h3 class="font-serif text-4xl font-bold mb-2">Gold</h3>
+                        <p class="text-gold-light text-lg">Best Value for Active Families</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <div class="flex items-baseline justify-center mb-2">
+                                <span class="text-5xl font-bold text-gray-900">₹1,50,000</span>
+                            </div>
+                            <span class="text-gray-600 text-lg">Annual Membership</span>
+                            <div class="mt-4 text-sm text-gray-500">
+                                <span>+ ₹30,000 admission fee (one-time)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700 font-semibold">All Silver membership benefits included</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Premium sports facilities with priority booking</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Priority event registration and seating</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">5 guest privileges per month</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">15% discount on all dining bills</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Complimentary personal training sessions (4/year)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Access to exclusive lounge areas</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Free valet parking service</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full py-4 bg-gold text-white font-semibold rounded-xl hover:bg-gold-dark transition text-lg shadow-lg">Select Gold</button>
+                    </div>
+                </div>
+
+                <div id="platinum-membership" class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
+                    <div class="bg-gradient-to-br from-gray-800 to-black p-8 text-white text-center">
+                        <i class="fa-solid fa-gem text-5xl mb-4"></i>
+                        <h3 class="font-serif text-4xl font-bold mb-2">Platinum</h3>
+                        <p class="text-gray-300 text-lg">Ultimate Luxury Experience</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-center mb-8">
+                            <div class="flex items-baseline justify-center mb-2">
+                                <span class="text-5xl font-bold text-gray-900">₹3,00,000</span>
+                            </div>
+                            <span class="text-gray-600 text-lg">Annual Membership</span>
+                            <div class="mt-4 text-sm text-gray-500">
+                                <span>+ ₹50,000 admission fee (one-time)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700 font-semibold">All Gold membership benefits included</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Exclusive VIP lounge and private areas</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Unlimited guest privileges</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Dedicated personal concierge service</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">25% discount on all dining and services</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Unlimited personal training sessions</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Complimentary spa services (monthly)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Private event hosting privileges</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-gold text-xl mt-1 mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-700">Reciprocal club access worldwide</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full py-4 bg-gray-100 text-gray-900 font-semibold rounded-xl hover:bg-gray-200 transition text-lg">Select Platinum</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                <div class="text-center">
+                    <h3 class="font-serif text-3xl font-bold text-gray-900 mb-4">Need Help Choosing?</h3>
+                    <p class="text-gray-600 mb-6">Our membership consultants are here to help you find the perfect plan for your family</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button class="px-8 py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dark transition">Schedule Consultation</button>
+                        <button class="px-8 py-3 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold/10 transition">Download Brochure</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="membership-comparison" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-gold/10 rounded-full text-gold font-semibold text-sm tracking-wide mb-4">DETAILED COMPARISON</span>
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-4">Compare All Plans</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">See the complete breakdown of features across all membership tiers</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto overflow-x-auto">
+                <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <thead>
+                        <tr class="bg-gradient-to-r from-gold-light to-cream">
+                            <th class="px-6 py-6 text-left font-serif text-xl font-bold text-gray-900">Features</th>
+                            <th class="px-6 py-6 text-center font-serif text-xl font-bold text-gray-900">Silver</th>
+                            <th class="px-6 py-6 text-center font-serif text-xl font-bold text-gray-900 bg-gold/20">Gold</th>
+                            <th class="px-6 py-6 text-center font-serif text-xl font-bold text-gray-900">Platinum</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Annual Fee</td>
+                            <td class="px-6 py-4 text-center text-gray-700">₹75,000</td>
+                            <td class="px-6 py-4 text-center text-gray-700 bg-gold/5">₹1,50,000</td>
+                            <td class="px-6 py-4 text-center text-gray-700">₹3,00,000</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Admission Fee (One-time)</td>
+                            <td class="px-6 py-4 text-center text-gray-700">₹15,000</td>
+                            <td class="px-6 py-4 text-center text-gray-700 bg-gold/5">₹30,000</td>
+                            <td class="px-6 py-4 text-center text-gray-700">₹50,000</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Dining Access</td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                            <td class="px-6 py-4 text-center bg-gold/5"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Dining Discount</td>
+                            <td class="px-6 py-4 text-center text-gray-700">10%</td>
+                            <td class="px-6 py-4 text-center text-gray-700 bg-gold/5">15%</td>
+                            <td class="px-6 py-4 text-center text-gray-700">25%</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Sports Facilities</td>
+                            <td class="px-6 py-4 text-center text-gray-700">Basic</td>
+                            <td class="px-6 py-4 text-center text-gray-700 bg-gold/5">Premium</td>
+                            <td class="px-6 py-4 text-center text-gray-700">VIP Access</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Guest Privileges</td>
+                            <td class="px-6 py-4 text-center text-gray-700">2/month</td>
+                            <td class="px-6 py-4 text-center text-gray-700 bg-gold/5">5/month</td>
+                            <td class="px-6 py-4 text-center text-gray-700">Unlimited</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Personal Training</td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-xmark text-gray-400 text-xl"></i></td>
+                            <td class="px-6 py-4 text-center bg-gold/5 text-gray-700">4/year</td>
+                            <td class="px-6 py-4 text-center text-gray-700">Unlimited</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Concierge Service</td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-xmark text-gray-400 text-xl"></i></td>
+                            <td class="px-6 py-4 text-center bg-gold/5"><i class="fa-solid fa-xmark text-gray-400 text-xl"></i></td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Priority Booking</td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-xmark text-gray-400 text-xl"></i></td>
+                            <td class="px-6 py-4 text-center bg-gold/5"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 font-semibold text-gray-900">Valet Parking</td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-xmark text-gray-400 text-xl"></i></td>
+                            <td class="px-6 py-4 text-center bg-gold/5"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                            <td class="px-6 py-4 text-center"><i class="fa-solid fa-check text-gold text-xl"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="membership-cta" class="py-20 bg-gradient-to-br from-gold via-gold-light to-cream">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-6">Ready to Join Kings Club?</h2>
+                <p class="text-xl text-gray-700 mb-10 leading-relaxed">Become part of Bangalore's most exclusive family club today and experience luxury like never before</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <button class="px-10 py-4 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition shadow-xl text-lg">Apply for Membership</button>
+                    <button class="px-10 py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-100 transition shadow-xl text-lg">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer" class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center space-x-2 mb-6">
+                    <i class="fa-solid fa-crown text-gold text-3xl"></i>
+                    <span class="font-serif text-2xl font-bold">Kings Club</span>
+                </div>
+                <p class="text-gray-400 mb-6 leading-relaxed">Bangalore's premier family club offering world-class amenities, dining, and exclusive experiences.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center hover:bg-gold transition"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center hover:bg-gold transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center hover:bg-gold transition"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Membership</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Dining</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Sports</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Events</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold mb-6">Contact</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start"><i class="fa-solid fa-location-dot text-gold mt-1 mr-3"></i><span>MG Road, Bangalore 560001</span></li>
+                    <li class="flex items-center"><i class="fa-solid fa-phone text-gold mr-3"></i><span>+91 80 1234 5678</span></li>
+                    <li class="flex items-center"><i class="fa-solid fa-envelope text-gold mr-3"></i><span>info@kingsclub.in</span></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold mb-6">Hours</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><span class="text-white font-semibold">Mon - Fri:</span> 6:00 AM - 11:00 PM</li>
+                    <li><span class="text-white font-semibold">Sat - Sun:</span> 7:00 AM - 11:00 PM</li>
+                    <li><span class="text-white font-semibold">Holidays:</span> 8:00 AM - 10:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Kings Club. All rights reserved. | <a href="#" class="hover:text-gold transition">Privacy Policy</a> | <a href="#" class="hover:text-gold transition">Terms of Service</a></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

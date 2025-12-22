@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports & Activities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-light': '#F4E4C1',
+                        'gold-dark': '#B8941F',
+                        cream: '#FFF8E7',
+                        'cream-dark': '#F5EDD6',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+<header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <!-- <i class="fa-solid fa-crown text-gold text-3xl"></i> -->
+            <img class="h-10 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, gold, elegant and luxurious, on a transparent background" />
+                
+                <span class="font-serif text-2xl font-bold text-gray-900">Kings Club</span>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-gold transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-gold transition">About Us</a>
+                <div class="relative group">
+                    <a href="#membership" class="text-gray-600 hover:text-gold transition flex items-center">
+                        Membership <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <a href="#dining" class="text-gray-600 hover:text-gold transition">Dining</a>
+                <a href="#sports" class="text-gold font-medium transition">Sports & Activities</a>
+                <a href="#events" class="text-gray-600 hover:text-gold transition">Events</a>
+                <a href="#gallery" class="text-gray-600 hover:text-gold transition">Gallery</a>
+                <a href="#contact" class="text-gray-600 hover:text-gold transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="hidden lg:block px-6 py-2.5 bg-gold text-white font-semibold rounded-md hover:bg-gold-dark transition">Join Now</button>
+                <button class="lg:hidden text-gray-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main id="main-content" class="pt-20">
+    <section id="hero-section" class="relative h-[600px] overflow-hidden">
+        <div class="absolute inset-0">
+            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/452a9754c0-f2909ed8461c33fa2e31.png" alt="luxury sports club facilities panoramic view, modern tennis courts, swimming pool, fitness center, professional lighting, premium quality" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+        </div>
+        
+        <div class="relative container mx-auto px-6 h-full flex items-center">
+            <div class="max-w-3xl">
+                <div class="inline-block px-4 py-2 bg-gold/20 backdrop-blur-sm rounded-full mb-6">
+                    <span class="text-gold-light font-semibold text-sm tracking-wide">WORLD-CLASS FACILITIES</span>
+                </div>
+                <h1 class="font-serif text-6xl font-bold text-white mb-6 leading-tight">Sports & Activities</h1>
+                <p class="text-xl text-gray-200 mb-8 leading-relaxed">Experience premium sports facilities and recreational activities designed for families who appreciate excellence. From professional courts to fitness programs, we offer something for every member of your family.</p>
+                <div class="flex items-center space-x-4">
+                    <button class="px-8 py-4 bg-gold text-white font-semibold rounded-md hover:bg-gold-dark transition shadow-lg">Book a Session</button>
+                    <button class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-md hover:bg-white/20 transition border border-white/30">Schedule Tour</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities-overview" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-gold/10 rounded-full text-gold font-semibold text-sm tracking-wide mb-4">PREMIUM FACILITIES</span>
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-4">State-of-the-Art Sports Complex</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our sports facilities are designed to meet international standards, providing members with exceptional experiences across various activities and fitness programs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div id="stat-courts" class="text-center p-8 bg-gradient-to-br from-cream to-white rounded-2xl">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-baseball text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">12</h3>
+                    <p class="text-gray-600 font-medium">Sports Courts</p>
+                </div>
+
+                <div id="stat-pool" class="text-center p-8 bg-gradient-to-br from-cream to-white rounded-2xl">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-person-swimming text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">3</h3>
+                    <p class="text-gray-600 font-medium">Swimming Pools</p>
+                </div>
+
+                <div id="stat-gym" class="text-center p-8 bg-gradient-to-br from-cream to-white rounded-2xl">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-dumbbell text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">5000</h3>
+                    <p class="text-gray-600 font-medium">Sq Ft Gym</p>
+                </div>
+
+                <div id="stat-trainers" class="text-center p-8 bg-gradient-to-br from-cream to-white rounded-2xl">
+                    <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-user-tie text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">15</h3>
+                    <p class="text-gray-600 font-medium">Expert Trainers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aquatics-section" class="py-20 bg-gradient-to-br from-blue-50 to-cream">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="h-64 overflow-hidden rounded-2xl">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ee9bfc1dd1-561d7ee88d2cfdb467d5.png" alt="luxury olympic swimming pool, crystal clear blue water, modern design, poolside loungers" />
+                        </div>
+                        <div class="h-64 overflow-hidden rounded-2xl mt-8">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c8369c86b8-60e39c305a1c2c75e7cd.png" alt="children" />
+                        </div>
+                        <div class="h-64 overflow-hidden rounded-2xl -mt-8">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a9704a0a2d-7ba082b11a11c5afa325.png" alt="aqua aerobics class in pool, instructor leading exercise, group fitness activity" />
+                        </div>
+                        <div class="h-64 overflow-hidden rounded-2xl">
+                            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d6eb928568-6f3b06e9f8b729c89a79.png" alt="swimming coach teaching technique, one-on-one lesson, professional instruction" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <span class="inline-block px-4 py-2 bg-blue-100 rounded-full text-blue-700 font-semibold text-sm tracking-wide mb-4">AQUATIC CENTER</span>
+                    <h2 class="font-serif text-5xl font-bold text-gray-900 mb-6">Swimming & Water Sports</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">Dive into luxury with our Olympic-standard swimming facilities. Whether you're a competitive swimmer or just looking to relax, our aquatic center offers something for everyone.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-medal text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Olympic-Size Pool</h4>
+                                <p class="text-gray-600">50-meter competition-standard pool for serious swimmers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-child text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Kids' Pool</h4>
+                                <p class="text-gray-600">Safe, shallow pool designed specifically for children</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-graduation-cap text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Swimming Lessons</h4>
+                                <p class="text-gray-600">Professional coaching for all ages and skill levels</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <button class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">Book Pool Time</button>
+                        <button class="px-8 py-3 bg-white border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">Swimming Classes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="racquet-sports" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="inline-block px-4 py-2 bg-green-100 rounded-full text-green-700 font-semibold text-sm tracking-wide mb-4">RACQUET SPORTS</span>
+                    <h2 class="font-serif text-5xl font-bold text-gray-900 mb-6">Tennis & Court Sports</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">Master your game on our professional courts. From tennis to badminton and squash, enjoy world-class facilities with expert coaching available.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gradient-to-br from-cream to-white p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-baseball text-green-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Tennis Courts</h4>
+                            <p class="text-gray-600 text-sm">4 professional hard courts with night lighting</p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-cream to-white p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-table-tennis-paddle-ball text-green-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Badminton</h4>
+                            <p class="text-gray-600 text-sm">6 indoor courts with wooden flooring</p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-cream to-white p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-square text-green-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Squash Courts</h4>
+                            <p class="text-gray-600 text-sm">2 glass-back courts with climate control</p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-cream to-white p-6 rounded-xl">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-trophy text-green-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Tournaments</h4>
+                            <p class="text-gray-600 text-sm">Regular competitions and leagues</p>
+                        </div>
+                    </div>
+                    
+                    <button class="px-8 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">Reserve Court</button>
+                </div>
+                
+                <div class="h-[600px] overflow-hidden rounded-2xl">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6d641042a6-1f52ece94911aeaeaf30.png" alt="professional tennis court with players, green surface, net, luxury sports club atmosphere, action shot" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fitness-center" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-red-100 rounded-full text-red-700 font-semibold text-sm tracking-wide mb-4">FITNESS & WELLNESS</span>
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-4">Modern Fitness Center</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Achieve your fitness goals with state-of-the-art equipment and personalized training programs designed for all fitness levels.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div id="cardio-zone" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d5aa5cf73f-e91417dabcdfbcc198fb.png" alt="modern gym cardio section, treadmills, elliptical machines, bright lighting, premium fitness equipment" />
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-heart-pulse text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-3">Cardio Zone</h3>
+                        <p class="text-gray-600 mb-4">Latest treadmills, ellipticals, and bikes with entertainment systems</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>20+ cardio machines</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Heart rate monitoring</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Personal TVs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="strength-training" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/44b65b9603-7fb6f01d5762fb23c938.png" alt="weight training area, dumbbells, barbells, strength equipment, professional gym setup" />
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-dumbbell text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-3">Strength Training</h3>
+                        <p class="text-gray-600 mb-4">Complete range of free weights and resistance machines</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Free weights area</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Cable machines</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Functional training</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="group-classes" class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="h-56 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c1c00b90e8-201094c8c1d26e965508.png" alt="yoga class in progress, group fitness session, instructor leading, peaceful studio environment" />
+                    </div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-users text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-3">Group Classes</h3>
+                        <p class="text-gray-600 mb-4">Diverse fitness classes led by certified instructors</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Yoga & Pilates</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Zumba & Dance</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i>HIIT & CrossFit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-12 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="font-serif text-4xl font-bold text-gray-900 mb-6">Personal Training Programs</h3>
+                        <p class="text-lg text-gray-600 mb-8">Work with our certified trainers to achieve your specific fitness goals through customized workout plans and nutritional guidance.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-check-circle text-gold mr-3"></i>
+                                <span class="text-gray-700">One-on-one training sessions</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-check-circle text-gold mr-3"></i>
+                                <span class="text-gray-700">Customized workout plans</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-check-circle text-gold mr-3"></i>
+                                <span class="text-gray-700">Nutrition counseling</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-check-circle text-gold mr-3"></i>
+                                <span class="text-gray-700">Progress tracking</span>
+                            </div>
+                        </div>
+                        
+                        <button class="px-8 py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dark transition">Book Consultation</button>
+                    </div>
+                    
+                    <div class="h-80 overflow-hidden rounded-2xl">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/574df625ee-70ae7fb0f32771306126.png" alt="personal trainer working with client, one-on-one fitness session, professional guidance, modern gym" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kids-activities" class="py-20 bg-gradient-to-br from-yellow-50 to-cream">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-yellow-100 rounded-full text-yellow-700 font-semibold text-sm tracking-wide mb-4">FAMILY FRIENDLY</span>
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-4">Kids' Sports Programs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Introduce your children to sports and fitness through our specially designed programs that focus on fun, skill development, and healthy habits.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div id="kids-swimming" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8f7eb078eb-efe3c730a374f2e3f3ed.png" alt="children swimming lessons, kids in pool with instructor, fun learning environment, safety focus" />
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-child-reaching text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Swimming Lessons</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ages 4-16 • Beginner to Advanced</p>
+                        <p class="text-gray-600">Safe, fun swimming instruction with certified instructors</p>
+                    </div>
+                </div>
+
+                <div id="kids-tennis" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ff89762633-8caf9113c2e7b1f73ec7.png" alt="kids tennis coaching, children learning tennis basics, small racquets, colorful court" />
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-baseball text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Junior Tennis</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ages 6-18 • All Skill Levels</p>
+                        <p class="text-gray-600">Professional tennis coaching with age-appropriate equipment</p>
+                    </div>
+                </div>
+
+                <div id="kids-martial-arts" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7ce5da6ac6-1be46ba480db8ebf7fd8.png" alt="kids martial arts class, children practicing karate, discipline and focus, traditional dojo" />
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-hand-fist text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Martial Arts</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ages 5-16 • Karate & Taekwondo</p>
+                        <p class="text-gray-600">Build discipline, confidence, and physical fitness</p>
+                    </div>
+                </div>
+
+                <div id="kids-basketball" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/822f04c76a-0e17aedbbcec7a6e0156.png" alt="children playing basketball, kids basketball court, team sport, fun group activity" />
+                    </div>
+                    <div class="p-6">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-basketball text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Basketball</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ages 8-18 • Team Skills</p>
+                        <p class="text-gray-600">Learn teamwork and coordination through basketball</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule-booking" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-br from-gold/5 to-cream rounded-3xl p-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="inline-block px-4 py-2 bg-gold/20 rounded-full text-gold-dark font-semibold text-sm tracking-wide mb-4">EASY BOOKING</span>
+                        <h2 class="font-serif text-5xl font-bold text-gray-900 mb-6">Reserve Your Spot Today</h2>
+                        <p class="text-lg text-gray-600 mb-8">Book courts, classes, and training sessions online or through our mobile app. Flexible scheduling to fit your family's lifestyle.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-calendar-check text-gold"></i>
+                                </div>
+                                <span class="text-gray-700">Book up to 7 days in advance</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-mobile-screen text-gold"></i>
+                                </div>
+                                <span class="text-gray-700">Mobile app for easy access</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-clock text-gold"></i>
+                                </div>
+                                <span class="text-gray-700">Flexible cancellation policy</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <button class="px-8 py-4 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dark transition shadow-lg">Book Now</button>
+                            <button class="px-8 py-4 bg-white border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold/5 transition">View Schedule</button>
+                        </div>
+                    </div>
+                    
+                    <div class="h-96 overflow-hidden rounded-2xl shadow-2xl">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b5d4c8a9f2-3e7d6f8a9b2c1d4e5f6a.png" alt="mobile app booking interface, sports facility reservation system, modern digital interface" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-section" class="py-20 bg-gradient-to-r from-gold to-gold-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-serif text-5xl font-bold text-white mb-6">Ready to Get Active?</h2>
+            <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">Join Kings Club today and give your family access to world-class sports facilities and programs designed for excellence.</p>
+            <div class="flex justify-center space-x-4">
+                <button class="px-10 py-4 bg-white text-gold font-bold rounded-lg hover:bg-gray-100 transition shadow-xl text-lg">Become a Member</button>
+                <button class="px-10 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition text-lg">Schedule a Tour</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer" class="bg-gray-900 text-gray-300 py-16">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center space-x-2 mb-6">
+                    <i class="fa-solid fa-crown text-gold text-3xl"></i>
+                    <span class="font-serif text-2xl font-bold text-white">Kings Club</span>
+                </div>
+                <p class="text-gray-400 mb-6">Bangalore's premier family membership club offering luxury dining, sports, and exclusive experiences.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-white mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="hover:text-gold transition">About Us</a></li>
+                    <li><a href="#membership" class="hover:text-gold transition">Membership</a></li>
+                    <li><a href="#dining" class="hover:text-gold transition">Dining</a></li>
+                    <li><a href="#events" class="hover:text-gold transition">Events</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-white mb-6">Facilities</h4>
+                <ul class="space-y-3">
+                    <li><a href="#sports" class="hover:text-gold transition">Sports & Activities</a></li>
+                    <li><a href="#gallery" class="hover:text-gold transition">Gallery</a></li>
+                    <li><a href="#contact" class="hover:text-gold transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-gold transition">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-white mb-6">Contact</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-location-dot text-gold mr-3 mt-1"></i>
+                        <span>MG Road, Bangalore, Karnataka 560001</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-phone text-gold mr-3"></i>
+                        <span>+91 80 1234 5678</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope text-gold mr-3"></i>
+                        <span>info@kingsclub.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 text-center">
+            <p class="text-gray-500">&copy; 2024 Kings Club. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

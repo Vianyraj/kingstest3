@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        
+        @import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&f[]=clash-display@400,500,600,700&f[]=general-sans@300,400,500,600&display=swap');
+        
+        * { font-family: 'General Sans', 'Inter Tight', sans-serif; }
+        .heading-font { font-family: 'Clash Display', sans-serif; }
+        .body-font { font-family: 'Satoshi', 'Inter Tight', sans-serif; }
+        
+        .noise-bg {
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(218, 165, 32, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(245, 245, 220, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 248, 220, 0.25) 0%, transparent 50%),
+                linear-gradient(135deg, #faf7f2 0%, #f5f1e8 25%, #f8f5f0 50%, #fdfcf8 75%, #fff 100%);
+            background-blend-mode: multiply, overlay, normal;
+        }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(248, 217, 139, 0.18);
+        }
+        
+        .asymmetric-border {
+            border-radius: 24px 8px 16px 32px;
+        }
+        
+        .card-asymmetric {
+            border-radius: 20px 4px 20px 4px;
+        }
+        
+        .interactive-image {
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .interactive-image:hover {
+            transform: rotateY(5deg) rotateX(2deg);
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .micro-bounce:hover {
+            animation: micro-bounce 0.4s ease;
+        }
+        
+        @keyframes micro-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-4px); }
+            60% { transform: translateY(-2px); }
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 245, 240, 0.8) 100%);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(218, 165, 32, 0.1);
+        }
+
+        /* Parallax Scrolling Styles */
+        .parallax-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .parallax-bg {
+            transform: translateZ(-1px) scale(2);
+        }
+
+        .parallax-mid {
+            transform: translateZ(-0.5px) scale(1.5);
+        }
+
+        .parallax-front {
+            transform: translateZ(0);
+        }
+
+        /* Smooth parallax scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .parallax-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .parallax-bg-image {
+            position: absolute;
+            top: -20%;
+            left: 0;
+            width: 100%;
+            height: 140%;
+            object-fit: cover;
+            will-change: transform;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 2;
+            will-change: transform;
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0 80px;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 24px;
+        }
+
+        .carousel-slide {
+            min-width: calc(33.333% - 16px);
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(248, 217, 139, 0.4);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn:hover {
+            background: #F8D98B;
+            color: white;
+            box-shadow: 0 6px 20px rgba(248, 217, 139, 0.5);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn-prev {
+            left: 0;
+        }
+
+        .carousel-btn-next {
+            right: 0;
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-center: center;
+            gap: 10px;
+            margin-top: 32px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(248, 217, 139, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: #F8D98B;
+            width: 36px;
+            border-radius: 6px;
+        }
+
+        /* New Carousel Styles */
+        .perspective-carousel-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+        }
+
+        .perspective-carousel-wrapper {
+            position: relative;
+            width: 350px;
+            height: 550px;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .perspective-carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            cursor: pointer;
+            background-color: #f0ebe4;
+        }
+
+        .perspective-carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .perspective-carousel-slide .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            color: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .perspective-carousel-slide.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Positioning the slides */
+        .perspective-carousel-slide.prev-2 { transform: translateX(-150%) scale(0.7) rotateY(45deg); z-index: 1; opacity: 0.3; }
+        .perspective-carousel-slide.prev-1 { transform: translateX(-80%) scale(0.85) rotateY(30deg); z-index: 2; opacity: 0.6; }
+        .perspective-carousel-slide.active { transform: translateX(0) scale(1); z-index: 3; opacity: 1; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .perspective-carousel-slide.next-1 { transform: translateX(80%) scale(0.85) rotateY(-30deg); z-index: 2; opacity: 0.6; }
+        .perspective-carousel-slide.next-2 { transform: translateX(150%) scale(0.7) rotateY(-45deg); z-index: 1; opacity: 0.3; }
+        .perspective-carousel-slide.hidden-slide { transform: translateX(0) scale(0.6); opacity: 0; z-index: 0; }
+
+        .perspective-carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background-color: rgba(20, 20, 20, 0.6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .perspective-carousel-nav:hover {
+            background-color: #F8D98B;
+            color: #333;
+            transform: translateY(-50%) scale(1.1);
+        }
+        #perspective-prev { left: 10%; }
+        #perspective-next { right: 10%; }
+
+        /* Update all yellow/amber colors to new shade */
+        .text-amber-400, .text-amber-500, .text-amber-600 {
+            color: #F8D98B !important;
+        }
+        
+        .bg-amber-400, .bg-amber-500, .bg-amber-600,
+        .from-amber-400, .from-amber-500, .to-amber-500, .to-amber-600 {
+            background-color: #F8D98B !important;
+        }
+        
+        .border-amber-500 {
+            border-color: #F8D98B !important;
+        }
+        
+        .privilege-card {
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .privilege-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .privilege-card:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .privilege-card:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .privilege-card:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .privilege-card:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        /* Modal Styles */
+        .modal-enter {
+            animation: modalEnter 0.3s ease-out;
+        }
+
+        .modal-leave {
+            animation: modalLeave 0.3s ease-in;
+        }
+
+        @keyframes modalEnter {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes modalLeave {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+        }
+
+        /* Custom scrollbar for modal */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d5b14c;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ddc27b;
+        }
+    </style>
+</head>
+<body class="noise-bg min-h-screen">
+
+<nav id="header" class="glassmorphism fixed top-0 w-full z-50 py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <img class="h-10 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, gold, elegant and luxurious, on a transparent background" />
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="KingsclubMainPage.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Home</a>
+            <a href="Dining.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Dining</a>
+            <a href="Sports.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Sports</a>
+            <a href="Events.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Events</a>
+            <a href="Contact.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">About</a>
+            <!-- <button class="bg-gradient-to-r from-amber-400 to-amber-500 text-white px-6 py-2 asymmetric-border hover:shadow-lg transition-all micro-bounce">
+                Join Now
+            </button> -->
+            <a href="Membership.html" class="bg-gradient-to-r from-amber-400 to-amber-500 text-white px-6 py-2 asymmetric-border hover:shadow-lg transition-all micro-bounce">
+    Join Now
+</a>
+        </div>
+        <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+</nav>
+
+<section id="hero" class="h-screen relative overflow-hidden pt-0">
+    <div class="relative w-full h-full">
+        <div class="absolute inset-0 w-full h-full overflow-hidden cursor-grab active:cursor-grabbing">
+            <div id="panorama-container" class="w-full h-full relative">
+                <img class="absolute top-0 left-0 h-full w-auto object-cover" style="transform: translateX(0%); min-width: 200%;" id="hero-360-image" src="KingsClubImage2.jpg" alt="panoramic view of a modern luxury club exterior at night, beautifully illuminated with warm lights, dramatic evening sky, high-resolution, elegant architecture" />
+            </div>
+        </div>
+        
+        <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+            <div class="text-center space-y-8 px-6 py-5 max-w-4xl">
+               <h1 class="heading-font text-6xl lg:text-8xl font-bold text-white leading-tight drop-shadow-2xl" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 2px 10px rgba(0,0,0,0.3);">
+    Welcome to
+    <span class="block mt-2 pb-2 bg-[#ddc27b] bg-clip-text text-transparent pb-1" style="text-shadow: none; filter: drop-shadow(0 4px 12px rgba(218,165,32,0.6));">
+        Kings Club
+    </span>
+</h1>
+               <p class="body-font text-xl lg:text-2xl text-white leading-relaxed max-w-2xl mx-auto font-medium" style="text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5);">
+    Bangalore's most prestigious family club offering world-class dining, sports facilities, and exclusive events in an elegant setting.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto">
+    <a href="MembershipSignup.html" class="bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] text-white px-10 py-5 asymmetric-border hover:shadow-2xl transition-all micro-bounce text-lg font-semibold hover:scale-105" style="box-shadow: 0 8px 30px rgba(218,165,32,0.4);">
+    Explore Membership
+</a>
+    <a href="https://www.youtube.com/watch?v=rhuMUbnvk7E" class="bg-white/20 backdrop-blur-md border-2 border-white text-[#080808] px-10 py-5 card-asymmetric hover:bg-white/30 transition-all micro-bounce text-lg font-semibold hover:scale-105">
+    Virtual Tour
+</a>
+</div>
+        </div>
+
+        <div class="absolute top-6 right-6 bg-white/20 backdrop-blur-md px-4 py-3 rounded-full text-sm body-font text-white flex items-center gap-2 z-20 border border-white/30">
+            <i class="fas fa-hand-pointer text-amber-400"></i>
+            <span class="font-medium">Hover to control | Auto-rotating</span>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-3xl opacity-70"></i>
+        </div>
+    </div>
+</section>
+
+<!-- <section id="intro" class="parallax-section">
+    <img class="parallax-bg-image" src="Home-Banner-Page-scaled.jpg" alt="Exterior of a modern, luxurious family club building during the day, clean architecture, beautiful landscaping, bright and welcoming atmosphere" />
+    <div class="parallax-overlay bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+    <div class="parallax-content max-w-6xl mx-auto px-6 text-center scroll-reveal">
+        <div class="absolute inset-0 flex items-center justify-center opacity-10">
+            <img class="h-64 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, white, elegant and luxurious, on a transparent background" />
+        </div>
+        <h2 class="heading-font text-5xl font-bold text-white mb-6 drop-shadow-2xl">
+            Where Luxury Meets Community
+        </h2>
+        <p class="body-font text-xl text-white leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
+            For over two decades, Kings Club has been the epitome of refined living in Bangalore. 
+            Our exclusive community brings together families who appreciate the finer things in life.
+        </p>
+    </div>
+</section> -->
+<section id="about-video" class="py-20 bg-gradient-to-r from-amber-50 to-orange-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="scroll-reveal">
+                <div class="asymmetric-border overflow-hidden shadow-2xl">
+                <!-- <iframe
+  class="w-full h-[400px]"
+  src="https://www.youtube-nocookie.com/embed/rhuMUbnvk7E?rel=0&modestbranding=1"
+  title="Kings Club Video"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  referrerpolicy="strict-origin-when-cross-origin">
+</iframe> -->
+<a href="https://www.youtube.com/watch?v=rhuMUbnvk7E" target="_blank" id="video-promo-link" class="block relative group rounded-xl overflow-hidden shadow-2xl">
+                        <div class="h-[350px] overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="kingsOutside.webp" alt="aerial night view of a luxurious modern clubhouse with a swimming pool, architectural lighting, lush green surroundings, exclusive real estate" />
+                        </div>
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="w-20 h-20 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                <i class="fa-solid fa-play text-white text-3xl ml-1"></i>
+                            </div>
+                        </div>
+                        <!-- <div class="absolute bottom-4 right-4 h-24 w-24">
+                           <img class="w-full h-full object-contain" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9f59c3eb2d-caa8366800e02d0912df.png" alt="elegant gold logo of a lion head inside a royal crest with" />
+                        </div> -->
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-reveal">
+                <h2 class="heading-font text-5xl font-bold text-gray-800 mb-4">About Kings Club</h2>
+                <div class="bg-[#d5b14c] text-white px-6 py-4 card-asymmetric mb-6 inline-block">
+                    <p class="text-2xl font-bold">750+ Memberships Closed!</p>
+                    <p class="text-lg">Get Yours Today!</p>
+                </div>
+                <p class="body-font text-lg text-gray-700 leading-relaxed mb-4">
+                    Welcome to Bangalore's Club – Kings Club. Discover the most spectacular & beautiful location at Kings Club, which is designed for lifestyle services in the vicinity of Malathalli Lake. Get the family and friends together to enjoy a luxury environment & several types of sports & leisure services in Nagarabhavi, West Bangalore. We focus on making your life more enjoyable and less stressful.
+                </p>
+                <p class="body-font text-lg text-gray-700 leading-relaxed mb-6">
+                    The Kings Club in Bangalore is surrounded by plenty of lush greenery and natural lighting, making it a prime destination. The rejuvenating climate of the region, along with its friendly atmosphere & delightfully crisp air make it a preferred destination. It makes you feel like royalty when you enter our entrance hall. We provide you with ample green space in our gardens as well as natural light and a gesture of extra care.
+                </p>
+                <p class="body-font text-xl text-gray-800 font-semibold mb-6">
+                    Don't miss the chance to build splendid memories with your near & dear ones
+                </p>
+                <button class="bg-[#d5b14c] text-white px-8 py-4 asymmetric-border hover:shadow-xl transition-all micro-bounce text-lg font-semibold flex items-center space-x-3">
+                    <i class="fas fa-download"></i>
+                    <span>Download Brochure</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="club-features" class="py-20 relative parallax-section">
+   
+    <img class="parallax-bg-image" 
+    src="logo2v.png" 
+    alt="Kings Club logo watermark background, luxury emblem, elegant design" 
+    style="
+        position: absolute;
+        top: 20%;
+        left: 5%;
+        transform: translate(-50%, -50%) rotate(180deg);
+        opacity: 1;
+        filter: brightness(1) sepia(1);
+        max-width: 80%;
+        height: auto;
+        background-color: #ffe4c4;
+    "
+/>
+
+    <div class="parallax-overlay bg-gradient-to-b from-stone-50/85 via-stone-50/75 to-stone-50/85"></div>
+    
+    <!-- Sticky Navigation -->
+    <div class="fixed right-8 top-1/2 -translate-y-1/2 z-40 space-y-4" id="sticky-nav">
+        <a href="#feature-sports" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-sports">
+            <i class="fas fa-basketball-ball text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-fitness" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-fitness">
+            <i class="fas fa-dumbbell text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-entertainment" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-entertainment">
+            <i class="fas fa-gamepad text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-banquets" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-banquets">
+            <i class="fas fa-glass-cheers text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+        <a href="#feature-restaurant" class="sticky-nav-item block w-14 h-14 bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center transition-all hover:bg-[#F8D98B] hover:scale-110 group border-2 border-transparent hover:border-[#F8D98B]" data-target="feature-restaurant">
+            <i class="fas fa-utensils text-xl text-gray-700 group-hover:text-white transition-colors"></i>
+        </a>
+    </div>
+
+    <div class="parallax-content max-w-7xl mx-auto px-6 w-full relative">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="heading-font text-5xl font-bold text-gray-800 mb-6">
+                Club Features
+            </h2>
+            <p class="body-font text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-4">
+                You can celebrate large and special events at the stunning King's Club, which has more than three acres of land and is situated in a magnificent location.
+            </p>
+            <!-- <p class="body-font text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                We have quite the paraphernalia for everything between birthdays, weddings, baby showers, graduation, promotion, or any celebration & have the fun times roll. We have a children-friendly ambiance where you could watch them grow, laugh, & play while they make the best out of the sports & fun activities. Park your car with ease in 200+ parking capacity area which is safe & secure. The best membership club in Bangalore, you can trust.
+            </p> -->
+        </div>
+
+        <!-- Featured Offerings Carousel -->
+        <div class="mb-20">
+            <div class="text-center mb-12">
+                <p class="body-font text-xl text-gray-600">Discover what makes Kings Club extraordinary</p>
+            </div>
+            
+            <div class="perspective-carousel-container">
+                <div class="perspective-carousel-wrapper" id="perspectiveCarouselWrapper">
+                    
+                    <div class="perspective-carousel-slide" data-index="0">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/58da9ebc44-e3ddcd5c49d99132733c.png" alt="sports facilities, tennis court, badminton, swimming pool" />
+                        <div class="content">
+                            <i class="fas fa-basketball-ball text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Sports</h3>
+                            <p class="body-font text-gray-200 mt-2">Championship courts, Olympic pools, and more for the active family.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="1">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/58da9ebc44-e3ddcd5c49d99132733c.png" alt="modern gym, fitness center, health equipment, wellness facilities" />
+                         <div class="content">
+                            <i class="fas fa-dumbbell text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Health & Fitness</h3>
+                            <p class="body-font text-gray-200 mt-2">State-of-the-art gym, yoga studios, and wellness programs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="2">
+                       <img src="https://st2.depositphotos.com/27201292/46862/i/1600/depositphotos_468622810-stock-photo-vertical-shot-group-people-who.jpg" alt="entertainment lounge, games room, recreation area, leisure activities" />
+                         <div class="content">
+                            <i class="fas fa-gamepad text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Entertainment</h3>
+                             <p class="body-font text-gray-200 mt-2">Gaming zones, kids play areas, and lounges for family fun.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="3">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12d65472af-adc1091581111661f0da.png" alt="elegant banquet hall, wedding venue, event space" />
+                         <div class="content">
+                            <i class="fas fa-glass-cheers text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Banquets</h3>
+                            <p class="body-font text-gray-200 mt-2">Elegant halls and outdoor venues for your grand celebrations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="perspective-carousel-slide" data-index="4">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/90d6b578d0-c667d413975e794db1d5.png" alt="fine dining restaurant, gourmet cuisine, elegant dining" />
+                        <div class="content">
+                            <i class="fas fa-utensils text-3xl mb-3 text-amber-400"></i>
+                            <h3 class="heading-font text-3xl font-semibold">Restaurant</h3>
+                            <p class="body-font text-gray-200 mt-2">Exquisite cuisine from world-renowned chefs in a fine-dining setting.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="perspective-carousel-nav" id="perspective-prev"><i class="fas fa-chevron-left"></i></div>
+                <div class="perspective-carousel-nav" id="perspective-next"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+
+      <div class="space-y-12">
+            <!-- Sports Section -->
+            <div id="feature-sports" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Sports</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Nestled amongst the greenery of nature, Kings Club, surrounded all the state-of-the-art facilities that ensure to make you experience relaxing & happiness. Come to enjoy a range of indoor sports & outdoor sports that are sure to delight your fitness soul.
+                        </p>
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            There's something for everybody! Luxuriate your favorite sports at your own pace. We provide extensive space for your complete sports activities with multiple spaces segregated into several courts for the perfect sport such as:
+                        </p>
+                        <ul class="space-y-3 body-font text-gray-700 text-lg">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Indoor activities</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Outdoor activities</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Table Tennis & many more</li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://kingsclub.in/wp-content/uploads/2021/02/Badmiton-Class-1024x577.jpg" alt="badminton court, sports facility" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 mt-8">
+                            <img src="https://kingsclub.in/wp-content/uploads/2021/02/Mini-Olympic-Pool-banner-image-1-1024x576.jpg" alt="olympic swimming pool, luxury sports club" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 -mt-8">
+                            <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/BILLIARDS-banner-image-r8hi2ek3bezxbkervi5nfxwrca7rf5fm5169ecysnc.jpg" alt="BILLIARDS" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/TT-banner-image-r8hi2ek23k77h9kwajy92b5e40s14g8ayhu68h833g.jpg" alt="table tennis, indoor sports" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health & Fitness Section -->
+            <div id="feature-fitness" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Health & Fitness</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
+                            <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/benifets-r8hi2gfqh89s4hi5zkri7aobasirjufrmr55715ar0.jpg" alt="modern gym, fitness equipment" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
+                            <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/gym-intruduction-r8hi2ek5r4jnme1o16j2lvxgn9qm6vwopncxn8vamg.jpg" alt="luxury fitness center, modern gym" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Kings Club is the most prestigious health club in Bangalore. At our modern & advanced fitness center, you can boost your stamina and energy with the latest technology. By taking the first step to wellness under the guidance of our fitness trainers, you will be guided through a customized program of specific exercises tailored to your needs or just relax at one of our SPA areas.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://png.pngtree.com/thumb_back/fh260/background/20240329/pngtree-rows-of-dumbbells-in-the-gym-image_15662386.jpg" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/yogadance-r8hi2k74gf72smuamhwybsniiqzrfg2tkblc927gkg.png" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entertainment Section -->
+            <div id="feature-entertainment" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Entertainment</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Guests are escorted by our entertainment team through a wealth of sports, entertainment, and relaxation in a fun environment. There are countless activities that can be enjoyed at our entertainment facility, including an equipped swimming pool, and sports fields. In addition, we offer entertainment services for the hosting of special events including New Year Bash, Dandiya Nights, Diwali, Dusherra & even other festivals & take care of all guests so they can enjoy themselves fully.
+                        </p>
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            Celebrating Valentine's Day with your loved ones and enjoying the dance floor with our best DJ is an even more exciting way to celebrate the holiday. Other events will include singers and belly dancers.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="data:image/jpeg;base64,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" alt="entertainment lounge, games room" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://m.media-amazon.com/images/I/71OF44ehRbL._AC_UF1000,1000_QL80_.jpg" alt="entertainment lounge, games room" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banquets Section -->
+            <div id="feature-banquets" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute bottom-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Banquets</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            At the Kings Club, you can choose from a variety of banqueting facilities that ensure your celebration is a memorable experience. At our unique banquet halls, we redefine hospitality by offering an explicit theme for every occasion, such as Engagement Parties, Anniversaries, Birthday Parties, Weddings, Kitty Parties, and Corporate Events, Conference hall, meeting hall, & much more. We will take care of everything from start to finish with our team of highly skilled professionals.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-r8hi2gfu4slrwc3i9cecx6sdiypzlkj7b49mzfkj1k.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://kingsclub.in/wp-content/uploads/2021/03/Indoor-Banquit-Hall-Banner-1200x749.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/Standard-Room-r8hi2com8vm8ylf1nqi1e3xz80e74mkwz2wt9cc01s.jpg" alt="indoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-1-scaled-r8hi2gfu4sm89lyxq7cbqvgdu1hcma45dwnwlssia0.jpg" alt="outdoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Section -->
+            <div id="feature-restaurant" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative">
+                    <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Restaurant</span>
+                </h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+                    <div class="space-y-6">
+                        <p class="body-font text-gray-700 leading-loose text-lg">
+                            At the Kings Club, you can enjoy a variety of fine dining experiences with our world-class chefs. From elegant banquets to casual gatherings, our restaurant offers a perfect blend of luxury and comfort. Whether you're celebrating a special occasion or just enjoying a meal with friends, our restaurant provides an unforgettable dining experience.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/social-geathering-scaled-r8hi2ek3bf1mpcfmvq7119eshtkd8td5xhnrh8jps0.jpg"fine dining, elegant setting" class="w-full h-full object-cover" />
+                            </div>
+                            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                                <img src="https://kingsclub.in/wp-content/uploads/2021/02/Restro-Bar-banner-image-2.jpg" alt="fine dining, elegant setting" class="w-full h-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://kingsclub.in/wp-content/uploads/2021/03/about-Sky-Lounge-1200x675-cropped.jpg"indoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                            <img src="https://kingsclub.in/wp-content/uploads/2021/02/Intruduction.jpg" alt="outdoor banquet, elegant hall" class="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="perks" class="py-20 parallax-section">
+    <img class="parallax-bg-image" src="logodark.png" alt="Kings Club logo watermark background" style="opacity: 1.08;  background-color: #ffe4c4;" />
+    <div class="parallax-overlay bg-gradient-to-b from-white/80 via-amber-50/90 to-orange-50/90"></div>
+    <div class="parallax-content max-w-7xl mx-auto px-6 w-full">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="heading-font text-5xl font-bold text-gray-800 mb-4">
+                Membership Privileges
+            </h2>
+            <p class="body-font text-xl text-gray-600">Exclusive benefits for our valued members</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/f2bc0378c6-912f3ea7c21be3b7a98a.png" alt="professional concierge desk, luxury hotel service, elegant reception area, warm lighting" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">24/7 Concierge</h3>
+                <p class="body-font text-gray-600 text-sm">Personal assistance whenever you need it</p>
+            </div>
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0f0e3d1ed1-d03c44ad925e22576d5c.png" alt="luxury valet parking service, premium car service, elegant entrance, professional staff" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">Valet Parking</h3>
+                <p class="body-font text-gray-600 text-sm">Complimentary valet service</p>
+            </div>
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/02f89b67f2-be6de60c391f8f66f292.png" alt="happy families and friends gathering, luxury club lounge, social event, elegant setting" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">Guest Privileges</h3>
+                <p class="body-font text-gray-600 text-sm">Bring friends and family</p>
+            </div>
+            <div class="text-center scroll-reveal privilege-card">
+                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 shadow-lg transform transition-all duration-500 hover:scale-105">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/a1738e8c34-9ae709edcd6e37bbd009.png" alt="exclusive discount offers, premium membership benefits, luxury services, elegant presentation" />
+                </div>
+                <h3 class="heading-font text-xl font-semibold text-gray-800 mb-2">Member Discounts</h3>
+                <p class="body-font text-gray-600 text-sm">Special rates on all services</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-20 overflow-hidden parallax-section">
+    <img class="parallax-bg-image" src="logo.png" alt="Kings Club logo watermark background" style="opacity: 1.08;  background-color: #ffe4c4;" />
+    <div class="parallax-overlay bg-gradient-to-b from-white/80 via-amber-50/90 to-orange-50/90"></div>
+
+    <div class="parallax-content max-w-7xl mx-auto px-6 w-full">
+        <div class="text-center mb-16 scroll-reveal">
+            <h2 class="heading-font text-5xl font-bold text-gray-800 mb-4">
+                What Our Members Say
+            </h2>
+            <p class="body-font text-xl text-gray-600">Hear from our satisfied club family</p>
+        </div>
+        
+        <div id="testimonial-carousel-container" class="relative h-[350px] flex items-center justify-center">
+            <div id="testimonial-carousel-wrapper" class="relative w-full h-full" style="perspective: 1500px;">
+                <div class="testimonial-card p-8 card-asymmetric shadow-lg absolute w-[calc(100%-200px)] max-w-2xl left-1/2 top-1/2" data-index="0">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Member" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="heading-font text-lg font-semibold text-gray-800">Priya Sharma</h4>
+                            <p class="body-font text-gray-600 text-sm">Family Membership</p>
+                        </div>
+                    </div>
+                    <p class="body-font text-gray-700 italic leading-relaxed">
+                        "Kings Club has become our second home. The facilities are world-class and the staff treats us like royalty."
+                    </p>
+                    <div class="flex text-amber-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 card-asymmetric shadow-lg absolute w-[calc(100%-200px)] max-w-2xl left-1/2 top-1/2" data-index="1">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Member" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="heading-font text-lg font-semibold text-gray-800">Rajesh Kumar</h4>
+                            <p class="body-font text-gray-600 text-sm">Corporate Membership</p>
+                        </div>
+                    </div>
+                    <p class="body-font text-gray-700 italic leading-relaxed">
+                        "Perfect venue for business meetings and family celebrations. The attention to detail is extraordinary."
+                    </p>
+                    <div class="flex text-amber-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 card-asymmetric shadow-lg absolute w-[calc(100%-200px)] max-w-2xl left-1/2 top-1/2" data-index="2">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg" alt="Member" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 class="heading-font text-lg font-semibold text-gray-800">Anita Menon</h4>
+                            <p class="body-font text-gray-600 text-sm">Lifetime Member</p>
+                        </div>
+                    </div>
+                    <p class="body-font text-gray-700 italic leading-relaxed">
+                        "Twenty years of membership and it keeps getting better. The community here is truly special."
+                    </p>
+                    <div class="flex text-amber-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+             <button id="testimonial-prev" class="carousel-btn absolute top-1/2 -translate-y-1/2 left-0 z-10"><i class="fas fa-chevron-left"></i></button>
+            <button id="testimonial-next" class="carousel-btn absolute top-1/2 -translate-y-1/2 right-0 z-10"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div id="testimonial-indicators" class="carousel-indicators mt-8"></div>
+    </div>
+</section>
+
+<footer id="footer" class="bg-gradient-to-b from-gray-800 to-gray-900 text-white py-16 rounded-t-2xl">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="col-span-2">
+                <div class="flex items-center space-x-2 mb-6">
+                    <img class="h-64 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" style="width: 80px; height: 50px;" alt="Kings Club logo, lion head in a shield with ornate flourishes, white, elegant and luxurious, on a transparent background" />
+                    <span class="heading-font text-2xl font-bold">Kings Club</span>
+                </div>
+                <p class="body-font text-gray-300 leading-relaxed mb-6 max-w-md">
+                    Bangalore's premier family club offering luxury, elegance, and unforgettable experiences since 2001.
+                </p>
+                <div class="flex space-x-4">
+                    <i class="fab fa-facebook text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                    <i class="fab fa-instagram text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                    <i class="fab fa-twitter text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                    <i class="fab fa-linkedin text-xl text-gray-400 hover:text-amber-500 cursor-pointer micro-bounce"></i>
+                </div>
+            </div>
+            <div>
+                <h3 class="heading-font text-xl font-semibold mb-6">Contact Info</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-map-marker-alt text-amber-500"></i>
+                        <span class="body-font text-gray-300 text-sm">MG Road, Bangalore 560001</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-phone text-amber-500"></i>
+                        <span class="body-font text-gray-300 text-sm">+91 80 2558 7700</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-amber-500"></i>
+                        <span class="body-font text-gray-300 text-sm">info@kingsclub.in</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="heading-font text-xl font-semibold mb-6">Quick Links</h3>
+                <div class="space-y-3">
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Membership Plans</a>
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Event Booking</a>
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Gallery</a>
+                    <a href="#" class="body-font text-gray-300 hover:text-amber-500 transition-colors block text-sm">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+        <p class="body-font text-gray-400 text-sm">
+            © 2025 Kings Club. All rights reserved.
+        </p>
+        <div class="flex items-center gap-4 md:gap-8">
+            <button onclick="openModal('privacy-modal')" class="body-font text-gray-300 hover:text-[#F8D98B] transition-colors text-sm micro-bounce">
+                Privacy Policy
+            </button>
+            <span class="text-gray-600">|</span>
+            <button onclick="openModal('terms-modal')" class="body-font text-gray-300 hover:text-[#F8D98B] transition-colors text-sm micro-bounce">
+                Terms & Conditions
+            </button>
+            <span class="text-gray-600">|</span>
+            <button onclick="openModal('refund-modal')" class="body-font text-gray-300 hover:text-[#F8D98B] transition-colors text-sm micro-bounce">
+                Refund Policy
+            </button>
+        </div>
+    </div>
+</div>
+    </div>
+</footer>
+
+<!-- MODAL FUNCTIONS - MUST BE GLOBAL -->
+<script>
+// Global Modal Functions
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) {
+        console.error('Modal not found:', modalId);
+        return;
+    }
+    
+    modal.classList.remove('hidden');
+    
+    // Trigger animation after display
+    setTimeout(() => {
+        const modalContent = modal.querySelector('.bg-white');
+        if (modalContent) {
+            modalContent.classList.remove('scale-95', 'opacity-0');
+            modalContent.classList.add('scale-100', 'opacity-100');
+        }
+    }, 10);
+    
+    // Prevent body scrolling
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+    
+    const modalContent = modal.querySelector('.bg-white');
+    
+    // Trigger close animation
+    if (modalContent) {
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+    }
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+// Initialize everything when page loads
+window.addEventListener('load', function() {
+    // Set up modal close events
+    document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal(this.id);
+            }
+        });
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+                if (!modal.classList.contains('hidden')) {
+                    closeModal(modal.id);
+                }
+            });
+        }
+    });
+
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal, .privilege-card').forEach(el => {
+        observer.observe(el);
+    });
+
+    // New Perspective Carousel
+    const carouselWrapper = document.getElementById('perspectiveCarouselWrapper');
+    const slides = document.querySelectorAll('.perspective-carousel-slide');
+    const prevBtn = document.getElementById('perspective-prev');
+    const nextBtn = document.getElementById('perspective-next');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev-1', 'prev-2', 'next-1', 'next-2', 'hidden-slide');
+            
+            let newIndex = (index - currentIndex + totalSlides) % totalSlides;
+            
+            if (newIndex === 0) {
+                slide.classList.add('active');
+            } else if (newIndex === 1) {
+                slide.classList.add('next-1');
+            } else if (newIndex === 2) {
+                slide.classList.add('next-2');
+            } else if (newIndex === totalSlides - 1) {
+                slide.classList.add('prev-1');
+            } else if (newIndex === totalSlides - 2) {
+                slide.classList.add('prev-2');
+            } else {
+                 slide.classList.add('hidden-slide');
+            }
+        });
+
+        // Rotate the wrapper for a 3D effect
+        const rotateAngle = -currentIndex * (360 / totalSlides);
+        // carouselWrapper.style.transform = `rotateY(${rotateAngle}deg)`;
+    }
+    
+    function showNext() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    slides.forEach(slide => {
+        slide.addEventListener('click', () => {
+            const slideIndex = parseInt(slide.dataset.index);
+            if (slideIndex !== currentIndex) {
+                currentIndex = slideIndex;
+                updateCarousel();
+            }
+        });
+    });
+
+    // Autoplay
+    let autoplayInterval = setInterval(showNext, 4000);
+
+    carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    carouselWrapper.addEventListener('mouseleave', () => autoplayInterval = setInterval(showNext, 4000));
+    
+    updateCarousel();
+
+    // Testimonial Carousel
+    const testimonialWrapper = document.getElementById('testimonial-carousel-wrapper');
+    const testimonialSlides = document.querySelectorAll('#testimonial-carousel-wrapper .testimonial-card');
+    const testimonialPrevBtn = document.getElementById('testimonial-prev');
+    const testimonialNextBtn = document.getElementById('testimonial-next');
+    const testimonialIndicatorsContainer = document.getElementById('testimonial-indicators');
+    
+    let testimonialCurrentIndex = 0;
+    const testimonialTotalSlides = testimonialSlides.length;
+
+    function createTestimonialIndicators() {
+        for (let i = 0; i < testimonialTotalSlides; i++) {
+            const button = document.createElement('button');
+            button.classList.add('carousel-indicator');
+            if (i === 0) button.classList.add('active');
+            button.dataset.index = i;
+            button.addEventListener('click', (e) => {
+                testimonialCurrentIndex = parseInt(e.target.dataset.index);
+                updateTestimonialCarousel();
+            });
+            testimonialIndicatorsContainer.appendChild(button);
+        }
+    }
+
+    function updateTestimonialCarousel() {
+        const offset = testimonialCurrentIndex * -100;
+        
+        testimonialSlides.forEach((slide, index) => {
+            const relativeIndex = index - testimonialCurrentIndex;
+            slide.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+            
+            if (relativeIndex === 0) { // Active slide
+                slide.style.transform = `translate(-50%, -50%) translateX(0) translateZ(0) scale(1)`;
+                slide.style.opacity = '1';
+                slide.style.zIndex = '3';
+            } else if (relativeIndex === 1 || relativeIndex === - (testimonialTotalSlides - 1)) { // Next slide
+                slide.style.transform = `translate(-50%, -50%) translateX(70%) translateZ(-300px) scale(0.8)`;
+                slide.style.opacity = '0.5';
+                slide.style.zIndex = '2';
+            } else if (relativeIndex === -1 || relativeIndex === (testimonialTotalSlides - 1)) { // Previous slide
+                slide.style.transform = `translate(-50%, -50%) translateX(-70%) translateZ(-300px) scale(0.8)`;
+                slide.style.opacity = '0.5';
+                slide.style.zIndex = '2';
+            } else { // Other slides
+                 slide.style.transform = `translate(-50%, -50%) translateX(${relativeIndex > 0 ? '140%' : '-140%'}) translateZ(-600px) scale(0.6)`;
+                slide.style.opacity = '0';
+                slide.style.zIndex = '1';
+            }
+        });
+        
+        const indicators = testimonialIndicatorsContainer.querySelectorAll('.carousel-indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === testimonialCurrentIndex);
+        });
+    }
+    
+    testimonialNextBtn.addEventListener('click', () => {
+        testimonialCurrentIndex = (testimonialCurrentIndex + 1) % testimonialTotalSlides;
+        updateTestimonialCarousel();
+    });
+    
+    testimonialPrevBtn.addEventListener('click', () => {
+        testimonialCurrentIndex = (testimonialCurrentIndex - 1 + testimonialTotalSlides) % testimonialTotalSlides;
+        updateTestimonialCarousel();
+    });
+    
+    createTestimonialIndicators();
+    updateTestimonialCarousel();
+
+    let testimonialAutoplay = setInterval(() => {
+        testimonialNextBtn.click();
+    }, 5000);
+
+    document.getElementById('testimonial-carousel-container').addEventListener('mouseenter', () => clearInterval(testimonialAutoplay));
+    document.getElementById('testimonial-carousel-container').addEventListener('mouseleave', () => {
+        testimonialAutoplay = setInterval(() => {
+            testimonialNextBtn.click();
+        }, 5000);
+    });
+
+
+    // Enhanced 360-degree panoramic image with auto-rotation
+    const panoramaContainer = document.getElementById('panorama-container');
+    const heroImage = document.getElementById('hero-360-image');
+    let isDragging = false;
+    let isHovering = false;
+    let startX = 0;
+    let currentX = 0;
+    let velocityX = 0;
+    let animationId = null;
+    let autoRotateId = null;
+
+    // Set initial position to center
+    const imageWidth = heroImage.offsetWidth;
+    const containerWidth = panoramaContainer.offsetWidth;
+    currentX = -(imageWidth - containerWidth) / 2;
+    heroImage.style.transform = `translateX(${currentX}px)`;
+
+    // Auto-rotation function
+    function autoRotate() {
+        if (!isDragging && !isHovering) {
+            currentX -= 0.5; // Slow rotation speed
+            
+            const minX = -(imageWidth - containerWidth);
+            
+            // Loop back when reaching the end
+            if (currentX < minX) {
+                currentX = 0;
+            }
+            
+            heroImage.style.transform = `translateX(${currentX}px)`;
+            autoRotateId = requestAnimationFrame(autoRotate);
+        }
+    }
+
+    // Start auto-rotation
+    autoRotate();
+
+    panoramaContainer.addEventListener('mouseenter', function() {
+        isHovering = true;
+        if (autoRotateId) {
+            cancelAnimationFrame(autoRotateId);
+        }
+    });
+
+    panoramaContainer.addEventListener('mouseleave', function() {
+        isHovering = false;
+        if (!isDragging) {
+            autoRotate();
+        }
+    });
+
+    panoramaContainer.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.clientX - currentX;
+        velocityX = 0;
+        panoramaContainer.style.cursor = 'grabbing';
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        if (autoRotateId) {
+            cancelAnimationFrame(autoRotateId);
+        }
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        
+        const x = e.clientX - startX;
+        const maxX = 0;
+        const minX = -(imageWidth - containerWidth);
+        
+        velocityX = x - currentX;
+        currentX = Math.max(minX, Math.min(maxX, x));
+        
+        heroImage.style.transform = `translateX(${currentX}px)`;
+    });
+
+    document.addEventListener('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+            panoramaContainer.style.cursor = 'grab';
+            
+            // Add momentum/inertia effect
+            function momentum() {
+                if (Math.abs(velocityX) > 0.5) {
+                    velocityX *= 0.95;
+                    currentX += velocityX;
+                    
+                    const maxX = 0;
+                    const minX = -(imageWidth - containerWidth);
+                    currentX = Math.max(minX, Math.min(maxX, currentX));
+                    
+                    heroImage.style.transform = `translateX(${currentX}px)`;
+                    animationId = requestAnimationFrame(momentum);
+                } else {
+                    if (!isHovering) {
+                        autoRotate();
+                    }
+                }
+            }
+            momentum();
+        }
+    });
+
+    // Touch events for mobile
+    panoramaContainer.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        isHovering = true;
+        startX = e.touches[0].clientX - currentX;
+        velocityX = 0;
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+        }
+        if (autoRotateId) {
+            cancelAnimationFrame(autoRotateId);
+        }
+    });
+
+    document.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        
+        const x = e.touches[0].clientX - startX;
+        const maxX = 0;
+        const minX = -(imageWidth - containerWidth);
+        
+        velocityX = x - currentX;
+        currentX = Math.max(minX, Math.min(maxX, x));
+        
+        heroImage.style.transform = `translateX(${currentX}px)`;
+    });
+
+    document.addEventListener('touchend', function() {
+        if (isDragging) {
+            isDragging = false;
+            isHovering = false;
+            
+            function momentum() {
+                if (Math.abs(velocityX) > 0.5) {
+                    velocityX *= 0.95;
+                    currentX += velocityX;
+                    
+                    const maxX = 0;
+                    const minX = -(imageWidth - containerWidth);
+                    currentX = Math.max(minX, Math.min(maxX, currentX));
+                    
+                    heroImage.style.transform = `translateX(${currentX}px)`;
+                    animationId = requestAnimationFrame(momentum);
+                } else {
+                    autoRotate();
+                }
+            }
+            momentum();
+        }
+    });
+
+    // Add parallax scrolling effect
+    function parallaxScroll() {
+        const parallaxSections = document.querySelectorAll('.parallax-section');
+        
+        parallaxSections.forEach(section => {
+            const bgImage = section.querySelector('.parallax-bg-image');
+            const overlay = section.querySelector('.parallax-overlay');
+            const content = section.querySelector('.parallax-content');
+            
+            if (bgImage) {
+                const scrolled = window.pageYOffset;
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const windowHeight = window.innerHeight;
+                
+                // Calculate if section is in viewport
+                if (scrolled + windowHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
+                    const yPos = (scrolled - sectionTop) * 0.3;
+                    bgImage.style.transform = `translateY(${yPos}px)`;
+                    
+                    if (overlay) {
+                        overlay.style.transform = `translateY(${yPos * 0.5}px)`;
+                    }
+                    
+                    if (content) {
+                        content.style.transform = `translateY(${yPos * -0.1}px)`;
+                    }
+                }
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', parallaxScroll);
+    parallaxScroll(); // Initial call
+
+    // Other interactive images
+    document.querySelectorAll('.interactive-image:not(#hero-360-image)').forEach(img => {
+        img.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / centerY * 5;
+            const rotateY = (x - centerX) / centerX * 5;
+            
+            this.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+        
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+    });
+});
+</script>
+
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" class="fixed inset-0 z-[100] hidden p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+    <div class="flex items-center justify-center min-h-full">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+            <div class="sticky top-0 bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] px-8 py-6 flex justify-between items-center">
+                <div>
+                    <h2 class="heading-font text-2xl font-bold text-white">Privacy Policy</h2>
+                    <p class="body-font text-white/90 text-sm">Kings Club - Your Trust Matters</p>
+                </div>
+                <button onclick="closeModal('privacy-modal')" class="text-white hover:text-gray-200 text-2xl transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto max-h-[60vh]">
+                <div class="space-y-6 body-font text-gray-700">
+                    <p>Kings Club makes every effort to handle your personal information as safely and securely as reasonably possible. When you visit our websites or use our services, you're trusting us with your information and we fully understand that this is a big responsibility and we take all reasonable measures to safeguard and protect your information.</p>
+                    
+                    <p>This Privacy Policy is meant to help you understand what information we collect, why we collect it, and how you can update and manage your information.</p>
+                    
+                    <p>As described below, your information may be collected by Kings Club, disclosed to third parties, and used by third parties and Kings Club. This Privacy Policy describes the information we collect from you and how we may use that information.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8 mb-4">Why We Collect Your Information:</h3>
+                    <ul class="space-y-3 pl-5">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#d5b14c] mt-1 mr-3"></i>
+                            <span>To register you so that you access parts and services of the Kings Club sites</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#d5b14c] mt-1 mr-3"></i>
+                            <span>To register you so that you may use access "Mobile" App</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#d5b14c] mt-1 mr-3"></i>
+                            <span>To register you so that you may subscribe to our newsletters</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#d5b14c] mt-1 mr-3"></i>
+                            <span>So that you may participate in discussion forums and blogs on our site</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#d5b14c] mt-1 mr-3"></i>
+                            <span>To perform verification / validation of identity, where applicable</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#d5b14c] mt-1 mr-3"></i>
+                            <span>To provide you with timely and relevant information through post/courier, SMS, Telephone/GSM, E-Mail and social media channels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#d5b14c] mt-1 mr-3"></i>
+                            <span>To provide you with a more personalized and meaningful experience on the Kings Club sites.</span>
+                        </li>
+                    </ul>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8 mb-4">Third-Party Services:</h3>
+                    <p>We occasionally employ other companies and individuals to perform functions on our behalf. For example, other companies and individuals may fulfill your orders from us, send you postal mail and e-mail, remove repetitive information from our customer lists, analyze our data, provide us with marketing assistance, and process credit card payments. These third-party service providers have access to personal information needed to perform their functions, and may not use it for other purposes.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8 mb-4">Data Protection:</h3>
+                    <p>We do not sell, rent, share, or otherwise disclose personally identifiable information of our customers for commercial purposes. We do not intend to disclose any personal information of yours without your consent to any third party who is not bound to act on our behalf unless such disclosure is required by law.</p>
+                    
+                    <div class="bg-amber-50 border-l-4 border-[#d5b14c] p-4 mt-6">
+                        <p class="text-sm"><strong>Last Updated:</strong> December 2024</p>
+                        <p class="text-sm mt-2">For any privacy-related concerns, please contact us at <span class="text-[#d5b14c] font-semibold">privacy@kingsclub.in</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Terms and Conditions Modal -->
+<div id="terms-modal" class="fixed inset-0 z-[100] hidden p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+    <div class="flex items-center justify-center min-h-full">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+            <div class="sticky top-0 bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] px-8 py-6 flex justify-between items-center">
+                <div>
+                    <h2 class="heading-font text-2xl font-bold text-white">Terms & Conditions</h2>
+                    <p class="body-font text-white/90 text-sm">Kings Club - Membership Agreement</p>
+                </div>
+                <button onclick="closeModal('terms-modal')" class="text-white hover:text-gray-200 text-2xl transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto max-h-[60vh]">
+                <div class="space-y-6 body-font text-gray-700">
+                    <h3 class="heading-font text-xl font-bold text-gray-800">1. Membership Agreement</h3>
+                    <p>By becoming a member of Kings Club, you agree to abide by all rules, regulations, and policies set forth by the Club. Membership is subject to approval by the Club's management.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">2. Membership Fees & Payments</h3>
+                    <p>Membership fees are payable in advance as per the chosen membership plan. Late payments may result in suspension of membership privileges. All fees are non-transferable and non-refundable except as specified in our Refund Policy.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">3. Club Rules & Conduct</h3>
+                    <p>All members and guests must adhere to the Club's code of conduct. The Club reserves the right to refuse admission or cancel membership for inappropriate behavior or violation of Club rules.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">4. Facility Usage</h3>
+                    <p>Members must book facilities in advance through the Club's reservation system. Club facilities are to be used responsibly, and any damage caused will be charged to the member's account.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">5. Guests Policy</h3>
+                    <p>Members may bring guests subject to Club policies and guest charges. Members are responsible for their guests' conduct and any charges incurred by them.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">6. Liability</h3>
+                    <p>The Club is not liable for any loss, damage, or injury to persons or property while on Club premises, except where such liability cannot be excluded by law.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">7. Amendments</h3>
+                    <p>The Club reserves the right to amend these terms and conditions at any time. Members will be notified of significant changes via email or Club notices.</p>
+                    
+                    <div class="bg-amber-50 border-l-4 border-[#d5b14c] p-4 mt-6">
+                        <p class="text-sm"><strong>Last Updated:</strong> December 2024</p>
+                        <p class="text-sm mt-2">For any terms-related queries, please contact us at <span class="text-[#d5b14c] font-semibold">legal@kingsclub.in</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Refund Policy Modal -->
+<div id="refund-modal" class="fixed inset-0 z-[100] hidden p-4 bg-black/60 backdrop-blur-sm overflow-y-auto">
+    <div class="flex items-center justify-center min-h-full">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+            <div class="sticky top-0 bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] px-8 py-6 flex justify-between items-center">
+                <div>
+                    <h2 class="heading-font text-2xl font-bold text-white">Refund Policy</h2>
+                    <p class="body-font text-white/90 text-sm">Kings Club - Financial Policies</p>
+                </div>
+                <button onclick="closeModal('refund-modal')" class="text-white hover:text-gray-200 text-2xl transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-8 overflow-y-auto max-h-[60vh]">
+                <div class="space-y-6 body-font text-gray-700">
+                    <h3 class="heading-font text-xl font-bold text-gray-800">1. Membership Fees</h3>
+                    <p>Membership fees are generally non-refundable. However, in exceptional circumstances such as medical emergencies or relocation, refund requests may be considered on a case-by-case basis at the discretion of Club management.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">2. Event Bookings</h3>
+                    <p>Cancellations made more than 30 days before the event date are eligible for a full refund. Cancellations made between 15-30 days before the event will receive a 50% refund. No refunds for cancellations made less than 15 days before the event.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">3. Service Charges</h3>
+                    <p>Service charges for facilities usage, food and beverages, and other ancillary services are non-refundable once services have been rendered.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">4. Processing Time</h3>
+                    <p>Approved refunds will be processed within 15-30 business days to the original payment method used for the transaction.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">5. Refund Request Procedure</h3>
+                    <p>All refund requests must be submitted in writing to the Club's accounts department along with supporting documents. Requests will be reviewed within 10 business days.</p>
+                    
+                    <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">6. Force Majeure</h3>
+                    <p>In case of events cancelled due to circumstances beyond our control (natural disasters, government restrictions, etc.), refunds or credits for future events will be provided at the Club's discretion.</p>
+                    
+                    <div class="bg-amber-50 border-l-4 border-[#d5b14c] p-4 mt-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-info-circle text-[#d5b14c] text-xl mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-semibold">Important Note:</p>
+                                <p class="text-sm mt-1">For faster processing of refund requests, please ensure all required documents are submitted. Incomplete requests will delay processing.</p>
+                            </div>
+                        </div>
+                        <p class="text-sm mt-4"><strong>Last Updated:</strong> December 2024</p>
+                        <p class="text-sm mt-2">For refund-related inquiries, contact <span class="text-[#d5b14c] font-semibold">accounts@kingsclub.in</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Terms and Conditions Modal -->
+<div id="terms-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+        <div class="sticky top-0 bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] px-8 py-6 flex justify-between items-center">
+            <div>
+                <h2 class="heading-font text-2xl font-bold text-white">Terms & Conditions</h2>
+                <p class="body-font text-white/90 text-sm">Kings Club - Membership Agreement</p>
+            </div>
+            <button onclick="closeModal('terms-modal')" class="text-white hover:text-gray-200 text-2xl transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="p-8 overflow-y-auto max-h-[60vh]">
+            <div class="space-y-6 body-font text-gray-700">
+                <h3 class="heading-font text-xl font-bold text-gray-800">1. Membership Agreement</h3>
+                <p>By becoming a member of Kings Club, you agree to abide by all rules, regulations, and policies set forth by the Club. Membership is subject to approval by the Club's management.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">2. Membership Fees & Payments</h3>
+                <p>Membership fees are payable in advance as per the chosen membership plan. Late payments may result in suspension of membership privileges. All fees are non-transferable and non-refundable except as specified in our Refund Policy.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">3. Club Rules & Conduct</h3>
+                <p>All members and guests must adhere to the Club's code of conduct. The Club reserves the right to refuse admission or cancel membership for inappropriate behavior or violation of Club rules.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">4. Facility Usage</h3>
+                <p>Members must book facilities in advance through the Club's reservation system. Club facilities are to be used responsibly, and any damage caused will be charged to the member's account.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">5. Guests Policy</h3>
+                <p>Members may bring guests subject to Club policies and guest charges. Members are responsible for their guests' conduct and any charges incurred by them.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">6. Liability</h3>
+                <p>The Club is not liable for any loss, damage, or injury to persons or property while on Club premises, except where such liability cannot be excluded by law.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">7. Amendments</h3>
+                <p>The Club reserves the right to amend these terms and conditions at any time. Members will be notified of significant changes via email or Club notices.</p>
+                
+                <div class="bg-amber-50 border-l-4 border-[#d5b14c] p-4 mt-6">
+                    <p class="text-sm"><strong>Last Updated:</strong> December 2024</p>
+                    <p class="text-sm mt-2">For any terms-related queries, please contact us at <span class="text-[#d5b14c] font-semibold">legal@kingsclub.in</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Refund Policy Modal -->
+<div id="refund-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+        <div class="sticky top-0 bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] px-8 py-6 flex justify-between items-center">
+            <div>
+                <h2 class="heading-font text-2xl font-bold text-white">Refund Policy</h2>
+                <p class="body-font text-white/90 text-sm">Kings Club - Financial Policies</p>
+            </div>
+            <button onclick="closeModal('refund-modal')" class="text-white hover:text-gray-200 text-2xl transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="p-8 overflow-y-auto max-h-[60vh]">
+            <div class="space-y-6 body-font text-gray-700">
+                <h3 class="heading-font text-xl font-bold text-gray-800">1. Membership Fees</h3>
+                <p>Membership fees are generally non-refundable. However, in exceptional circumstances such as medical emergencies or relocation, refund requests may be considered on a case-by-case basis at the discretion of Club management.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">2. Event Bookings</h3>
+                <p>Cancellations made more than 30 days before the event date are eligible for a full refund. Cancellations made between 15-30 days before the event will receive a 50% refund. No refunds for cancellations made less than 15 days before the event.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">3. Service Charges</h3>
+                <p>Service charges for facilities usage, food and beverages, and other ancillary services are non-refundable once services have been rendered.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">4. Processing Time</h3>
+                <p>Approved refunds will be processed within 15-30 business days to the original payment method used for the transaction.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">5. Refund Request Procedure</h3>
+                <p>All refund requests must be submitted in writing to the Club's accounts department along with supporting documents. Requests will be reviewed within 10 business days.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">6. Force Majeure</h3>
+                <p>In case of events cancelled due to circumstances beyond our control (natural disasters, government restrictions, etc.), refunds or credits for future events will be provided at the Club's discretion.</p>
+                
+                <div class="bg-amber-50 border-l-4 border-[#d5b14c] p-4 mt-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-info-circle text-[#d5b14c] text-xl mt-1 mr-3"></i>
+                        <div>
+                            <p class="font-semibold">Important Note:</p>
+                            <p class="text-sm mt-1">For faster processing of refund requests, please ensure all required documents are submitted. Incomplete requests will delay processing.</p>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-4"><strong>Last Updated:</strong> December 2024</p>
+                    <p class="text-sm mt-2">For refund-related inquiries, contact <span class="text-[#d5b14c] font-semibold">accounts@kingsclub.in</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

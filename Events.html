@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-light': '#F4E4C1',
+                        'gold-dark': '#B8941F',
+                        cream: '#FFF8E7',
+                        'cream-dark': '#F5EDD6',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+<header id="header" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <!-- <i class="fa-solid fa-crown text-gold text-3xl"></i> -->
+            <img class="h-10 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, gold, elegant and luxurious, on a transparent background" />
+               
+                <span class="font-serif text-2xl font-bold text-gray-900">Kings Club</span>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-gold transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-gold transition">About Us</a>
+                <div class="relative group">
+                    <a href="#membership" class="text-gray-600 hover:text-gold transition flex items-center">
+                        Membership <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <a href="#dining" class="text-gray-600 hover:text-gold transition">Dining</a>
+                <a href="#sports" class="text-gray-600 hover:text-gold transition">Sports & Activities</a>
+                <a href="#events" class="text-gray-900 font-medium hover:text-gold transition">Events</a>
+                <a href="#gallery" class="text-gray-600 hover:text-gold transition">Gallery</a>
+                <a href="#contact" class="text-gray-600 hover:text-gold transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="hidden lg:block px-6 py-2.5 bg-gold text-white font-semibold rounded-md hover:bg-gold-dark transition">Join Now</button>
+                <button class="lg:hidden text-gray-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main id="main-content" class="pt-20">
+    <section id="events-hero" class="relative h-[600px] overflow-hidden bg-gradient-to-br from-gold-light to-cream">
+        <div class="container mx-auto px-6 h-full flex items-center">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-2 bg-gold/20 backdrop-blur-sm rounded-full mb-6">
+                    <span class="text-gold-dark font-semibold text-sm tracking-wide">EXCLUSIVE EVENTS & CELEBRATIONS</span>
+                </div>
+                <h1 class="font-serif text-6xl font-bold text-gray-900 mb-6 leading-tight">Club Events & Calendar</h1>
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed">Join us for memorable experiences, exclusive gatherings, and celebrations that bring our community together in luxury and elegance.</p>
+                <div class="flex items-center space-x-4">
+                    <button class="px-8 py-4 bg-gold text-white font-semibold rounded-md hover:bg-gold-dark transition shadow-lg">View All Events</button>
+                    <button class="px-8 py-4 bg-white/80 backdrop-blur-sm text-gray-900 font-semibold rounded-md hover:bg-white transition border border-gray-200">Event Hosting</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calendar-section" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div id="calendar-widget" class="lg:col-span-2">
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                        <div class="bg-gradient-to-r from-gold to-gold-dark text-white p-6">
+                            <div class="flex items-center justify-between">
+                                <h2 class="font-serif text-3xl font-bold">December 2024</h2>
+                                <div class="flex items-center space-x-3">
+                                    <button class="p-2 hover:bg-white/20 rounded-lg transition">
+                                        <i class="fa-solid fa-chevron-left text-xl"></i>
+                                    </button>
+                                    <button class="p-2 hover:bg-white/20 rounded-lg transition">
+                                        <i class="fa-solid fa-chevron-right text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <div class="grid grid-cols-7 gap-2 mb-4">
+                                <div class="text-center font-semibold text-gray-600 py-2">Sun</div>
+                                <div class="text-center font-semibold text-gray-600 py-2">Mon</div>
+                                <div class="text-center font-semibold text-gray-600 py-2">Tue</div>
+                                <div class="text-center font-semibold text-gray-600 py-2">Wed</div>
+                                <div class="text-center font-semibold text-gray-600 py-2">Thu</div>
+                                <div class="text-center font-semibold text-gray-600 py-2">Fri</div>
+                                <div class="text-center font-semibold text-gray-600 py-2">Sat</div>
+                            </div>
+                            
+                            <div class="grid grid-cols-7 gap-2">
+                                <div class="h-16 flex flex-col justify-center items-center text-gray-400">1</div>
+                                <div class="h-16 flex flex-col justify-center items-center">2</div>
+                                <div class="h-16 flex flex-col justify-center items-center">3</div>
+                                <div class="h-16 flex flex-col justify-center items-center">4</div>
+                                <div class="h-16 flex flex-col justify-center items-center">5</div>
+                                <div class="h-16 flex flex-col justify-center items-center">6</div>
+                                <div class="h-16 flex flex-col justify-center items-center relative">
+                                    <span class="text-gray-900">7</span>
+                                    <div class="w-2 h-2 bg-purple-500 rounded-full absolute bottom-1"></div>
+                                </div>
+                                <div class="h-16 flex flex-col justify-center items-center">8</div>
+                                <div class="h-16 flex flex-col justify-center items-center">9</div>
+                                <div class="h-16 flex flex-col justify-center items-center">10</div>
+                                <div class="h-16 flex flex-col justify-center items-center">11</div>
+                                <div class="h-16 flex flex-col justify-center items-center">12</div>
+                                <div class="h-16 flex flex-col justify-center items-center">13</div>
+                                <div class="h-16 flex flex-col justify-center items-center relative">
+                                    <span class="text-gray-900">14</span>
+                                    <div class="w-2 h-2 bg-green-500 rounded-full absolute bottom-1"></div>
+                                </div>
+                                <div class="h-16 flex flex-col justify-center items-center relative">
+                                    <span class="text-gray-900">15</span>
+                                    <div class="w-2 h-2 bg-blue-500 rounded-full absolute bottom-1"></div>
+                                </div>
+                                <div class="h-16 flex flex-col justify-center items-center">16</div>
+                                <div class="h-16 flex flex-col justify-center items-center">17</div>
+                                <div class="h-16 flex flex-col justify-center items-center">18</div>
+                                <div class="h-16 flex flex-col justify-center items-center">19</div>
+                                <div class="h-16 flex flex-col justify-center items-center">20</div>
+                                <div class="h-16 flex flex-col justify-center items-center">21</div>
+                                <div class="h-16 flex flex-col justify-center items-center relative">
+                                    <span class="text-gray-900">22</span>
+                                    <div class="w-2 h-2 bg-red-500 rounded-full absolute bottom-1"></div>
+                                </div>
+                                <div class="h-16 flex flex-col justify-center items-center">23</div>
+                                <div class="h-16 flex flex-col justify-center items-center">24</div>
+                                <div class="h-16 flex flex-col justify-center items-center relative bg-gold/20 rounded-lg">
+                                    <span class="text-gold-dark font-bold">25</span>
+                                    <div class="w-2 h-2 bg-gold rounded-full absolute bottom-1"></div>
+                                </div>
+                                <div class="h-16 flex flex-col justify-center items-center">26</div>
+                                <div class="h-16 flex flex-col justify-center items-center">27</div>
+                                <div class="h-16 flex flex-col justify-center items-center">28</div>
+                                <div class="h-16 flex flex-col justify-center items-center">29</div>
+                                <div class="h-16 flex flex-col justify-center items-center">30</div>
+                                <div class="h-16 flex flex-col justify-center items-center relative bg-gold/10 rounded-lg">
+                                    <span class="text-gold-dark font-bold">31</span>
+                                    <div class="w-2 h-2 bg-gold rounded-full absolute bottom-1"></div>
+                                </div>
+                                <div class="h-16 flex flex-col justify-center items-center text-gray-400">1</div>
+                                <div class="h-16 flex flex-col justify-center items-center text-gray-400">2</div>
+                                <div class="h-16 flex flex-col justify-center items-center text-gray-400">3</div>
+                                <div class="h-16 flex flex-col justify-center items-center text-gray-400">4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="upcoming-events-sidebar" class="space-y-6">
+                    <div class="bg-gradient-to-br from-cream to-white rounded-2xl p-6 shadow-lg">
+                        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-6">Upcoming Events</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4 p-4 bg-white rounded-xl border border-gold/20 hover:shadow-md transition">
+                                <div class="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-glass-cheers text-gold text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">New Year Gala</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Dec 25, 2024 • 7:00 PM</p>
+                                    <span class="px-2 py-1 bg-gold/20 text-gold text-xs rounded-full">Featured</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-music text-purple-600 text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">Jazz Night</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Dec 7, 2024 • 8:00 PM</p>
+                                    <span class="px-2 py-1 bg-purple-100 text-purple-600 text-xs rounded-full">Cultural</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-trophy text-green-600 text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">Tennis Tournament</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Dec 14, 2024 • 9:00 AM</p>
+                                    <span class="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full">Sports</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-users text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">Members Meet</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Dec 15, 2024 • 6:00 PM</p>
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">Social</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition">
+                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-heart text-red-600 text-xl"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">Charity Dinner</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Dec 22, 2024 • 7:30 PM</p>
+                                    <span class="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full">Charity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-gold-light to-cream rounded-2xl p-6 shadow-lg">
+                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-4">Event Legend</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-4 h-4 bg-gold rounded-full"></div>
+                                <span class="text-sm text-gray-700">Featured Events</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-4 h-4 bg-purple-500 rounded-full"></div>
+                                <span class="text-sm text-gray-700">Cultural Programs</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                                <span class="text-sm text-gray-700">Sports Events</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+                                <span class="text-sm text-gray-700">Social Gatherings</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-4 h-4 bg-red-500 rounded-full"></div>
+                                <span class="text-sm text-gray-700">Special Occasions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-events" class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-2 bg-gold/10 rounded-full text-gold font-semibold text-sm tracking-wide mb-4">FEATURED EVENTS</span>
+                <h2 class="font-serif text-5xl font-bold text-gray-900 mb-4">Don't Miss These Highlights</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Exclusive events that showcase the best of Kings Club's hospitality and community spirit</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div id="gala-event" class="bg-white rounded-2xl overflow-hidden shadow-xl">
+                    <div class="h-80 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/846aaaf3e4-9f0d413daaed9263cb70.png" alt="elegant new year gala dinner ballroom with golden decorations, chandeliers, formal dining setup, luxury event venue" />
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-gold/20 text-gold rounded-full text-sm font-semibold">Featured Event</span>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fa-regular fa-calendar mr-2"></i>
+                                <span>December 25, 2024</span>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-3xl font-bold text-gray-900 mb-3">New Year Gala Dinner</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Welcome 2025 in grand style with an exclusive black-tie gala featuring world-class entertainment, gourmet cuisine, and champagne toasts at midnight. Limited to 200 guests.</p>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-4 text-sm text-gray-600">
+                                <div class="flex items-center">
+                                    <i class="fa-regular fa-clock mr-2"></i>
+                                    <span>7:00 PM - 2:00 AM</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-users mr-2"></i>
+                                    <span>150/200 Seats</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <button class="flex-1 py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dark transition">Reserve Now</button>
+                            <button class="px-6 py-3 border border-gold text-gold font-semibold rounded-lg hover:bg-gold/10 transition">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div id="jazz-event" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d4536bb77c-166d12838922eed8af8a.png" alt="jazz music performance on stage with saxophone player, intimate club setting, warm lighting" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-1 bg-purple-100 text-purple-600 text-xs rounded-full">Cultural</span>
+                                    <span class="text-sm text-gray-600">Dec 7 • 8:00 PM</span>
+                                </div>
+                                <h4 class="font-serif text-xl font-bold text-gray-900 mb-2">Jazz Night with Local Artists</h4>
+                                <p class="text-gray-600 text-sm mb-3">Enjoy smooth jazz performances by Bangalore's finest musicians in our intimate lounge setting.</p>
+                                <button class="px-4 py-2 bg-purple-100 text-purple-600 font-semibold rounded-lg hover:bg-purple-200 transition text-sm">Book Seats</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tennis-event" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/df36d63f5e-24195f491704ede27f6e.png" alt="tennis tournament match on professional court, players competing, sports event atmosphere" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full">Sports</span>
+                                    <span class="text-sm text-gray-600">Dec 14 • 9:00 AM</span>
+                                </div>
+                                <h4 class="font-serif text-xl font-bold text-gray-900 mb-2">Annual Tennis Championship</h4>
+                                <p class="text-gray-600 text-sm mb-3">Compete or spectate in our premier tennis tournament featuring multiple categories and age groups.</p>
+                                <button class="px-4 py-2 bg-green-100 text-green-600 font-semibold rounded-lg hover:bg-green-200 transition text-sm">Register</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="charity-event" class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                                <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/b30868ef6a-45f79d8dd6023eaaf4fc.png" alt="elegant charity dinner event with fundraising atmosphere, formal table setting, philanthropic gathering" />
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full">Charity</span>
+                                    <span class="text-sm text-gray-600">Dec 22 • 7:30 PM</span>
+                                </div>
+                                <h4 class="font-serif text-xl font-bold text-gray-900 mb-2">Charity Dinner for Education</h4>
+                                <p class="text-gray-600 text-sm mb-3">Support underprivileged children's education through our annual charity dinner and auction.</p>
+                                <button class="px-4 py-2 bg-red-100 text-red-600 font-semibold rounded-lg hover:bg-red-200 transition text-sm">Donate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="event-hosting" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="inline-block px-4 py-2 bg-gold/10 rounded-full text-gold font-semibold text-sm tracking-wide mb-4">PRIVATE EVENTS</span>
+                    <h2 class="font-serif text-5xl font-bold text-gray-900 mb-6">Host Your Special Occasions</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">Transform your celebrations into unforgettable experiences with our premium event hosting services. From intimate family gatherings to grand corporate events, we provide the perfect setting.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center p-6 bg-cream rounded-xl">
+                            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa-solid fa-birthday-cake text-gold text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Birthday Parties</h4>
+                            <p class="text-sm text-gray-600">Memorable celebrations for all ages</p>
+                        </div>
+                        <div class="text-center p-6 bg-cream rounded-xl">
+                            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa-solid fa-ring text-gold text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Weddings</h4>
+                            <p class="text-sm text-gray-600">Elegant venues for your special day</p>
+                        </div>
+                        <div class="text-center p-6 bg-cream rounded-xl">
+                            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa-solid fa-briefcase text-gold text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Corporate Events</h4>
+                            <p class="text-sm text-gray-600">Professional meetings and conferences</p>
+                        </div>
+                        <div class="text-center p-6 bg-cream rounded-xl">
+                            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa-solid fa-graduation-cap text-gold text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Anniversaries</h4>
+                            <p class="text-sm text-gray-600">Celebrate milestones in style</p>
+                        </div>
+                    </div>
+                    
+                    <button class="px-8 py-3 bg-gold text-white font-semibold rounded-lg hover:bg-gold-dark transition">Plan Your Event</button>
+                </div>
+                
+                <div class="h-[600px] overflow-hidden rounded-2xl">
+                    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c8f4a5b92d-3e7f8c9a2b1d4e5f6a7b.png" alt="luxury event venue setup with elegant decoration, banquet hall, premium event hosting space" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-section" class="py-20 bg-gradient-to-br from-gold to-gold-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="font-serif text-4xl font-bold text-white mb-6">Join Us for Exclusive Events</h2>
+                <p class="text-xl text-white/90 mb-8">Become a member today and get access to all our premium events, exclusive gatherings, and special celebrations throughout the year.</p>
+                <div class="flex items-center justify-center space-x-4">
+                    <button class="px-8 py-4 bg-white text-gold font-semibold rounded-lg hover:bg-cream transition shadow-lg">Become a Member</button>
+                    <button class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center space-x-2 mb-6">
+                    <i class="fa-solid fa-crown text-gold text-3xl"></i>
+                    <span class="font-serif text-2xl font-bold">Kings Club</span>
+                </div>
+                <p class="text-gray-400 mb-6">Bangalore's premier membership club for families seeking luxury, community, and exceptional experiences.</p>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Membership</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Events</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Gallery</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold mb-6">Facilities</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Dining</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Sports</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Activities</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold transition">Event Hosting</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-xl font-bold mb-6">Contact</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-location-dot mt-1 mr-3 text-gold"></i>
+                        <span>123 MG Road, Bangalore, Karnataka 560001</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-phone mr-3 text-gold"></i>
+                        <span>+91 80 1234 5678</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope mr-3 text-gold"></i>
+                        <span>info@kingsclub.in</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Kings Club. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
