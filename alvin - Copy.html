@@ -168,8 +168,6 @@
             transform: translateZ(0);
         }
 
-        
-
         /* Smooth parallax scroll */
         html {
             scroll-behavior: smooth;
@@ -467,9 +465,8 @@
 }
 
 .bg-image-animate {
-    animation: gentlePan 25s ease-in-out infinite;
+    animation: gentlePan 45s ease-in-out infinite;
     background-size: cover;
-     will-change: transform;
 }
 
         /* Custom scrollbar for modal */
@@ -1004,7 +1001,7 @@
 <!-- <div class="snap-spacer"></div> -->
       <section class="snap-section one">
         <!-- <div id="feature-sports" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group"> -->
-        <div id="feature-sports" class="h-screen p-12  relative group">
+        <div id="feature-sports" class="h-screen p-12 ">
     <!-- Moving Background Image -->
          <!-- background-image: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');  -->
    
@@ -1027,9 +1024,7 @@
 </div>
     
     <!-- <div class="absolute top-0 right-0 w-[100%] h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div> -->
-    <!-- <div class="absolute top-0 right-0 w-[100%] h-64 group-hover:scale-150 transition-transform duration-700"></div> -->
-    <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-   
+    <div class="absolute top-0 right-0 w-[100%] h-64 group-hover:scale-150 transition-transform duration-700"></div>
     <h3 class="heading-font text-5xl font-bold text-gray-800 text-cleft mt-24 relative z-10">
         <!-- <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Sports</span> -->
         <!-- <span class="bg-gradient-to-r from-gray-700 to-white bg-clip-text text-transparent">Sports</span> -->
@@ -1073,7 +1068,7 @@
        <!-- vinay section 2 -->
       <section class="snap-section two">
         <!-- <div id="feature-fitness" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group"> -->
-        <div id="feature-fitness" class="h-screen p-12 relative group">
+        <div id="feature-fitness" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
    
     <!-- Moving Background Image -->
    <div class="absolute inset-0 overflow-hidden">
@@ -1135,7 +1130,7 @@
        <!-- vinay section 2 -->
          <!-- vinay section 3 -->
       <section class="snap-section three">
-        <div id="feature-entertainment" class="h-screen p-12 relative group">
+        <div id="feature-entertainment" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
     
        <!-- Moving Background Image -->
    <div class="absolute inset-0 overflow-hidden">
@@ -1186,93 +1181,85 @@
        <!-- vinay section 3 -->
          <!-- vinay section 4 -->
       <section class="snap-section four">
-        <div id="feature-banquets" class="h-screen p-12 overflow-hidden relative group">
+        <div id="feature-banquets" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
     
 
-   <!-- Moving Background Image -->
-   <div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('https://image.wedmegood.com/resized/1000X/uploads/member/4032275/1676036530_WhatsApp_Image_2023_02_08_at_6.28.16_PM.jpeg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-      
-    "></div>
-</div>
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="parallax-bg-image bg-image-animate" style="
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/011/144/428/non_2x/playing-chips-and-poker-cards-on-dark-background-poker-game-casiono-online-web-background-template-illustration-free-vector.jpg');
+            background-size: cover;
+            background-position: center;
+            will-change: transform, filter;
+            /* transition: transform 0.3s ease-out; */
+             opacity: 0.15;
+        filter: brightness(1.2);
+        "></div>
+    </div>
     
-   <div class="relative z-10 flex justify-center">
-  <div class="w-full max-w-xl px-6">
-
-    <!-- CENTERED HEADING -->
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mt-16">
-      Banquets
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+    <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative z-10">
+        <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Banquets</span>
     </h3>
-
-    <!-- LEFT-ALIGNED CONTENT -->
-     <div class="space-y-2 text-center pt-6">
-     <div class="space-y-2 text-left">
-    <p class="body-font text-black leading-loose text-2xl font-sans">
-      At the Kings Club, you can choose from a variety of banqueting facilities that ensure your celebration is a memorable experience.
-      At our unique banquet halls, we redefine hospitality by offering an explicit theme for every occasion.
-    </p></div>
-
-    <ul class="space-y-3 body-font text-2xl font-sans">
-      <li class="text-black">Indoor Banquet</li>
-      <li class="text-black">Outdoor Banquet</li>
-      <li class="text-black">Rooms</li>
-      <li class="text-black">Ample Parking</li>
-    </ul>
-  </div>
-  </div>
-</div>
-
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
+        <div class="space-y-6">
+            <p class="body-font text-gray-700 leading-loose text-lg">
+                At the Kings Club, you can choose from a variety of banqueting facilities that ensure your celebration is a memorable experience. At our unique banquet halls, we redefine hospitality by offering an explicit theme for every occasion, such as Engagement Parties, Anniversaries, Birthday Parties, Weddings, Kitty Parties, and Corporate Events, Conference hall, meeting hall, & much more. We will take care of everything from start to finish with our team of highly skilled professionals.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-r8hi2gfu4slrwc3i9cecx6sdiypzlkj7b49mzfkj1k.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
+                </div>
+                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
+                    <img src="https://kingsclub.in/wp-content/uploads/2021/03/Indoor-Banquit-Hall-Banner-1200x749.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/Standard-Room-r8hi2com8vm8ylf1nqi1e3xz80e74mkwz2wt9cc01s.jpg" alt="indoor banquet, elegant hall" class="w-full h-full object-cover" />
+            </div>
+            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
+                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-1-scaled-r8hi2gfu4sm89lyxq7cbqvgdu1hcma45dwnwlssia0.jpg" alt="outdoor banquet, elegant hall" class="w-full h-full object-cover" />
+            </div>
+        </div>
+    </div>
 </div>
       </section>
        <!-- vinay section 4 -->
        <!-- vinay section 5 -->
         <section class="snap-section five">
-<div id="feature-sports" class="h-screen p-12  relative group">
+<div id="feature-restaurant" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
     
     <!-- Moving Background Image -->
-      <div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/770987670.jpg?k=6ddda725ed13dfd74c6c2ca35bb66eddff10f2ba10979551b3e4c6a4cd46fa70&o=');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-        opacity: 1;
-        filter: brightness(1);
-    "></div>
-</div>
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="parallax-bg-image bg-image-animate" style="
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            will-change: transform, filter;
+            transition: transform 0.3s ease-out;
+             opacity: 0.15;
+        filter: brightness(1.2);
+        "></div>
+    </div>
     
-    <!-- <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+    <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
     <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative z-10">
         <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Restaurant</span>
-    </h3> -->
-    <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-   
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mt-16 relative z-10">
-        <!-- <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Sports</span> -->
-        <!-- <span class="bg-gradient-to-r from-gray-700 to-white bg-clip-text text-transparent">Sports</span> -->
-        <span class="text-white">Restaurant</span>
     </h3>
-    <!-- <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10"> -->
-    <div class="grid md:grid-cols-2 gap-12 items-center mt-16 relative z-10">
-   
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
         <div class="space-y-6">
-            <p class="body-font text-white leading-loose text-lg">
+            <p class="body-font text-gray-700 leading-loose text-lg">
                 At the Kings Club, you can enjoy a variety of fine dining experiences with our world-class chefs. From elegant banquets to casual gatherings, our restaurant offers a perfect blend of luxury and comfort. Whether you're celebrating a special occasion or just enjoying a meal with friends, our restaurant provides an unforgettable dining experience.
             </p>
             <div class="grid grid-cols-2 gap-4">
