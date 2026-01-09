@@ -6,43 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        champagne: {
-                            100: '#F5EFE6',
-                            300: '#E6D5C0',
-                            400: '#D4BFA3',
-                            500: '#C5A880',
-                            600: '#B09268',
-                            800: '#8C7350',
-                            900: '#5E4B35',
-                        },
-                        royal: {
-                            900: '#1A1A1A',
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Lato"', 'sans-serif'],
-                        cinzel: ['"Cinzel"', 'serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(197, 168, 128, 0.3)',
-                        'inner-light': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.2)',
-                    }
-                }
-            }
-        }
-    </script>
     <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         ::-webkit-scrollbar { display: none; }
         
@@ -51,29 +19,6 @@
         * { font-family: 'General Sans', 'Inter Tight', sans-serif; }
         .heading-font { font-family: 'Clash Display', sans-serif; }
         .body-font { font-family: 'Satoshi', 'Inter Tight', sans-serif; }
-        
-        .nav-item-hover {
-            position: relative;
-        }
-        .nav-item-hover::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -4px;
-            left: 50%;
-            background-color: white;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-            opacity: 0.7;
-        }
-        .nav-item-hover:hover::after {
-            width: 80%;
-        }
-        
-        .custom-nav-shape {
-            border-radius: 50px;
-        }
         
         .noise-bg {
             background: 
@@ -491,63 +436,31 @@
 </head>
 <body class="noise-bg min-h-screen">
 
-<!-- Luxury Navbar from the provided code -->
-<!-- <header id="header" class="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm py-6 transition-all duration-300 shadow-sm border-b border-champagne-100"> -->
-<header id="header" class="fixed top-0 left-0 right-0 z-50 w-full py-4 transition-all ">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-center items-center">
-        
-        <!-- Navigation Container (The Beige Pill) -->
-        <!-- <div id="nav-container" class="w-full max-w-7xl bg-champagne-500 text-white shadow-soft custom-nav-shape flex items-center justify-between px-8 py-4 h-[80px] relative overflow-hidden"> -->
-        <div id="nav-container" class="w-full max-w-7xl bg-[#CCAC89] text-white shadow-soft custom-nav-shape flex items-center justify-between px-8 py-4 h-[66px] relative overflow-hidden">
-            
-            <!-- Decorative Sheen -->
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-
-            <!-- Left Section: Logo -->
-            <div class="flex items-center gap-3 z-10 min-w-[200px]">
-                <!-- Using your existing logo instead of crown icon -->
-                <!-- <img class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 p-1" 
-                     src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" 
-                     alt="Kings Club logo, lion head in a shield with ornate flourishes" /> -->
-                 <div class="flex items-center space-x-2">
-            <img class="h-10 w-auto bg-amber-900" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, gold, elegant and luxurious, on a transparent background" />
+<nav id="header" class="glassmorphism fixed top-0 w-full z-50 py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <img class="h-10 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, gold, elegant and luxurious, on a transparent background" />
         </div>
-                     <div class="flex flex-col">
-                    <span class="font-cinzel font-bold text-lg tracking-widest leading-none text-white">KINGS CLUB</span>
-                    <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-white/80">Est. 2001</span>
-                </div>
-            </div>
-
-            <!-- Center Navigation -->
-            <!-- Hidden on mobile, visible on desktop -->
-            <nav class="hidden lg:flex items-center justify-center gap-8 z-10 flex-1">
-                <a href="KingsclubMainPage.html" class="font-serif text-[17px] text-white hover:text-champagne-100 transition-colors nav-item-hover">Home</a>
-                <a href="Sports.html" class="font-serif text-[17px] text-white hover:text-champagne-100 transition-colors nav-item-hover">Sports</a>
-                <a href="Dining.html" class="font-serif text-[17px] text-white hover:text-champagne-100 transition-colors nav-item-hover">Restaurant</a>
-                <a href="Events.html" class="font-serif text-[17px] text-white hover:text-champagne-100 transition-colors nav-item-hover">Banquets</a>
-                <a href="#" class="font-serif text-[17px] text-white hover:text-champagne-100 transition-colors nav-item-hover">Rooms</a>
-                <a href="Contact.html" class="font-serif text-[17px] text-white hover:text-champagne-100 transition-colors nav-item-hover">About Us</a>
-                <a href="#" class="font-serif text-[17px] text-white hover:text-champagne-100 transition-colors nav-item-hover">Summer Camp</a>
-            </nav>
-
-            <!-- Right Section: CTA -->
-            <div class="flex items-center justify-end z-10 min-w-[200px]">
-                <a href="Membership.html" class="group relative px-6 py-2.5 rounded-full bg-champagne-800 text-white font-sans text-sm font-semibold tracking-wide shadow-lg hover:bg-champagne-900 transition-all duration-300 overflow-hidden">
-                    <span class="relative z-10">Get in touch</span>
-                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Button (Visible only on small screens) -->
-            <button class="lg:hidden text-white text-2xl z-20 ml-auto">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="KingsclubMainPage.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Home</a>
+            <a href="Dining.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Dining</a>
+            <a href="Sports.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Sports</a>
+            <a href="Events.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">Events</a>
+            <a href="Contact.html" class="body-font text-amber-500 hover:text-amber-600 transition-colors micro-bounce font-medium">About</a>
+            <!-- <button class="bg-gradient-to-r from-amber-400 to-amber-500 text-white px-6 py-2 asymmetric-border hover:shadow-lg transition-all micro-bounce">
+                Join Now
+            </button> -->
+            <a href="Membership.html" class="bg-gradient-to-r from-amber-400 to-amber-500 text-white px-6 py-2 asymmetric-border hover:shadow-lg transition-all micro-bounce">
+    Join Now
+</a>
         </div>
+        <button class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
     </div>
-</header>
+</nav>
 
-<!-- Add margin-top to hero section to account for fixed navbar -->
-<section id="hero" class="h-screen relative overflow-hidden ">
+<section id="hero" class="h-screen relative overflow-hidden pt-0">
     <div class="relative w-full h-full">
         <div class="absolute inset-0 w-full h-full overflow-hidden cursor-grab active:cursor-grabbing">
             <div id="panorama-container" class="w-full h-full relative">
@@ -563,6 +476,9 @@
         Kings Club
     </span>
 </h1>
+               <!-- <p class="body-font text-xl lg:text-2xl text-white leading-relaxed max-w-2xl mx-auto font-medium" style="text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5);">
+    Bangalore's most prestigious family club offering world-class dining, sports facilities, and exclusive events in an elegant setting.
+</p> -->
 <div class="flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto pt-[100px]">
     <a href="MembershipSignup.html" class="bg-[#d5b14c] text-white px-6 py-2 asymmetric-border hover:shadow-xl transition-all micro-bounce text-lg font-semibold flex items-center space-x-3" style="box-shadow: 0 8px 30px rgba(218,165,32,0.4);">
     Explore Membership
@@ -584,11 +500,36 @@
     </div>
 </section>
 
+<!-- <section id="intro" class="parallax-section">
+    <img class="parallax-bg-image" src="Home-Banner-Page-scaled.jpg" alt="Exterior of a modern, luxurious family club building during the day, clean architecture, beautiful landscaping, bright and welcoming atmosphere" />
+    <div class="parallax-overlay bg-gradient-to-b from-black/60 via-black/50 to-black/60"></div>
+    <div class="parallax-content max-w-6xl mx-auto px-6 text-center scroll-reveal">
+        <div class="absolute inset-0 flex items-center justify-center opacity-10">
+            <img class="h-64 w-auto" src="https://kingsclub.in/wp-content/uploads/2020/12/logo.png" alt="Kings Club logo, lion head in a shield with ornate flourishes, white, elegant and luxurious, on a transparent background" />
+        </div>
+        <h2 class="heading-font text-5xl font-bold text-white mb-6 drop-shadow-2xl">
+            Where Luxury Meets Community
+        </h2>
+        <p class="body-font text-xl text-white leading-relaxed max-w-3xl mx-auto drop-shadow-lg">
+            For over two decades, Kings Club has been the epitome of refined living in Bangalore. 
+            Our exclusive community brings together families who appreciate the finer things in life.
+        </p>
+    </div>
+</section> -->
 <section id="about-video" class="py-20 bg-gradient-to-r from-amber-50 to-orange-50">
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="scroll-reveal">
                 <div class="asymmetric-border overflow-hidden shadow-2xl">
+                <!-- <iframe
+  class="w-full h-[400px]"
+  src="https://www.youtube-nocookie.com/embed/rhuMUbnvk7E?rel=0&modestbranding=1"
+  title="Kings Club Video"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+  referrerpolicy="strict-origin-when-cross-origin">
+</iframe> -->
 <a href="https://www.youtube.com/watch?v=rhuMUbnvk7E" target="_blank" id="video-promo-link" class="block relative group rounded-xl overflow-hidden shadow-2xl">
                         <div class="h-[350px] overflow-hidden">
                             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="kingsOutside.webp" alt="aerial night view of a luxurious modern clubhouse with a swimming pool, architectural lighting, lush green surroundings, exclusive real estate" />
@@ -598,6 +539,9 @@
                                 <i class="fa-solid fa-play text-white text-3xl ml-1"></i>
                             </div>
                         </div>
+                        <!-- <div class="absolute bottom-4 right-4 h-24 w-24">
+                           <img class="w-full h-full object-contain" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/9f59c3eb2d-caa8366800e02d0912df.png" alt="elegant gold logo of a lion head inside a royal crest with" />
+                        </div> -->
                     </a>
                 </div>
             </div>
@@ -624,7 +568,6 @@
         </div>
     </div>
 </section>
-
 <section id="club-features" class="py-20 relative parallax-section">
    
     <img class="parallax-bg-image" 
@@ -664,8 +607,7 @@
         </a>
     </div>
 
-    <!-- <div class="parallax-content max-w-7xl mx-auto px-6 w-full relative"> -->
-    <div class="parallax-content  mx-auto w-full relative">
+    <div class="parallax-content max-w-7xl mx-auto px-6 w-full relative">
         <div class="text-center mb-16 scroll-reveal">
             <h2 class="heading-font text-5xl font-bold text-gray-800 mb-6">
                 Club Features
@@ -673,6 +615,9 @@
             <p class="body-font text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto mb-4">
                 You can celebrate large and special events at the stunning King's Club, which has more than three acres of land and is situated in a magnificent location.
             </p>
+            <!-- <p class="body-font text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                We have quite the paraphernalia for everything between birthdays, weddings, baby showers, graduation, promotion, or any celebration & have the fun times roll. We have a children-friendly ambiance where you could watch them grow, laugh, & play while they make the best out of the sports & fun activities. Park your car with ease in 200+ parking capacity area which is safe & secure. The best membership club in Bangalore, you can trust.
+            </p> -->
         </div>
 
         <!-- Featured Offerings Carousel -->
@@ -735,13 +680,12 @@
             </div>
         </div>
 
-      <!-- <div class="space-y-12"> -->
-      <!-- <div id="sticky-features-container" class="z-40 bg-black" style="height: 500vh; position: relative;">
-        <div id="features-scroll-container" class="h-screen overflow-y-scroll snap-y snap-mandatory bg-black" style="height: 100vh; scroll-snap-type: y mandatory; position: sticky; top: 0;"> -->
+      <div class="space-y-12">
            <!-- Sports Section - Complete -->
-<!-- <div id="feature-sports" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group  "> -->
-<!-- <div id="feature-sports" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<div id="feature-sports" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
+    <!-- Moving Background Image -->
    
+    <!-- Updated Moving Background Container -->
 <div class="absolute inset-0 overflow-hidden">
     <div class="parallax-bg-image bg-image-animate" style="
         position: absolute;
@@ -759,7 +703,7 @@
     "></div>
 </div>
     
-    <div class="absolute top-0 right-0 w-[100%] h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+    <div class="absolute top-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
     <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative z-10">
         <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Sports</span>
     </h3>
@@ -793,12 +737,13 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Health & Fitness Section - Complete -->
-<!-- <div id="feature-fitness" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<!-- <div id="feature-fitness" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group"> -->
+<div id="feature-fitness" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
    
-    
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -835,20 +780,25 @@
             </p>
             <div class="grid grid-cols-2 gap-4">
                 <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20240329/pngtree-rows-of-dumbbells-in-the-gym-image_15662386.jpg" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
+                    <!-- <img src="https://kingsclub.in/wp-content/uploads/2021/02/gym-benifit-intruduction.jpg" alt="fitness trainer, personal training" class="w-full h-full object-cover" /> -->
+                                <img src="https://png.pngtree.com/thumb_back/fh260/background/20240329/pngtree-rows-of-dumbbells-in-the-gym-image_15662386.jpg" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
+                
                 </div>
                 <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/yogadance-r8hi2k74gf72smuamhwybsniiqzrfg2tkblc927gkg.png" alt="yoga and dance classes" class="w-full h-full object-cover" />
+                    <!-- <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/yogadance-r8hi2k74gf72smuamhwybsniiqzrfg2tkblc927gkg.png" alt="yoga and dance classes" class="w-full h-full object-cover" /> -->
+                                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/yogadance-r8hi2k74gf72smuamhwybsniiqzrfg2tkblc927gkg.png" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
+                
                 </div>
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Entertainment Section - Complete -->
-<!-- <div id="feature-entertainment" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<!-- <div id="feature-entertainment" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group"> -->
+<div id="feature-entertainment" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
     
-  
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -881,19 +831,24 @@
         </div>
         <div class="grid grid-cols-2 gap-4">
             <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/entertainment-1.jpg" alt="entertainment lounge, games room" class="w-full h-full object-cover" />
+                <!-- <img src="https://kingsclub.in/wp-content/uploads/2021/02/entertainment-1.jpg" alt="entertainment lounge, games room" class="w-full h-full object-cover" /> -->
+                            <img src="data:image/jpeg;base64,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" alt="entertainment lounge, games room" class="w-full h-full object-cover" />
+           
             </div>
             <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/entertainment-2.jpg" alt="dance floor, party event" class="w-full h-full object-cover" />
+                <!-- <img src="https://kingsclub.in/wp-content/uploads/2021/02/entertainment-2.jpg" alt="dance floor, party event" class="w-full h-full object-cover" /> -->
+                            <img src="https://m.media-amazon.com/images/I/71OF44ehRbL._AC_UF1000,1000_QL80_.jpg" alt="entertainment lounge, games room" class="w-full h-full object-cover" />
+            
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Banquets Section - Complete -->
-<!-- <div id="feature-banquets" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<!-- <div id="feature-banquets" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group"> -->
+<div id="feature-banquets" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
     
-  
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -938,12 +893,13 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Restaurant Section - Complete -->
-<!-- <div id="feature-restaurant" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<!-- <div id="feature-restaurant" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group"> -->
+<div id="feature-restaurant" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group">
     
-   
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -988,306 +944,12 @@
             </div>
         </div>
     </div>
-</div> -->
-        <!-- </div>
-        </div> -->
+</div>
+        </div>
     </div>
 </section>
 
-<!-- SNAP SCROLL SECTION -->
-  <section class="snap-parent" id="snapParent">
-    <div class="snap-container" id="snapContainer">
-      <!-- vinay section 1 -->
-<!-- <div class="snap-spacer"></div> -->
-      <section class="snap-section one">
-        <!-- <div id="feature-sports" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group"> -->
-        <div id="feature-sports" class="h-screen p-12 ">
-    <!-- Moving Background Image -->
-         <!-- background-image: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');  -->
-   
-    <!-- Updated Moving Background Container -->
-<div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('https://static.vecteezy.com/system/resources/previews/001/430/326/large_2x/badminton-balls-on-black-background-free-photo.jpg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-        opacity: 1;
-        filter: brightness(1);
-    "></div>
-</div>
-    
-    <!-- <div class="absolute top-0 right-0 w-[100%] h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div> -->
-    <div class="absolute top-0 right-0 w-[100%] h-64 group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-cleft mt-24 relative z-10">
-        <!-- <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Sports</span> -->
-        <!-- <span class="bg-gradient-to-r from-gray-700 to-white bg-clip-text text-transparent">Sports</span> -->
-        <span class="text-white">Sports</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-12 items-center mt-16 relative z-10">
-        <div class="space-y-6">
-            <p class="body-font text-white leading-loose text-lg">
-                Nestled amongst the greenery of nature, Kings Club, surrounded all the state-of-the-art facilities that ensure to make you experience relaxing & happiness. Come to enjoy a range of indoor sports & outdoor sports that are sure to delight your fitness soul.
-            </p>
-            <!-- <p class="body-font text-gray-700 leading-loose text-lg"> -->
-            <!-- <p class="body-font text-white leading-loose text-lg">
-                There's something for everybody! Luxuriate your favorite sports at your own pace. We provide extensive space for your complete sports activities with multiple spaces segregated into several courts for the perfect sport such as:
-            </p> -->
-            <ul class="space-y-3 body-font text-white text-lg">
-                <!-- <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li> -->
-                <li class="flex items-center text-white">Badminton</li>
-                <li class="flex items-center">Indoor activities</li>
-                <li class="flex items-center">Outdoor activities</li>
-                <li class="flex items-center">Table Tennis & many more</li>
-            </ul>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <!-- <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/Badmiton-Class-1024x577.jpg" alt="badminton court, sports facility" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 mt-8">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/Mini-Olympic-Pool-banner-image-1-1024x576.jpg" alt="olympic swimming pool, luxury sports club" class="w-full h-full object-cover" />
-            </div> -->
-            <!-- <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 -mt-8">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/BILLIARDS-banner-image-r8hi2ek3bezxbkervi5nfxwrca7rf5fm5169ecysnc.jpg" alt="BILLIARDS" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/TT-banner-image-r8hi2ek23k77h9kwajy92b5e40s14g8ayhu68h833g.jpg" alt="table tennis, indoor sports" class="w-full h-full object-cover" />
-            </div> -->
-        </div>
-    </div>
-</div>
-      </section> 
-      <!-- vinay section 1 -->
-       <!-- vinay section 2 -->
-      <section class="snap-section two">
-        <!-- <div id="feature-fitness" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group"> -->
-        <div id="feature-fitness" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-   
-    <!-- Moving Background Image -->
-   <div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('dumbbell.jpg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-        opacity: 1;
-        filter: brightness(1);
-    "></div>
-</div>
-    
-    <div class="absolute top-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-left pr-24 mt-36 relative z-10">
-        <!-- <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Health & Fitness</span> -->
-        <span class="bg-gradient-to-r from-[#ff8f00] to-amber-600 bg-clip-text text-transparent">Health & Fitness</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-2 items-center mt-2 relative z-10">
-        <!-- <div class="grid grid-cols-2 gap-4">
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/benifets-r8hi2gfqh89s4hi5zkri7aobasirjufrmr55715ar0.jpg" alt="modern gym, fitness equipment" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/gym-intruduction-r8hi2ek5r4jnme1o16j2lvxgn9qm6vwopncxn8vamg.jpg" alt="luxury fitness center, modern gym" class="w-full h-full object-cover" />
-            </div>
-        </div> -->
-        <div class="space-y-6 pr-4 mt-4">
-            <!-- <p class="body-font text-white leading-loose text-lg"> -->
-            <!-- <p class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent"> -->
-           <span class="text-[#ff8f00] to-amber-600 bg-clip-text text-transparent">
-  Kings Club is the most prestigious health club in Bangalore. At our modern & advanced fitness center, you can boost your stamina and energy with the latest technology. By taking the first step to wellness under the guidance of our fitness trainers, you will be guided through a customized program of specific exercises tailored to your needs or just relax at one of our SPA areas.
-</span>
-<ul class="space-y-3 body-font text-lg">
-                <!-- <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li> -->
-                <li class="flex items-center text-[#ff8f00]">Modern Gym</li>
-                <li class="flex items-center text-[#ff8f00]">Dance Studio</li>
-                <li class="flex items-center text-[#ff8f00]">Spa</li>
-                <li class="flex items-center text-[#ff8f00]">Steam Room</li>
-            </ul>
-            <!-- <div class="grid grid-cols-2 gap-4">
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20240329/pngtree-rows-of-dumbbells-in-the-gym-image_15662386.jpg" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
-                </div>
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/yogadance-r8hi2k74gf72smuamhwybsniiqzrfg2tkblc927gkg.png" alt="yoga and dance classes" class="w-full h-full object-cover" />
-                </div> -->
-            </div>
-        </div>
-    </div>
 
-      </section>
-       <!-- vinay section 2 -->
-         <!-- vinay section 3 -->
-      <section class="snap-section three">
-        <div id="feature-entertainment" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-    
-       <!-- Moving Background Image -->
-   <div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('https://static.vecteezy.com/system/resources/previews/011/144/428/large_2x/playing-chips-and-poker-cards-on-dark-background-poker-game-casiono-online-web-background-template-illustration-free-vector.jpg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-        opacity: 1;
-        filter: brightness(1);
-    "></div>
-</div>
-    
-    <!-- <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div> -->
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-right mt-24 pr-48 relative z-10">
-  <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">
-    Entertainment
-  </span>
-</h3>
-
-<div class="w-full relative z-10 pr-16 mt-8">
-  <div class="max-w-lg ml-auto text-left bg-transparent">
-    <p class="body-font text-[#F8D98B] leading-loose text-lg space-y-3">
-      Guests enjoy a lively mix of entertainment and relaxation in a vibrant setting.
-      Our facility features a swimming pool, sports fields, and engaging recreational activities.
-      We also host special events and festive celebrations, ensuring a fun and memorable experience for all.
-    </p>
-     <ul class="space-y-3 body-font text-lg mt-4">
-                <!-- <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li> -->
-                <li class="flex items-center text-[#F8D98B]">Cards Room</li>
-                <li class="flex items-center text-[#F8D98B]">Billiards</li>
-                <li class="flex items-center text-[#F8D98B]">Foosball</li>
-                <li class="flex items-center text-[#F8D98B]">Carrom</li>
-            </ul>
-  </div>
- 
-</div>
-
-
-</div>
-      </section>
-       <!-- vinay section 3 -->
-         <!-- vinay section 4 -->
-      <!-- <section class="snap-section four">
-        <div id="feature-banquets" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-    
-
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="parallax-bg-image bg-image-animate" style="
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            top: -10%;
-            left: -10%;
-            background-image: url('https://static.vecteezy.com/system/resources/previews/011/144/428/non_2x/playing-chips-and-poker-cards-on-dark-background-poker-game-casiono-online-web-background-template-illustration-free-vector.jpg');
-            background-size: cover;
-            background-position: center;
-            will-change: transform, filter;
-            /* transition: transform 0.3s ease-out; */
-             opacity: 0.15;
-        filter: brightness(1.2);
-        "></div>
-    </div>
-    
-    <div class="absolute bottom-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative z-10">
-        <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Banquets</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
-        <div class="space-y-6">
-            <p class="body-font text-gray-700 leading-loose text-lg">
-                At the Kings Club, you can choose from a variety of banqueting facilities that ensure your celebration is a memorable experience. At our unique banquet halls, we redefine hospitality by offering an explicit theme for every occasion, such as Engagement Parties, Anniversaries, Birthday Parties, Weddings, Kitty Parties, and Corporate Events, Conference hall, meeting hall, & much more. We will take care of everything from start to finish with our team of highly skilled professionals.
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-r8hi2gfu4slrwc3i9cecx6sdiypzlkj7b49mzfkj1k.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
-                </div>
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/2021/03/Indoor-Banquit-Hall-Banner-1200x749.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/Standard-Room-r8hi2com8vm8ylf1nqi1e3xz80e74mkwz2wt9cc01s.jpg" alt="indoor banquet, elegant hall" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-1-scaled-r8hi2gfu4sm89lyxq7cbqvgdu1hcma45dwnwlssia0.jpg" alt="outdoor banquet, elegant hall" class="w-full h-full object-cover" />
-            </div>
-        </div>
-    </div>
-</div>
-      </section> -->
-       <!-- vinay section 4 -->
-       <!-- vinay section 5 -->
-        <!-- <section class="snap-section five">
-<div id="feature-restaurant" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-    
-    
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="parallax-bg-image bg-image-animate" style="
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            top: -10%;
-            left: -10%;
-            background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            will-change: transform, filter;
-            transition: transform 0.3s ease-out;
-             opacity: 0.15;
-        filter: brightness(1.2);
-        "></div>
-    </div>
-    
-    <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative z-10">
-        <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Restaurant</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
-        <div class="space-y-6">
-            <p class="body-font text-gray-700 leading-loose text-lg">
-                At the Kings Club, you can enjoy a variety of fine dining experiences with our world-class chefs. From elegant banquets to casual gatherings, our restaurant offers a perfect blend of luxury and comfort. Whether you're celebrating a special occasion or just enjoying a meal with friends, our restaurant provides an unforgettable dining experience.
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/social-geathering-scaled-r8hi2ek3bf1mpcfmvq7119eshtkd8td5xhnrh8jps0.jpg" alt="fine dining, elegant setting" class="w-full h-full object-cover" />
-                </div>
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/2021/02/Restro-Bar-banner-image-2.jpg" alt="restaurant bar, elegant dining" class="w-full h-full object-cover" />
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/03/about-Sky-Lounge-1200x675-cropped.jpg" alt="sky lounge, elegant dining area" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/Intruduction.jpg" alt="restaurant interior, elegant dining" class="w-full h-full object-cover" />
-            </div>
-        </div>
-    </div>
-</div>
-        </section> -->
-       <!-- vinay section 5 -->
-
-       <!-- <div class="snap-spacer"></div> -->
-
-    </div>
-  </section>
 
 <section id="perks" class="py-20 parallax-section">
     <img class="parallax-bg-image" src="logodark.png" alt="Kings Club logo watermark background" style="opacity: 1.08;  background-color: #ffe4c4;" />
@@ -1466,142 +1128,6 @@
 </div>
     </div>
 </footer>
-
-<!-- smoother movable section -->
-<script>
-const container = document.getElementById("snapContainer");
-const parent = document.getElementById("snapParent");
-const sections = Array.from(container.querySelectorAll(".snap-section"));
-
-let index = 0;
-let locked = false;
-let edgeIntent = 0;
-
-const INTENT_THRESHOLD = 120;
-const SCROLL_DURATION = 700;
-
-function scrollToIndex(i) {
-  locked = true;
-
-  container.scrollTo({
-    top: i * window.innerHeight,
-    behavior: "smooth"
-  });
-
-  setTimeout(() => {
-    locked = false;
-  }, SCROLL_DURATION);
-}
-
-window.addEventListener("wheel", (e) => {
-  const parentRect = parent.getBoundingClientRect();
-  const inside =
-    parentRect.top <= 0 &&
-    parentRect.bottom >= window.innerHeight;
-
-  if (!inside) return;
-
-  e.preventDefault();
-  if (locked) return;
-
-  const dir = e.deltaY > 0 ? 1 : -1;
-
-  // Normal section scrolling
-  if (dir === 1 && index < sections.length - 1) {
-    index++;
-    scrollToIndex(index);
-    edgeIntent = 0;
-    return;
-  }
-
-  if (dir === -1 && index > 0) {
-    index--;
-    scrollToIndex(index);
-    edgeIntent = 0;
-    return;
-  }
-
-  // Edge intent handling
-  edgeIntent += Math.abs(e.deltaY);
-
-  if (edgeIntent > INTENT_THRESHOLD) {
-    edgeIntent = 0;
-
-    // Release to page scroll
-    window.scrollBy({
-      top: dir * window.innerHeight,
-      behavior: "smooth"
-    });
-  }
-}, { passive: false });
-</script>
-
-
-
-
-<script>
-const parallaxImages = document.querySelectorAll(".parallax-bg-image");
-
-// CONFIG
-const PARALLAX_PER_SECTION = 60; // px movement per section
-const DURATION = 5000; // 🔥 5 seconds per section
-
-let currentSection = 0;
-let animationStart = null;
-let fromY = 0;
-let toY = 0;
-let animating = false;
-
-function easeInOut(t) {
-  return t < 0.5
-    ? 2 * t * t
-    : 1 - Math.pow(-2 * t + 2, 2) / 2;
-}
-
-function animateParallax(timestamp) {
-  if (!animationStart) animationStart = timestamp;
-
-  const elapsed = timestamp - animationStart;
-  const progress = Math.min(elapsed / DURATION, 1);
-  const eased = easeInOut(progress);
-
-  const y = fromY + (toY - fromY) * eased;
-
-  parallaxImages.forEach(img => {
-    img.style.transform = `translateY(${y}px) scale(1.08)`;
-  });
-
-  if (progress < 1) {
-    requestAnimationFrame(animateParallax);
-  } else {
-    animating = false;
-    fromY = toY;
-    animationStart = null;
-  }
-}
-
-// 🔔 Call this WHEN section index changes
-function onSectionChange(newIndex) {
-  if (animating) return;
-
-  currentSection = newIndex;
-
-  fromY = toY;
-  toY = currentSection * PARALLAX_PER_SECTION;
-
-  animating = true;
-  animationStart = null;
-  requestAnimationFrame(animateParallax);
-}
-</script>
-
-
-
-
-
-
-<!-- smoother movable section -->
-
 
 <!-- MODAL FUNCTIONS - MUST BE GLOBAL -->
 <script>
@@ -2080,107 +1606,6 @@ function initMouseMoveParallax() {
 // Call the function to initialize the effect
 initMouseMoveParallax();
 
-// Sticky Features Container Scroll Control
-function initStickyFeaturesScroll() {
-    const stickyContainer = document.getElementById('sticky-features-container');
-    const scrollContainer = document.getElementById('features-scroll-container');
-    
-    if (!stickyContainer || !scrollContainer) return;
-    
-    let isUserScrolling = false;
-    let lastWindowScroll = window.pageYOffset;
-    
-    // Sync main page scroll with inner container scroll
-    function syncScroll() {
-        if (isUserScrolling) return;
-        
-        const containerRect = stickyContainer.getBoundingClientRect();
-        const windowScroll = window.pageYOffset;
-        const containerTop = stickyContainer.offsetTop;
-        const containerHeight = stickyContainer.offsetHeight;
-        const windowHeight = window.innerHeight;
-        
-        // Check if container is in sticky range (top or bottom)
-        const isInStickyRange = (containerRect.top <= 0 && containerRect.top > -containerHeight + windowHeight) ||
-                                (containerRect.bottom <= windowHeight && containerRect.bottom > 0);
-        
-        if (isInStickyRange) {
-            // Calculate scroll progress based on container position
-            let scrollProgress = 0;
-            
-            // When stuck at top (scrolling down)
-            if (containerRect.top <= 0 && containerRect.top > -containerHeight + windowHeight) {
-                const scrollPast = Math.max(0, windowScroll - containerTop);
-                const maxScrollPast = containerHeight - windowHeight;
-                scrollProgress = Math.min(Math.max(scrollPast / maxScrollPast, 0), 1);
-            }
-            // When stuck at bottom (scrolling up from below)
-            else if (containerRect.bottom <= windowHeight && containerRect.bottom > 0) {
-                const scrollPast = containerHeight - (containerRect.bottom - containerTop);
-                const maxScrollPast = containerHeight - windowHeight;
-                scrollProgress = Math.min(Math.max(scrollPast / maxScrollPast, 0), 1);
-            }
-            
-            // Calculate inner container scroll position
-            const maxInnerScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-            const targetInnerScroll = scrollProgress * maxInnerScroll;
-            
-            if (maxInnerScroll > 0) {
-                scrollContainer.scrollTop = targetInnerScroll;
-            }
-        }
-    }
-    
-    // Handle wheel events - redirect to inner container when sticky
-    function handleWheel(e) {
-        const containerRect = stickyContainer.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const isStuckAtTop = containerRect.top <= 0 && containerRect.top > -containerRect.height + windowHeight;
-        const isStuckAtBottom = containerRect.bottom <= windowHeight && containerRect.bottom > 0;
-        
-        if (isStuckAtTop || isStuckAtBottom) {
-            const scrollTop = scrollContainer.scrollTop;
-            const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-            
-            // If scrolling down and at bottom of inner container, allow main scroll
-            if (e.deltaY > 0 && scrollTop >= maxScroll - 5) {
-                return true;
-            }
-            
-            // If scrolling up and at top of inner container, allow main scroll
-            if (e.deltaY < 0 && scrollTop <= 5) {
-                return true;
-            }
-            
-            // Otherwise, scroll the inner container
-            scrollContainer.scrollTop += e.deltaY * 0.5;
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-    }
-    
-    // Handle wheel events on document
-    document.addEventListener('wheel', handleWheel, { passive: false });
-    
-    // Handle inner container scroll
-    scrollContainer.addEventListener('scroll', function() {
-        isUserScrolling = true;
-        setTimeout(() => { isUserScrolling = false; }, 100);
-    });
-    
-    // Sync on window scroll
-    window.addEventListener('scroll', syncScroll, { passive: true });
-    
-    // Initial sync
-    syncScroll();
-}
-
-// Initialize on page load
-window.addEventListener('load', function() {
-    initStickyFeaturesScroll();
-});
-
 </script>
 
 <!-- Privacy Policy Modal -->
@@ -2342,6 +1767,98 @@ window.addEventListener('load', function() {
                         <p class="text-sm mt-4"><strong>Last Updated:</strong> December 2024</p>
                         <p class="text-sm mt-2">For refund-related inquiries, contact <span class="text-[#d5b14c] font-semibold">accounts@kingsclub.in</span></p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Terms and Conditions Modal -->
+<div id="terms-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+        <div class="sticky top-0 bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] px-8 py-6 flex justify-between items-center">
+            <div>
+                <h2 class="heading-font text-2xl font-bold text-white">Terms & Conditions</h2>
+                <p class="body-font text-white/90 text-sm">Kings Club - Membership Agreement</p>
+            </div>
+            <button onclick="closeModal('terms-modal')" class="text-white hover:text-gray-200 text-2xl transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="p-8 overflow-y-auto max-h-[60vh]">
+            <div class="space-y-6 body-font text-gray-700">
+                <h3 class="heading-font text-xl font-bold text-gray-800">1. Membership Agreement</h3>
+                <p>By becoming a member of Kings Club, you agree to abide by all rules, regulations, and policies set forth by the Club. Membership is subject to approval by the Club's management.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">2. Membership Fees & Payments</h3>
+                <p>Membership fees are payable in advance as per the chosen membership plan. Late payments may result in suspension of membership privileges. All fees are non-transferable and non-refundable except as specified in our Refund Policy.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">3. Club Rules & Conduct</h3>
+                <p>All members and guests must adhere to the Club's code of conduct. The Club reserves the right to refuse admission or cancel membership for inappropriate behavior or violation of Club rules.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">4. Facility Usage</h3>
+                <p>Members must book facilities in advance through the Club's reservation system. Club facilities are to be used responsibly, and any damage caused will be charged to the member's account.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">5. Guests Policy</h3>
+                <p>Members may bring guests subject to Club policies and guest charges. Members are responsible for their guests' conduct and any charges incurred by them.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">6. Liability</h3>
+                <p>The Club is not liable for any loss, damage, or injury to persons or property while on Club premises, except where such liability cannot be excluded by law.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">7. Amendments</h3>
+                <p>The Club reserves the right to amend these terms and conditions at any time. Members will be notified of significant changes via email or Club notices.</p>
+                
+                <div class="bg-amber-50 border-l-4 border-[#d5b14c] p-4 mt-6">
+                    <p class="text-sm"><strong>Last Updated:</strong> December 2024</p>
+                    <p class="text-sm mt-2">For any terms-related queries, please contact us at <span class="text-[#d5b14c] font-semibold">legal@kingsclub.in</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Refund Policy Modal -->
+<div id="refund-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+        <div class="sticky top-0 bg-gradient-to-r from-[#ddc27b] to-[#d5b14c] px-8 py-6 flex justify-between items-center">
+            <div>
+                <h2 class="heading-font text-2xl font-bold text-white">Refund Policy</h2>
+                <p class="body-font text-white/90 text-sm">Kings Club - Financial Policies</p>
+            </div>
+            <button onclick="closeModal('refund-modal')" class="text-white hover:text-gray-200 text-2xl transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="p-8 overflow-y-auto max-h-[60vh]">
+            <div class="space-y-6 body-font text-gray-700">
+                <h3 class="heading-font text-xl font-bold text-gray-800">1. Membership Fees</h3>
+                <p>Membership fees are generally non-refundable. However, in exceptional circumstances such as medical emergencies or relocation, refund requests may be considered on a case-by-case basis at the discretion of Club management.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">2. Event Bookings</h3>
+                <p>Cancellations made more than 30 days before the event date are eligible for a full refund. Cancellations made between 15-30 days before the event will receive a 50% refund. No refunds for cancellations made less than 15 days before the event.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">3. Service Charges</h3>
+                <p>Service charges for facilities usage, food and beverages, and other ancillary services are non-refundable once services have been rendered.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">4. Processing Time</h3>
+                <p>Approved refunds will be processed within 15-30 business days to the original payment method used for the transaction.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">5. Refund Request Procedure</h3>
+                <p>All refund requests must be submitted in writing to the Club's accounts department along with supporting documents. Requests will be reviewed within 10 business days.</p>
+                
+                <h3 class="heading-font text-xl font-bold text-gray-800 mt-8">6. Force Majeure</h3>
+                <p>In case of events cancelled due to circumstances beyond our control (natural disasters, government restrictions, etc.), refunds or credits for future events will be provided at the Club's discretion.</p>
+                
+                <div class="bg-amber-50 border-l-4 border-[#d5b14c] p-4 mt-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-info-circle text-[#d5b14c] text-xl mt-1 mr-3"></i>
+                        <div>
+                            <p class="font-semibold">Important Note:</p>
+                            <p class="text-sm mt-1">For faster processing of refund requests, please ensure all required documents are submitted. Incomplete requests will delay processing.</p>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-4"><strong>Last Updated:</strong> December 2024</p>
+                    <p class="text-sm mt-2">For refund-related inquiries, contact <span class="text-[#d5b14c] font-semibold">accounts@kingsclub.in</span></p>
                 </div>
             </div>
         </div>

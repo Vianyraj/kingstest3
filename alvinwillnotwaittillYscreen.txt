@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
     <script>
         tailwind.config = {
             theme: {
@@ -493,12 +492,12 @@
 
 <!-- Luxury Navbar from the provided code -->
 <!-- <header id="header" class="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm py-6 transition-all duration-300 shadow-sm border-b border-champagne-100"> -->
-<header id="header" class="fixed top-0 left-0 right-0 z-50 w-full py-4 transition-all ">
+<header id="header" class="fixed top-0 left-0 right-0 z-50 w-full  py-6 transition-all ">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-center items-center">
         
         <!-- Navigation Container (The Beige Pill) -->
         <!-- <div id="nav-container" class="w-full max-w-7xl bg-champagne-500 text-white shadow-soft custom-nav-shape flex items-center justify-between px-8 py-4 h-[80px] relative overflow-hidden"> -->
-        <div id="nav-container" class="w-full max-w-7xl bg-[#CCAC89] text-white shadow-soft custom-nav-shape flex items-center justify-between px-8 py-4 h-[66px] relative overflow-hidden">
+        <div id="nav-container" class="w-full max-w-7xl bg-[#CCAC89] text-white shadow-soft custom-nav-shape flex items-center justify-between px-8 py-4 h-[80px] relative overflow-hidden">
             
             <!-- Decorative Sheen -->
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
@@ -547,7 +546,7 @@
 </header>
 
 <!-- Add margin-top to hero section to account for fixed navbar -->
-<section id="hero" class="h-screen relative overflow-hidden ">
+<section id="hero" class="h-screen relative overflow-hidden pt-[120px]">
     <div class="relative w-full h-full">
         <div class="absolute inset-0 w-full h-full overflow-hidden cursor-grab active:cursor-grabbing">
             <div id="panorama-container" class="w-full h-full relative">
@@ -736,12 +735,13 @@
         </div>
 
       <!-- <div class="space-y-12"> -->
-      <!-- <div id="sticky-features-container" class="z-40 bg-black" style="height: 500vh; position: relative;">
-        <div id="features-scroll-container" class="h-screen overflow-y-scroll snap-y snap-mandatory bg-black" style="height: 100vh; scroll-snap-type: y mandatory; position: sticky; top: 0;"> -->
+      <div class="h-screen overflow-y-scroll snap-y snap-mandatory">
            <!-- Sports Section - Complete -->
 <!-- <div id="feature-sports" class="p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl scroll-reveal scroll-mt-24 overflow-hidden relative group  "> -->
-<!-- <div id="feature-sports" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<div id="feature-sports" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+    <!-- Moving Background Image -->
    
+    <!-- Updated Moving Background Container -->
 <div class="absolute inset-0 overflow-hidden">
     <div class="parallax-bg-image bg-image-animate" style="
         position: absolute;
@@ -793,12 +793,12 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Health & Fitness Section - Complete -->
-<!-- <div id="feature-fitness" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<div id="feature-fitness" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
    
-    
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -843,12 +843,12 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Entertainment Section - Complete -->
-<!-- <div id="feature-entertainment" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<div id="feature-entertainment" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
     
-  
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -888,12 +888,12 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Banquets Section - Complete -->
-<!-- <div id="feature-banquets" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<div id="feature-banquets" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
     
-  
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -938,12 +938,12 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Restaurant Section - Complete -->
-<!-- <div id="feature-restaurant" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
+<div id="feature-restaurant" class="h-screen snap-start p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
     
-   
+    <!-- Moving Background Image -->
     <div class="absolute inset-0 overflow-hidden">
         <div class="parallax-bg-image bg-image-animate" style="
             position: absolute;
@@ -988,306 +988,12 @@
             </div>
         </div>
     </div>
-</div> -->
-        <!-- </div>
-        </div> -->
+</div>
+        </div>
     </div>
 </section>
 
-<!-- SNAP SCROLL SECTION -->
-  <section class="snap-parent" id="snapParent">
-    <div class="snap-container" id="snapContainer">
-      <!-- vinay section 1 -->
-<!-- <div class="snap-spacer"></div> -->
-      <section class="snap-section one">
-        <!-- <div id="feature-sports" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group"> -->
-        <div id="feature-sports" class="h-screen p-12 ">
-    <!-- Moving Background Image -->
-         <!-- background-image: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');  -->
-   
-    <!-- Updated Moving Background Container -->
-<div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('https://static.vecteezy.com/system/resources/previews/001/430/326/large_2x/badminton-balls-on-black-background-free-photo.jpg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-        opacity: 1;
-        filter: brightness(1);
-    "></div>
-</div>
-    
-    <!-- <div class="absolute top-0 right-0 w-[100%] h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div> -->
-    <div class="absolute top-0 right-0 w-[100%] h-64 group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-cleft mt-24 relative z-10">
-        <!-- <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Sports</span> -->
-        <!-- <span class="bg-gradient-to-r from-gray-700 to-white bg-clip-text text-transparent">Sports</span> -->
-        <span class="text-white">Sports</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-12 items-center mt-16 relative z-10">
-        <div class="space-y-6">
-            <p class="body-font text-white leading-loose text-lg">
-                Nestled amongst the greenery of nature, Kings Club, surrounded all the state-of-the-art facilities that ensure to make you experience relaxing & happiness. Come to enjoy a range of indoor sports & outdoor sports that are sure to delight your fitness soul.
-            </p>
-            <!-- <p class="body-font text-gray-700 leading-loose text-lg"> -->
-            <!-- <p class="body-font text-white leading-loose text-lg">
-                There's something for everybody! Luxuriate your favorite sports at your own pace. We provide extensive space for your complete sports activities with multiple spaces segregated into several courts for the perfect sport such as:
-            </p> -->
-            <ul class="space-y-3 body-font text-white text-lg">
-                <!-- <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li> -->
-                <li class="flex items-center text-white">Badminton</li>
-                <li class="flex items-center">Indoor activities</li>
-                <li class="flex items-center">Outdoor activities</li>
-                <li class="flex items-center">Table Tennis & many more</li>
-            </ul>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <!-- <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/Badmiton-Class-1024x577.jpg" alt="badminton court, sports facility" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 mt-8">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/Mini-Olympic-Pool-banner-image-1-1024x576.jpg" alt="olympic swimming pool, luxury sports club" class="w-full h-full object-cover" />
-            </div> -->
-            <!-- <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64 -mt-8">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/BILLIARDS-banner-image-r8hi2ek3bezxbkervi5nfxwrca7rf5fm5169ecysnc.jpg" alt="BILLIARDS" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/TT-banner-image-r8hi2ek23k77h9kwajy92b5e40s14g8ayhu68h833g.jpg" alt="table tennis, indoor sports" class="w-full h-full object-cover" />
-            </div> -->
-        </div>
-    </div>
-</div>
-      </section> 
-      <!-- vinay section 1 -->
-       <!-- vinay section 2 -->
-      <section class="snap-section two">
-        <!-- <div id="feature-fitness" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group"> -->
-        <div id="feature-fitness" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-   
-    <!-- Moving Background Image -->
-   <div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('dumbbell.jpg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-        opacity: 1;
-        filter: brightness(1);
-    "></div>
-</div>
-    
-    <div class="absolute top-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-left pr-24 mt-36 relative z-10">
-        <!-- <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Health & Fitness</span> -->
-        <span class="bg-gradient-to-r from-[#ff8f00] to-amber-600 bg-clip-text text-transparent">Health & Fitness</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-2 items-center mt-2 relative z-10">
-        <!-- <div class="grid grid-cols-2 gap-4">
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/benifets-r8hi2gfqh89s4hi5zkri7aobasirjufrmr55715ar0.jpg" alt="modern gym, fitness equipment" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-72">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/gym-intruduction-r8hi2ek5r4jnme1o16j2lvxgn9qm6vwopncxn8vamg.jpg" alt="luxury fitness center, modern gym" class="w-full h-full object-cover" />
-            </div>
-        </div> -->
-        <div class="space-y-6 pr-4 mt-4">
-            <!-- <p class="body-font text-white leading-loose text-lg"> -->
-            <!-- <p class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent"> -->
-           <span class="text-[#ff8f00] to-amber-600 bg-clip-text text-transparent">
-  Kings Club is the most prestigious health club in Bangalore. At our modern & advanced fitness center, you can boost your stamina and energy with the latest technology. By taking the first step to wellness under the guidance of our fitness trainers, you will be guided through a customized program of specific exercises tailored to your needs or just relax at one of our SPA areas.
-</span>
-<ul class="space-y-3 body-font text-lg">
-                <!-- <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li> -->
-                <li class="flex items-center text-[#ff8f00]">Modern Gym</li>
-                <li class="flex items-center text-[#ff8f00]">Dance Studio</li>
-                <li class="flex items-center text-[#ff8f00]">Spa</li>
-                <li class="flex items-center text-[#ff8f00]">Steam Room</li>
-            </ul>
-            <!-- <div class="grid grid-cols-2 gap-4">
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20240329/pngtree-rows-of-dumbbells-in-the-gym-image_15662386.jpg" alt="fitness trainer, personal training" class="w-full h-full object-cover" />
-                </div>
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/yogadance-r8hi2k74gf72smuamhwybsniiqzrfg2tkblc927gkg.png" alt="yoga and dance classes" class="w-full h-full object-cover" />
-                </div> -->
-            </div>
-        </div>
-    </div>
 
-      </section>
-       <!-- vinay section 2 -->
-         <!-- vinay section 3 -->
-      <section class="snap-section three">
-        <div id="feature-entertainment" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-    
-       <!-- Moving Background Image -->
-   <div class="absolute inset-0 overflow-hidden">
-    <div class="parallax-bg-image bg-image-animate" style="
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        background-image: url('https://static.vecteezy.com/system/resources/previews/011/144/428/large_2x/playing-chips-and-poker-cards-on-dark-background-poker-game-casiono-online-web-background-template-illustration-free-vector.jpg');
-        background-size: cover;
-        background-position: center;
-        will-change: transform, filter;
-        
-        opacity: 1;
-        filter: brightness(1);
-    "></div>
-</div>
-    
-    <!-- <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div> -->
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-right mt-24 pr-48 relative z-10">
-  <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">
-    Entertainment
-  </span>
-</h3>
-
-<div class="w-full relative z-10 pr-16 mt-8">
-  <div class="max-w-lg ml-auto text-left bg-transparent">
-    <p class="body-font text-[#F8D98B] leading-loose text-lg space-y-3">
-      Guests enjoy a lively mix of entertainment and relaxation in a vibrant setting.
-      Our facility features a swimming pool, sports fields, and engaging recreational activities.
-      We also host special events and festive celebrations, ensuring a fun and memorable experience for all.
-    </p>
-     <ul class="space-y-3 body-font text-lg mt-4">
-                <!-- <li class="flex items-center"><i class="fas fa-check-circle text-[#F8D98B] mr-3 text-xl"></i>Badminton</li> -->
-                <li class="flex items-center text-[#F8D98B]">Cards Room</li>
-                <li class="flex items-center text-[#F8D98B]">Billiards</li>
-                <li class="flex items-center text-[#F8D98B]">Foosball</li>
-                <li class="flex items-center text-[#F8D98B]">Carrom</li>
-            </ul>
-  </div>
- 
-</div>
-
-
-</div>
-      </section>
-       <!-- vinay section 3 -->
-         <!-- vinay section 4 -->
-      <!-- <section class="snap-section four">
-        <div id="feature-banquets" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-    
-
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="parallax-bg-image bg-image-animate" style="
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            top: -10%;
-            left: -10%;
-            background-image: url('https://static.vecteezy.com/system/resources/previews/011/144/428/non_2x/playing-chips-and-poker-cards-on-dark-background-poker-game-casiono-online-web-background-template-illustration-free-vector.jpg');
-            background-size: cover;
-            background-position: center;
-            will-change: transform, filter;
-            /* transition: transform 0.3s ease-out; */
-             opacity: 0.15;
-        filter: brightness(1.2);
-        "></div>
-    </div>
-    
-    <div class="absolute bottom-0 right-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative z-10">
-        <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Banquets</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
-        <div class="space-y-6">
-            <p class="body-font text-gray-700 leading-loose text-lg">
-                At the Kings Club, you can choose from a variety of banqueting facilities that ensure your celebration is a memorable experience. At our unique banquet halls, we redefine hospitality by offering an explicit theme for every occasion, such as Engagement Parties, Anniversaries, Birthday Parties, Weddings, Kitty Parties, and Corporate Events, Conference hall, meeting hall, & much more. We will take care of everything from start to finish with our team of highly skilled professionals.
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-r8hi2gfu4slrwc3i9cecx6sdiypzlkj7b49mzfkj1k.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
-                </div>
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/2021/03/Indoor-Banquit-Hall-Banner-1200x749.jpg" alt="banquet hall, wedding venue" class="w-full h-full object-cover" />
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/Standard-Room-r8hi2com8vm8ylf1nqi1e3xz80e74mkwz2wt9cc01s.jpg" alt="indoor banquet, elegant hall" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/banquit-cover-page-1-scaled-r8hi2gfu4sm89lyxq7cbqvgdu1hcma45dwnwlssia0.jpg" alt="outdoor banquet, elegant hall" class="w-full h-full object-cover" />
-            </div>
-        </div>
-    </div>
-</div>
-      </section> -->
-       <!-- vinay section 4 -->
-       <!-- vinay section 5 -->
-        <!-- <section class="snap-section five">
-<div id="feature-restaurant" class="h-screen p-12 bg-gradient-to-br from-stone-50/90 to-white/80 card-asymmetric shadow-2xl overflow-hidden relative group">
-    
-    
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="parallax-bg-image bg-image-animate" style="
-            position: absolute;
-            width: 120%;
-            height: 120%;
-            top: -10%;
-            left: -10%;
-            background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            will-change: transform, filter;
-            transition: transform 0.3s ease-out;
-             opacity: 0.15;
-        filter: brightness(1.2);
-        "></div>
-    </div>
-    
-    <div class="absolute top-0 left-0 w-64 h-64 bg-[#F8D98B] opacity-10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-    <h3 class="heading-font text-5xl font-bold text-gray-800 text-center mb-12 relative z-10">
-        <span class="bg-gradient-to-r from-[#F8D98B] to-amber-600 bg-clip-text text-transparent">Restaurant</span>
-    </h3>
-    <div class="grid md:grid-cols-2 gap-12 items-center mb-12 relative z-10">
-        <div class="space-y-6">
-            <p class="body-font text-gray-700 leading-loose text-lg">
-                At the Kings Club, you can enjoy a variety of fine dining experiences with our world-class chefs. From elegant banquets to casual gatherings, our restaurant offers a perfect blend of luxury and comfort. Whether you're celebrating a special occasion or just enjoying a meal with friends, our restaurant provides an unforgettable dining experience.
-            </p>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/elementor/thumbs/social-geathering-scaled-r8hi2ek3bf1mpcfmvq7119eshtkd8td5xhnrh8jps0.jpg" alt="fine dining, elegant setting" class="w-full h-full object-cover" />
-                </div>
-                <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-48">
-                    <img src="https://kingsclub.in/wp-content/uploads/2021/02/Restro-Bar-banner-image-2.jpg" alt="restaurant bar, elegant dining" class="w-full h-full object-cover" />
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/03/about-Sky-Lounge-1200x675-cropped.jpg" alt="sky lounge, elegant dining area" class="w-full h-full object-cover" />
-            </div>
-            <div class="feature-img-card rounded-3xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-500 hover:shadow-2xl h-64">
-                <img src="https://kingsclub.in/wp-content/uploads/2021/02/Intruduction.jpg" alt="restaurant interior, elegant dining" class="w-full h-full object-cover" />
-            </div>
-        </div>
-    </div>
-</div>
-        </section> -->
-       <!-- vinay section 5 -->
-
-       <!-- <div class="snap-spacer"></div> -->
-
-    </div>
-  </section>
 
 <section id="perks" class="py-20 parallax-section">
     <img class="parallax-bg-image" src="logodark.png" alt="Kings Club logo watermark background" style="opacity: 1.08;  background-color: #ffe4c4;" />
@@ -1466,142 +1172,6 @@
 </div>
     </div>
 </footer>
-
-<!-- smoother movable section -->
-<script>
-const container = document.getElementById("snapContainer");
-const parent = document.getElementById("snapParent");
-const sections = Array.from(container.querySelectorAll(".snap-section"));
-
-let index = 0;
-let locked = false;
-let edgeIntent = 0;
-
-const INTENT_THRESHOLD = 120;
-const SCROLL_DURATION = 700;
-
-function scrollToIndex(i) {
-  locked = true;
-
-  container.scrollTo({
-    top: i * window.innerHeight,
-    behavior: "smooth"
-  });
-
-  setTimeout(() => {
-    locked = false;
-  }, SCROLL_DURATION);
-}
-
-window.addEventListener("wheel", (e) => {
-  const parentRect = parent.getBoundingClientRect();
-  const inside =
-    parentRect.top <= 0 &&
-    parentRect.bottom >= window.innerHeight;
-
-  if (!inside) return;
-
-  e.preventDefault();
-  if (locked) return;
-
-  const dir = e.deltaY > 0 ? 1 : -1;
-
-  // Normal section scrolling
-  if (dir === 1 && index < sections.length - 1) {
-    index++;
-    scrollToIndex(index);
-    edgeIntent = 0;
-    return;
-  }
-
-  if (dir === -1 && index > 0) {
-    index--;
-    scrollToIndex(index);
-    edgeIntent = 0;
-    return;
-  }
-
-  // Edge intent handling
-  edgeIntent += Math.abs(e.deltaY);
-
-  if (edgeIntent > INTENT_THRESHOLD) {
-    edgeIntent = 0;
-
-    // Release to page scroll
-    window.scrollBy({
-      top: dir * window.innerHeight,
-      behavior: "smooth"
-    });
-  }
-}, { passive: false });
-</script>
-
-
-
-
-<script>
-const parallaxImages = document.querySelectorAll(".parallax-bg-image");
-
-// CONFIG
-const PARALLAX_PER_SECTION = 60; // px movement per section
-const DURATION = 5000; // 🔥 5 seconds per section
-
-let currentSection = 0;
-let animationStart = null;
-let fromY = 0;
-let toY = 0;
-let animating = false;
-
-function easeInOut(t) {
-  return t < 0.5
-    ? 2 * t * t
-    : 1 - Math.pow(-2 * t + 2, 2) / 2;
-}
-
-function animateParallax(timestamp) {
-  if (!animationStart) animationStart = timestamp;
-
-  const elapsed = timestamp - animationStart;
-  const progress = Math.min(elapsed / DURATION, 1);
-  const eased = easeInOut(progress);
-
-  const y = fromY + (toY - fromY) * eased;
-
-  parallaxImages.forEach(img => {
-    img.style.transform = `translateY(${y}px) scale(1.08)`;
-  });
-
-  if (progress < 1) {
-    requestAnimationFrame(animateParallax);
-  } else {
-    animating = false;
-    fromY = toY;
-    animationStart = null;
-  }
-}
-
-// 🔔 Call this WHEN section index changes
-function onSectionChange(newIndex) {
-  if (animating) return;
-
-  currentSection = newIndex;
-
-  fromY = toY;
-  toY = currentSection * PARALLAX_PER_SECTION;
-
-  animating = true;
-  animationStart = null;
-  requestAnimationFrame(animateParallax);
-}
-</script>
-
-
-
-
-
-
-<!-- smoother movable section -->
-
 
 <!-- MODAL FUNCTIONS - MUST BE GLOBAL -->
 <script>
@@ -2079,107 +1649,6 @@ function initMouseMoveParallax() {
 
 // Call the function to initialize the effect
 initMouseMoveParallax();
-
-// Sticky Features Container Scroll Control
-function initStickyFeaturesScroll() {
-    const stickyContainer = document.getElementById('sticky-features-container');
-    const scrollContainer = document.getElementById('features-scroll-container');
-    
-    if (!stickyContainer || !scrollContainer) return;
-    
-    let isUserScrolling = false;
-    let lastWindowScroll = window.pageYOffset;
-    
-    // Sync main page scroll with inner container scroll
-    function syncScroll() {
-        if (isUserScrolling) return;
-        
-        const containerRect = stickyContainer.getBoundingClientRect();
-        const windowScroll = window.pageYOffset;
-        const containerTop = stickyContainer.offsetTop;
-        const containerHeight = stickyContainer.offsetHeight;
-        const windowHeight = window.innerHeight;
-        
-        // Check if container is in sticky range (top or bottom)
-        const isInStickyRange = (containerRect.top <= 0 && containerRect.top > -containerHeight + windowHeight) ||
-                                (containerRect.bottom <= windowHeight && containerRect.bottom > 0);
-        
-        if (isInStickyRange) {
-            // Calculate scroll progress based on container position
-            let scrollProgress = 0;
-            
-            // When stuck at top (scrolling down)
-            if (containerRect.top <= 0 && containerRect.top > -containerHeight + windowHeight) {
-                const scrollPast = Math.max(0, windowScroll - containerTop);
-                const maxScrollPast = containerHeight - windowHeight;
-                scrollProgress = Math.min(Math.max(scrollPast / maxScrollPast, 0), 1);
-            }
-            // When stuck at bottom (scrolling up from below)
-            else if (containerRect.bottom <= windowHeight && containerRect.bottom > 0) {
-                const scrollPast = containerHeight - (containerRect.bottom - containerTop);
-                const maxScrollPast = containerHeight - windowHeight;
-                scrollProgress = Math.min(Math.max(scrollPast / maxScrollPast, 0), 1);
-            }
-            
-            // Calculate inner container scroll position
-            const maxInnerScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-            const targetInnerScroll = scrollProgress * maxInnerScroll;
-            
-            if (maxInnerScroll > 0) {
-                scrollContainer.scrollTop = targetInnerScroll;
-            }
-        }
-    }
-    
-    // Handle wheel events - redirect to inner container when sticky
-    function handleWheel(e) {
-        const containerRect = stickyContainer.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const isStuckAtTop = containerRect.top <= 0 && containerRect.top > -containerRect.height + windowHeight;
-        const isStuckAtBottom = containerRect.bottom <= windowHeight && containerRect.bottom > 0;
-        
-        if (isStuckAtTop || isStuckAtBottom) {
-            const scrollTop = scrollContainer.scrollTop;
-            const maxScroll = scrollContainer.scrollHeight - scrollContainer.clientHeight;
-            
-            // If scrolling down and at bottom of inner container, allow main scroll
-            if (e.deltaY > 0 && scrollTop >= maxScroll - 5) {
-                return true;
-            }
-            
-            // If scrolling up and at top of inner container, allow main scroll
-            if (e.deltaY < 0 && scrollTop <= 5) {
-                return true;
-            }
-            
-            // Otherwise, scroll the inner container
-            scrollContainer.scrollTop += e.deltaY * 0.5;
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-    }
-    
-    // Handle wheel events on document
-    document.addEventListener('wheel', handleWheel, { passive: false });
-    
-    // Handle inner container scroll
-    scrollContainer.addEventListener('scroll', function() {
-        isUserScrolling = true;
-        setTimeout(() => { isUserScrolling = false; }, 100);
-    });
-    
-    // Sync on window scroll
-    window.addEventListener('scroll', syncScroll, { passive: true });
-    
-    // Initial sync
-    syncScroll();
-}
-
-// Initialize on page load
-window.addEventListener('load', function() {
-    initStickyFeaturesScroll();
-});
 
 </script>
 

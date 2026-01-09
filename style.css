@@ -1,0 +1,80 @@
+/* Normal sections */
+.page-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+/* Parent wrapper */
+.snap-parent {
+  height: 210vh; /* 4 sections × 100vh */
+  position: relative;
+}
+
+/* Sticky container */
+/* .snap-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+   overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+   overscroll-behavior: contain;
+
+ scroll-padding-top: 10px;
+  scroll-padding-bottom: 20px;
+} */
+.snap-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  /* overflow-y: auto; */
+  overflow: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+/* Child sections */
+/* .snap-section {
+  height: 100vh;
+  scroll-snap-align: start;
+scroll-snap-stop: always; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 4rem;
+  color: white;
+} */
+ .snap-section {
+  height: 100vh;
+  /* scroll-snap-align: start;
+  scroll-snap-stop: always; */
+}
+
+.snap-container.release {
+  position: relative !important;
+}
+/* .parallax-bg-image {
+  transform: translateY(0px) scale(1.08);
+  will-change: transform;
+} */
+ .parallax-bg-image {
+  transition: none !important;
+}
+/* .snap-spacer {
+  height: 1px;
+  scroll-snap-align: none;
+} */
+/* Colors */
+.one { background: #1e3a8a; }
+.two { background: #0f766e; }
+.three { background: #7c2d12; }
+.four { background: #4c1d95; }
+.five { background: #4c1d95; }
+
+.intro { background: #e5e7eb; }
+.outro { background: #d1d5db; }
